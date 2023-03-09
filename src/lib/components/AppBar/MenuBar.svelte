@@ -3,11 +3,16 @@
   import { widthLessthan680, widthLessthan480, user } from "$lib/stores";
   import Logo from "$lib/components/AppBar/Logo.svelte";
   import MiddleMenu from "$lib/components/AppBar/MiddleMenu.svelte";
-  import ThemeMenu from "$lib/components/Appbar/ThemeMenu.svelte";
-  import LoginBtn from "$lib/components/Appbar/LoginBtn.svelte";
-  import LogoutBtn from "$lib/components/Appbar/LogoutBtn.svelte";
-  import LangMenu from "$lib/components/Appbar/LangMenu.svelte";
-  import UserMenu from "$lib/components/Appbar/UserMenu.svelte";
+  // import ThemeMenu from "$lib/components/Appbar/ThemeMenu.svelte";
+  import ThemeMenu from "./ThemeMenu.svelte";
+  // import LoginBtn from "$lib/components/Appbar/LoginBtn.svelte";
+  import LoginBtn from "./LoginBtn.svelte";
+  // import LogoutBtn from "$lib/components/Appbar/LogoutBtn.svelte";
+  import LogoutBtn from "./LogoutBtn.svelte";
+  // import LangMenu from "$lib/components/Appbar/LangMenu.svelte";
+  import LangMenu from "./LangMenu.svelte";
+  // import UserMenu from "$lib/components/Appbar/UserMenu.svelte";
+  import UserMenu from "./UserMenu.svelte";
 
   // import type { PageData } from "./$types";
   // export let data: PageData;
