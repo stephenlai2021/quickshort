@@ -35,7 +35,7 @@ export const actions: Actions = {
         });
       }      
 
-      throw redirect(303, data.url);
+      // throw redirect(303, data.url);
     }
 
     const body = Object.fromEntries(await request.formData());
@@ -45,7 +45,7 @@ export const actions: Actions = {
       password: body.password as string,
     });
 
-    if (data) console.log('email login: ', data)
+    // if (data) console.log('email login: ', data)
 
     if (err) {
       if (err instanceof AuthApiError && err.status === 400) {

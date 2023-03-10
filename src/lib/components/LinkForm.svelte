@@ -18,7 +18,7 @@
     });
   })
 
-  $: console.log('mobile: ', $mobile)
+  // $: console.log('mobile: ', $mobile)
  </script>
  
  <form 

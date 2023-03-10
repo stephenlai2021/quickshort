@@ -3,15 +3,15 @@
   import LinkCard from '$lib/components/LinkCard.svelte'
   import { page } from '$app/stores';
   import { t } from '$lib/i18n/translations';
+  import { user } from '$lib/stores'
+  import { onMount } from 'svelte';
 
   import type { PageData } from "./$types";
   export let data: PageData;
-  console.log('user data: ', data)
-  console.log('user data: ', $page.data)
 
-  // $: if (data.session) alert(data.session.user.email)
-
-  console.log('url: ', $page.url.pathname)
+  onMount(() => {
+    if (data) $user = data.user.user
+  })
 
   const loop = [
     {

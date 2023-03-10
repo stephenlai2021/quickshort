@@ -8,9 +8,6 @@
   import LogoutBtn from "./LogoutBtn.svelte";
   import LangMenu from "./LangMenu.svelte";
   import UserMenu from "./UserMenu.svelte";
-
-  // import type { PageData } from "./$types";
-  // export let data: PageData;
 </script>
 
 <div

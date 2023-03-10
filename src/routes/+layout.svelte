@@ -15,7 +15,6 @@
   
   import type { PageData } from './$types';
 	export let data: PageData;
-  console.log('auth: ', data)
 
   const handleRWD = () => {
     if (window.innerWidth <= 680) $widthLessthan680 = true;

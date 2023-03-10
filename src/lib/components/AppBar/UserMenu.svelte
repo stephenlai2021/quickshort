@@ -3,16 +3,12 @@
   import { supabaseClient } from "$lib/supabase";
   import { user } from "$lib/stores";
   import { page } from "$app/stores";
+  import { onMount } from 'svelte'
   import userAvatar from "$lib/assets/images/sister.png";
 
-  // import type { PageData } from "./$types";
-  // export let data: PageData;
-  // console.log(data)
-
-  // import type { Session } from "@supabase/supabase-js";
-  // export let session: Session | null;
-
-  $: if ($user) console.log("user: ", $user);
+  onMount(() => {
+    console.log('user | user menu: ', $user)
+  })
 
   const submitLogout: SubmitFunction = async ({ cancel }) => {
     const { error } = await supabaseClient.auth.signOut();
@@ -28,7 +24,7 @@
     <button>
       <span>
         <img
-          src={userAvatar}
+          src={$user.user_metadata?.avatar_url}          
           alt=""
           width="35"
           height="35"
@@ -37,7 +33,8 @@
       </span>
     </button>
     <ul class="dropdown-menu absolute right-0 p-1 bg-base-100 border">
-      <li><button>user email</button></li>
+      <li><button>{$user?.email}</button></li>
+      <!-- <li><button>{$user?.user_metadata ? $user?.user_metadata.email : $user.email}</button></li> -->
       <li>
         <form action="/logout" method="POST" use:enhance={submitLogout}>
           <button type="submit" class="">Logout</button>

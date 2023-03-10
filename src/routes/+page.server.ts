@@ -5,7 +5,6 @@ export const load: PageServerLoad = async ({ locals }) => {
   if (locals.session) {
     throw redirect(303, "/dashboard");
   }
-  return {};
 };
 
 export const actions: Actions = {
