@@ -26,7 +26,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   if (theme) {
     return await resolve(event, {
       transformPageChunk: ({ html }) =>
-        html.replace('data-theme=""', `data-theme="${theme}"`),
+        html.replace('data-theme="dark"', `data-theme="${theme}"`),
     });
   }
 
