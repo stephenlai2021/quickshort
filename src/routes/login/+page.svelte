@@ -7,7 +7,7 @@
 
   const signInWithProvider = async (provider: Provider) => {
 		const { data, error } = await supabaseClient.auth.signInWithOAuth({
-			provider: provider
+			provider
 		});
 
     if (data) console.log('github account | client: ', data)
@@ -20,9 +20,9 @@
 			case 'google':
 				await signInWithProvider('google');
 				break;
-			case 'discord':
-				await signInWithProvider('discord');
-				break;
+			// case 'discord':
+			// 	await signInWithProvider('discord');
+			// 	break;
 			case 'github':
 				await signInWithProvider('github');
 				break;
@@ -64,6 +64,12 @@
           formaction="?/login&provider=github"
         >
           {$t("common.btn-github")}
+        </button>
+        <button
+          class="py-4 px-4 rounded-full w-full mt-5 btn-github bg-secondary"
+          formaction="?/login&provider=google"
+        >
+          {$t("common.btn-google")}
         </button>
       </form>
 

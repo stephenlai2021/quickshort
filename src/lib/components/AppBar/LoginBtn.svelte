@@ -3,7 +3,7 @@
 </script>
 
 <li class="btn-login">
-  <a href="/login">
+  <a href="/auth">
     <button>
       {$t("common.login")}
     </button>

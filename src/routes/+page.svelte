@@ -12,7 +12,7 @@
     <p class="text-lg w-10/12 md:w-2/3 mx-auto my-10">
       {$t('common.subtitle')}
     </p>
-    <a href="/login" class="py-4 px-8 rounded-full bg-primary text-sm">
+    <a href="/auth" class="py-4 px-8 rounded-full bg-primary text-sm">
       {$t('common.action')}
     </a>
   </div>

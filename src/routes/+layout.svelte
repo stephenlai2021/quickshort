@@ -12,9 +12,6 @@
   import { browser } from "$app/environment";
   import MenuBar from "$lib/components/AppBar/MenuBar.svelte";
   import Icon from "$lib/assets/images/favicon.ico";
-  
-  import type { PageData } from './$types';
-	export let data: PageData;
 
   const handleRWD = () => {
     if (window.innerWidth <= 680) $widthLessthan680 = true;

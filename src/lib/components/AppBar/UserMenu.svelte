@@ -32,7 +32,7 @@
         />
       </span>
     </button>
-    <ul class="dropdown-menu absolute right-0 p-1 bg-base-100 border">
+    <ul class="dropdown-menu absolute right-[3px] p-1 bg-base-100 border">
       <li><button>{$user?.email}</button></li>
       <!-- <li><button>{$user?.user_metadata ? $user?.user_metadata.email : $user.email}</button></li> -->
       <li>

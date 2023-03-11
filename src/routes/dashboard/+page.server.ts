@@ -6,7 +6,7 @@ export const load: PageServerLoad = async ({ locals }) => {
     throw redirect(303, "/");
   }
 
-  console.log('session | dashboard: ', locals.session)
+  // console.log('session | dashboard: ', locals.session)
   return {
     user: locals.session
   };
