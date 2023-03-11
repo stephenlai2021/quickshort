@@ -27,6 +27,9 @@
       case "github":
         await signInWithProvider("github");
         break;
+      case "facebook":
+        await signInWithProvider("facebook");
+        break;
       default:
         break;
     }
@@ -34,8 +37,8 @@
   };
 </script>
 
-<div class="h-screen grid place-content-center">
-  <div class="mt-10 mx-auto">
+<div class="h-screen grid place-content-cente">
+  <div class="mt-[100px] mx-auto">
     <div
       class="card bg-white/5 backdrop-blur-lg border border-neutral/10 rounded-2xl p-5 w-[300px]"
     >
@@ -63,16 +66,49 @@
           class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-black text-white"
           formaction="?/login&provider=github"
         >
-          <img class="mr-[20px]" src="https://cdn.iconscout.com/icon/free/png-256/github-3691248-3073768.png?f=webp&w=128" alt="" width="25">
+          <img
+            class="mr-[20px]"
+            src="https://cdn.iconscout.com/icon/free/png-256/github-3691248-3073768.png?f=webp&w=128"
+            alt=""
+            width="25"
+          />
           {$t("common.btn-github")}
         </button>
         <button
           class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-white text-black font-weight-bold"
           formaction="?/login&provider=google"
         >
-          <!-- <GoogleIcon /> -->
-          <img class="mr-[20px]" src="https://cdn-icons-png.flaticon.com/512/2965/2965278.png" alt="" width="25">
+          <img
+            class="mr-[20px]"
+            src="https://cdn-icons-png.flaticon.com/512/2965/2965278.png"
+            alt=""
+            width="25"
+          />
           {$t("common.btn-google")}
+        </button>
+        <button
+          class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-[#1877F2] text-white font-weight-bold"
+          formaction="?/login&provider=facebook"
+        >
+          <img
+            class="mr-[20px]"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
+            alt=""
+            width="25"
+          />
+          {$t("common.btn-facebook")}
+        </button>
+        <button
+          class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-white  [#8C9EFF] text-black font-weight-bold"
+          formaction="?/login&provider=discord"
+        >
+          <img
+            class="mr-[20px]"
+            src="https://icon2.cleanpng.com/20180512/vve/kisspng-discord-computer-icons-logo-computer-software-5af6ee32eff047.5576594815261322749828.jpg"
+            alt=""
+            width="25"
+          />
+          {$t("common.btn-discord")}
         </button>
       </form>
     </div>

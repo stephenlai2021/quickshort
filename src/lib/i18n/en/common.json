@@ -36,6 +36,8 @@
   "help": "help",
   "btn-github": "Login with Github",
   "btn-google": "Login with Google",
+  "btn-discord": "Login with Discord",
+  "btn-facebook": "Login with Facebook",
   "email": "Email",
   "password": "Password",
   "login": "login",
