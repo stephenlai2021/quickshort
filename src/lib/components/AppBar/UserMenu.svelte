@@ -2,9 +2,7 @@
   import { enhance, type SubmitFunction } from "$app/forms";
   import { supabaseClient } from "$lib/supabase";
   import { user } from "$lib/stores";
-  import { page } from "$app/stores";
   import { onMount } from 'svelte'
-  import userAvatar from "$lib/assets/images/sister.png";
 
   onMount(() => {
     console.log('user | user menu: ', $user)

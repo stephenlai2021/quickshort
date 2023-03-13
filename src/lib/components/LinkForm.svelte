@@ -21,10 +21,11 @@
   // $: console.log('mobile: ', $mobile)
  </script>
  
+ <!-- class="border border-neutral/20 hover:border-secondary/50 mt-10 flex flex-wrap sm:flex-nowrap justify-between items-middle gap-5" -->
  <form 
    method="POST" 
    action="" 
-   class="mt-10 flex flex-wrap sm:flex-nowrap justify-between items-middle gap-5"
+   class="border border-secondary/50 hover:border-secondary/50 mt-10 flex flex-wrap sm:flex-nowrap justify-between items-middle gap-5"
    class:card={ !$mobile }
    >
  <!-- <form method="POST" action="" class="mt-10 flex flex-wrap sm:flex-nowrap justify-between items-middle gap-5"> -->

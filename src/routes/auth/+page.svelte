@@ -63,7 +63,7 @@
 
       <form method="POST" use:enhance={submitSocialLogin}>
         <button
-          class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-black text-white"
+          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-black text-white"
           formaction="?/login&provider=github"
         >
           <img
@@ -75,7 +75,7 @@
           {$t("common.btn-github")}
         </button>
         <button
-          class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-white text-black font-weight-bold"
+          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-white text-black font-weight-bold"
           formaction="?/login&provider=google"
         >
           <img
@@ -87,7 +87,7 @@
           {$t("common.btn-google")}
         </button>
         <button
-          class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-[#1877F2] text-white font-weight-bold"
+          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-[#1877F2] text-white font-weight-bold"
           formaction="?/login&provider=facebook"
         >
           <img
@@ -99,7 +99,7 @@
           {$t("common.btn-facebook")}
         </button>
         <button
-          class="py-4 px-4 rounded-[8px] w-full mt-5 btn-github bg-white  [#8C9EFF] text-black font-weight-bold"
+          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-white  [#8C9EFF] text-black font-weight-bold"
           formaction="?/login&provider=discord"
         >
           <img

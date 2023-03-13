@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="boarder border-b border-white/10 px-8 py-2 bg-base-100 backdrop-blur-md  border-white/20 fixed top-0 left-0 right-0 z-50"
+  class="border-white/10 px-8 py-2 bg-base-100 backdrop-blur-md  border-white/20 fixed top-0 left-0 right-0 z-50"
   class:pr-5={$widthLessthan680}
   class:pl-4={$widthLessthan480}
 >

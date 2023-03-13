@@ -1,10 +1,12 @@
 import { redirect } from "@sveltejs/kit";
-import type { Actions, PageServerLoad } from "./$types"
+import type { Actions, PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ locals }) => {
   if (locals.session) {
     throw redirect(303, "/dashboard");
   }
+
+  return { user: {} };
 };
 
 export const actions: Actions = {

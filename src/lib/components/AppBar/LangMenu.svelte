@@ -11,7 +11,7 @@
       <IconLang />
     </span>
   </button>
-  <ul class="absolute right-0 p-1 bg-base-100 border">
+  <ul class="absolute right-[3px] p-1 bg-base-100 border">
     {#each langs as lang}
       {#if lang === "English"}
         <li>

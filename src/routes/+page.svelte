@@ -1,7 +1,11 @@
 <script lang="ts">
   import { t } from '$lib/i18n/translations';
   import { user } from '$lib/stores'
-  import { onMount } from 'svelte';  
+
+  import type { PageData } from "./$types";
+  export let data: PageData;
+
+  $user = data.user
 </script>
 
 <section class="h-screen grid place-items-center bg-base-100">

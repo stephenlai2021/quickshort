@@ -1,9 +1,8 @@
 <script lang="ts">
   import LinkForm from '$lib/components/LinkForm.svelte'
   import LinkCard from '$lib/components/LinkCard.svelte'
-  import { page } from '$app/stores';
   import { t } from '$lib/i18n/translations';
-  import { user } from '$lib/stores'
+  import { user, auth } from '$lib/stores'
   import { onMount } from 'svelte';
 
   import type { PageData } from "./$types";
@@ -11,6 +10,7 @@
 
   onMount(() => {
     if (data) $user = data.user.user
+    $auth = true
   })
 
   const loop = [

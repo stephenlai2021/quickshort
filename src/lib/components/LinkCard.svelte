@@ -13,10 +13,10 @@
 
 <!-- class="backdrop-blur-lg border border- border-opacity-50 rounded-xl p-5 min-w-[300px] mb-5 flex justify-between gap-5 hover:border-white/30 transition-all duration-200" -->
 <div
-  class="backdrop-blur-lg border border- border-opacity-50 rounded-xl p-5 min-w- mb-5 flex justify-between gap-5 hover:border-white/30 transition-all duration-200"
+  class="backdrop-blur-lg border border-b border-secondary/50 border-opacity-50 rounded-xl p-5 min-w- mb-5 flex justify-between gap-5 hover:border-secondary/50 transition-all duration-200"
 >
   <div class="w-1/2 link">
-    <div class="text-xl">
+    <div class="text-xl text-">
       <a href="#">/{link.shortKey}</a>
     </div>
     <div class="text-xs sm:text-base">

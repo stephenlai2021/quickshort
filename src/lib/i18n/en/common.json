@@ -1,5 +1,5 @@
 {
-  "logo": "QUICKSHORT",
+  "logo": "QuickShort",
   "title": "Shorten Your URLs Easily.",
   "subtitle": "QuickShort is the easiest way to shorten URLs and track analytics for your website.",
   "action": "Short Now",
@@ -44,5 +44,6 @@
   "login-hint": "Don't have an account? Register",
   "register": "Register",
   "register-hint": "Already have an account? Login",
-  "logout": "Logout"
+  "logout": "Logout",
+  "send": "SEND"
 }

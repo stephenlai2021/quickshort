@@ -44,5 +44,6 @@
   "login-hint": "沒有帳戶? 註冊",
   "register": "註冊",
   "register-hint": "已經有了一個帳戶? 登錄",
-  "logout": "登出"
+  "logout": "登出",
+  "send": "送出"
 }
