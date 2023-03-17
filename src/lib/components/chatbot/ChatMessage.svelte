@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { ChatCompletionRequestMessageRoleEnum } from "openai";
   import { user } from "$lib/stores";
+  import avatar from "$lib/assets/images/avatar.png"
+  import chatbot from "$lib/assets/images/sister.png"
 
   export let type: ChatCompletionRequestMessageRoleEnum;
   export let message: string;
@@ -17,33 +19,33 @@
     );
   } 
 	else {
-    userAvatar =
-      "https://www.shareicon.net/data/256x256/2015/09/18/103159_user_512x512.png";
+    userAvatar = avatar
   }
 </script>
 
 <div class="chat {type === 'user' ? 'chat-end' : 'chat-start'} justify-end">
-  <div class="chat-image avatar">
+  <!-- <div class="chat-image avatar">
     <div class="w-10 rounded-full">
       {#if userAvatar}
         <img
           src={type === "user"
             ? userAvatar
-            : "https://raw.githubusercontent.com/SAP-Custom-Widget/ChatGptWidget/main/icon.png"}
+            : chatbot}
           alt="{type} avatar"
         />
       {:else}
         <img
           src={type === "user"
-            ? "https://www.shareicon.net/data/256x256/2015/09/18/103159_user_512x512.png"
-            : "https://raw.githubusercontent.com/SAP-Custom-Widget/ChatGptWidget/main/icon.png"}
+            ? avatar
+            : chatbot}
           alt="{type} avatar"
         />
       {/if}
     </div>
-  </div>
+  </div> -->
+
   <div
-    class="chat-bubble rounded-[8px] {type === 'user'
+    class="chat-bubble text-[14px] rounded-[8px] {type === 'user'
       ? 'chat-bubble-primary'
       : 'chat-bubble-secondary'}"
   >

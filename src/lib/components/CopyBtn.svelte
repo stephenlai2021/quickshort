@@ -5,7 +5,7 @@
  </script>
  
  <button
-    class="border border-neutral/10 bg-secondary hover:border-white/20 transition-all duration-200 py-2 px-4 bg rounded-xl ml-5"
+    class="bg-secondary/20 hover:border-white/20 transition-all duration-200 py-2 px-4 bg rounded-xl ml-5"
     on:click={handleCopy}
   >
     <svg

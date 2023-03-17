@@ -2,7 +2,7 @@
   import { t } from "$lib/i18n/translations";
   import { enhance, type SubmitFunction } from "$app/forms";
   import { supabaseClient } from "$lib/supabase";
-  import { user } from "$lib/stores";
+  import { user, widthLessthan360 } from "$lib/stores";
   import type { Provider } from "@supabase/supabase-js";
   import GoogleIcon from "$lib/assets/images/google-icon.png";
 
@@ -37,13 +37,16 @@
   };
 </script>
 
-<div class="h-screen grid place-content-cente">
-  <div class="mt-[100px] mx-auto">
+<div class="h-screen grid place-content-center">
+  <div class="mt-[0px] mx-auto">
     <div
-      class="card bg-white/5 backdrop-blur-lg border border-neutral/10 rounded-2xl p-5 w-[300px]"
+      class="card shadow-neutral/50 shadow-md bg-white/5 borde border-neutral/10 rounded-2xl p-5 w-[300px]"
+      style:width={$widthLessthan360 ? '90vw' : '300px'}
+      class:card={!$widthLessthan360}
+      class:p-3={$widthLessthan360}
     >
       <div class="text-center flex justify-center">
-        <div class="p-4 border rounded-full border-white/10">
+        <div class="p-4 mt-2 border rounded-full border-white/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,7 +64,7 @@
         </div>
       </div>
 
-      <form method="POST" use:enhance={submitSocialLogin}>
+      <form method="POST" use:enhance={submitSocialLogin} class="pb-2">
         <button
           class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-black text-white"
           formaction="?/login&provider=github"
@@ -122,8 +125,14 @@
     display: flex;
   }
 
-  .btn-action {
-    margin-top: 30px;
-    width: 100%;
+  @media (max-width: 360px) {
+    button {
+      padding-left: 12px;
+      padding-right: 8px;
+    }
+
+    img {
+      margin-right: 10px;
+    }
   }
 </style>

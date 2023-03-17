@@ -1,5 +1,6 @@
 {
-  "logo": "快修",
+  "logo_long": "快修",
+  "logo_short": "快修",
   "title": "輕鬆縮短你的網址",
   "subtitle": "魁秀是縮短網址和跟踪分析網站的最簡單方法",
   "action": "現在就修",
@@ -45,5 +46,6 @@
   "register": "註冊",
   "register-hint": "已經有了一個帳戶? 登錄",
   "logout": "登出",
-  "send": "送出"
+  "send": "送出",
+  "chat": "聊天助理"
 }

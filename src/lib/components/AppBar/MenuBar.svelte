@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="border-white/10 px-8 py-2 bg-base-100 backdrop-blur-md  border-white/20 fixed top-0 left-0 right-0 z-50"
+  class="px-8 py- bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50 shadow-neutral/10 shadow-md"
   class:pr-5={$widthLessthan680}
   class:pl-4={$widthLessthan480}
 >
@@ -36,7 +36,7 @@
             <LogoutBtn />
           {/if}
 
-          {#if $page.url.pathname === "/dashboard"}
+          {#if $page.url.pathname.startsWith("/dashboard")}
             <UserMenu />
           {/if}
         </ul>

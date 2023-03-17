@@ -5,15 +5,17 @@
 </script>
 
 <a href="/" data-sveltekit-reload class="logo flex relative navbar-brand text-2xl font-bold">
-  <img class="logo-image" src={logo} alt="" width="28" height="28" />
-  <span
-    class="title"
-    style:display={$widthLessthan560 && $locale === "ja"
+  <!-- <img class="logo-image" src={logo} alt="" width="28" height="28" /> -->
+    <!-- style:display={$widthLessthan560 && $locale === "ja"
       ? "none"
       : $widthLessthan480 && $locale !== "ja"
       ? "none"
-      : "block"}>{$t("common.logo")}
-  </span>
+      : "block"} -->
+  {#if $widthLessthan480}
+    <span class="title">{$t('common.logo_short')}</span>
+  {:else}
+    <span class="title">{$t('common.logo_long')}</span>
+  {/if}
 </a>
 
 <style>
@@ -22,8 +24,8 @@
   }
 
   .title {
-    margin-left: 10px;
-    width: 192px;
+    /* margin-left: 10px; */
+    /* width: 192px; */
   }
 
   @media (max-width: 480px) {
@@ -32,9 +34,9 @@
     }
 
     .title {
-      margin-left: 0;
-      width: auto;
-      display: none;
+      margin-left: 8px;
+      /* width: auto;
+      display: none; */
     }
   }
 </style>

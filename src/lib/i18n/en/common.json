@@ -1,5 +1,6 @@
 {
-  "logo": "QuickShort",
+  "logo_long": "QuickShort",
+  "logo_short": "QS",
   "title": "Shorten Your URLs Easily.",
   "subtitle": "QuickShort is the easiest way to shorten URLs and track analytics for your website.",
   "action": "Short Now",
@@ -27,9 +28,9 @@
   "night": "night",
   "dashboard": "Dashboard",
   "long_url": "Long URL",
-  "long_url_placeholder": "enter or paste long URL",
+  "long_url_placeholder": "Enter or paste long URL",
   "short_key": "Short Key",
-  "short_key_placeholder": "enter a key (optional",
+  "short_key_placeholder": "Enter a key (optional)",
   "shorten": "Shorten",
   "pricing": "pricing",
   "features": "features",
@@ -45,5 +46,6 @@
   "register": "Register",
   "register-hint": "Already have an account? Login",
   "logout": "Logout",
-  "send": "SEND"
+  "send": "SEND",
+  "chat": "Chatbot"
 }

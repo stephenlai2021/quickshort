@@ -3,8 +3,10 @@
   import { SSE } from "sse.js";
   import { cubicOut } from "svelte/easing";
   import { t } from "$lib/i18n/translations";
-  import { menuOpen } from "$lib/stores";
+  import { menuOpen, openaiKey } from "$lib/stores";
   import ChatMessage from "./ChatMessage.svelte";
+  import IconSister from "$lib/components/icon/IconSister.svelte";
+  import IconClose from "$lib/components/icon/IconClose.svelte";
 
   let query: string = "";
   let answer: string = "";
@@ -12,6 +14,7 @@
   let loading: boolean = false;
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
+
   function scrollToBottom() {
     setTimeout(function () {
       scrollToDiv.scrollIntoView({
@@ -28,7 +31,10 @@
       headers: {
         "Content-Type": "application/json",
       },
-      payload: JSON.stringify({ messages: chatMessages }),
+      payload: JSON.stringify({
+        messages: chatMessages,
+        openaiKey: $openaiKey,
+      }),
     });
     query = "";
     eventSource.addEventListener("error", handleError);
@@ -61,7 +67,12 @@
     loading = false;
     query = "";
     answer = "";
-    console.error(err);
+    console.error("request error: ", err);
+    alert(
+      "Your OpenAI API key is invalid, please enter a valid key or create a new one 😀"
+    );
+    $menuOpen = false;
+    $openaiKey = "";
   }
 
   function slidefade(node, params) {
@@ -81,20 +92,32 @@
 
 <div
   transition:slidefade
-  class="relative pt-[10px] flex flex-col pt-4 w- px-0 items-center gap-"
+  class="chat-window pt-[0px] flex flex-col pt-4 w- px-0 items-center gap-"
   on:click|stopPropagation
   on:keydown
 >
   <div
-    class="absolute h-[20px] w-full rounded-[8px] z-10 backdrop-blur-[6px]"
-  />
-  <div
-    class="inner-wrapper h-[300px] w-[350px] pt-[0px] bg-neutral rounded-t-[8px] p-4 overflow-y-auto flex flex-col gap-4"
+    class="inner-wrapper shadow-neutral/50 shadow-md h-[300px] w-[350px] pt-[0px] bg-base-200 backdrop-blur-2xl rounded-t-[8px] overflow-y-auto flex flex-col gap-4"
   >
-    <div class="flex flex-col gap-2 pt-[16px]">
+    <div
+      class="chat-window-header w-full px-4 bg-base-100 backdrop-blur-2xl py-3 flex items-center shadow-neutral/10 shadow-md"
+    >
+      <IconSister />
+      <div class="description ml-[10px] flex flex-col">
+        <span>QuickShort</span>
+        <span class="text-[12px]">AI powered chatbbot</span>
+      </div>
+      <div
+        class="icon-close-wrapper ml-auto cursor-pointer"
+        on:click={() => ($menuOpen = false)}
+      >
+        <IconClose />
+      </div>
+    </div>
+    <div class="mt-[0px] overflow-y-aut flex flex-col gap-2 pt-[0px] px-4">
       <ChatMessage
         type="assistant"
-        message="Hello, ask me anything you want!"
+        message="Please ask me questions about QuickShort or anything else 🥰"
       />
       {#each chatMessages as message}
         <ChatMessage type={message.role} message={message.content} />
@@ -109,53 +132,28 @@
     <div class="" bind:this={scrollToDiv} />
   </div>
   <form
-    class="relative flex w-full border-t-[0px] border-base-300 rounded-b-[8px] gap-4 bg-neutral p-4"
+    class="input-form relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-lg bg-base-300"
     on:submit|preventDefault={handleSubmit}
   >
-    <div
-      class="icon-close text-base-100"
-      on:keydown
-      on:click={() => ($menuOpen = false)}
+    <input type="text" class="w-[70%]" bind:value={query} />
+    <button
+      type="submit"
+      class="text-[14px] rounded-[4px] px-[10px] btn- w-[30%]"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="ionicon"
-        viewBox="0 0 512 512"
-        width="22"
-        height="22"
-      >
-        <title>Close Circle</title>
-        <path
-          d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-          fill="none"
-          stroke="currentColor"
-          stroke-miterlimit="10"
-          stroke-width="32"
-        />
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="32"
-          d="M320 320L192 192M192 320l128-128"
-        />
-      </svg>
-    </div>
-    <input
-      type="text"
-      class="rounded-[4px] py-[3px] pl-[5px] bordered border-neutral w-"
-      bind:value={query}
-    />
-    <button type="submit" class="btn-send rounded-[4px] px-[10px] btn-accent">
-      <!-- <span class="btn-text">{$t('common.send')}</span> -->
-      {$t("common.send")}
+      <span>{$t("common.send")}</span>
     </button>
   </form>
 </div>
 
 <style>
-   /* width */
+  input[type="text"] {
+    border: none;
+    border-radius: 0;
+    border-bottom-left-radius: 8px;
+    outline: none;
+  }
+
+  /* width */
   ::-webkit-scrollbar {
     width: 16px;
   }
@@ -163,13 +161,16 @@
   /* Track */
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-top-right-radius: 10px;
+    /* border-bottom-right-radius: 10px; */
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    /* border-bottom-right-radius: 10px; */
   }
 
   /* Handle on hover */
@@ -177,32 +178,14 @@
     background: #555;
   }
 
-  .icon-close {
-    display: none;
-  }
-
   @media (max-width: 400px) {
-    .icon-close {
-      position: absolute;
-      /* top: 50%; */
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-style: 18px;
-      /* padding: 5px; */
-      /* width: 16px;
-      height: 16px; */
-      /* border: 1px solid; */
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-
     .inner-wrapper {
       width: 100%;
-      height: calc(100vh - 150px);
+      height: calc(100vh - 40px);
+    }
+
+    input[type="text"] {
+      border-radius: 0;
     }
   }
 </style>

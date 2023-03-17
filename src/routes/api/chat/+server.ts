@@ -14,12 +14,14 @@ export const config: Config = {
 
 export const POST: RequestHandler = async ({ request }) => {
   try {
-    if (!OPENAI_KEY) {
-      throw new Error("OPENAI_KEY env variable not set");
-    }
+    // if (!OPENAI_KEY) {
+    //   throw new Error("OPENAI_KEY env variable not set");
+    // }
 
     const requestData = await request.json();
-    console.log("data: ", requestData);
+    const { openaiKey } = requestData
+    console.log("chat data: ", requestData);
+    console.log("openaiKey: ", openaiKey);
 
     if (!requestData) {
       throw new Error("No request data");
@@ -41,7 +43,8 @@ export const POST: RequestHandler = async ({ request }) => {
     const moderationRes = await fetch("https://api.openai.com/v1/moderations", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_KEY}`,
+        // Authorization: `Bearer ${OPENAI_KEY}`,
+        Authorization: `Bearer ${openaiKey}`,
       },
       method: "POST",
       body: JSON.stringify({
@@ -56,8 +59,11 @@ export const POST: RequestHandler = async ({ request }) => {
       throw new Error("Query flagged by openai");
     }
 
+    // const prompt =
+    //   "You are a virtual assistant for a company called Huntabyte. Your name is Axel Smith";
+
     const prompt =
-      "You are a virtual assistant for a company called Huntabyte. Your name is Axel Smith";
+      "You are a specialist for a company called QuickShort specializing shorten long url links, you know everything ins and outs of this technology and the competitors in the area";
     tokenCount += getTokens(prompt);
 
     if (tokenCount >= 4000) {
@@ -80,7 +86,7 @@ export const POST: RequestHandler = async ({ request }) => {
       "https://api.openai.com/v1/chat/completions",
       {
         headers: {
-          Authorization: `Bearer ${OPENAI_KEY}`,
+          Authorization: `Bearer ${openaiKey}`,
           "Content-Type": "application/json",
         },
         method: "POST",

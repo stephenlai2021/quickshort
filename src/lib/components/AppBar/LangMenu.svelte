@@ -7,11 +7,11 @@
 
 <li class="relative cursor-pointer">
   <button class="btn-lang">
-    <span class="px-2">
+    <span class="px-">
       <IconLang />
     </span>
   </button>
-  <ul class="absolute right-[3px] p-1 bg-base-100 border">
+  <ul class="dropdown-menu">
     {#each langs as lang}
       {#if lang === "English"}
         <li>

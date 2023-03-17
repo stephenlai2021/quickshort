@@ -2,6 +2,7 @@
   import { t } from "$lib/i18n/translations";
   import { page } from "$app/stores";
   import { enhance } from "$app/forms";
+  import IconColorPalette from '../IconColorPalette.svelte'
 
   const themes = [
     "dark",
@@ -37,9 +38,9 @@
 
 <li class="relative cursor-pointer">
   <button>
-    <span class="">{$t("common.theme")}🎨</span>
+    <IconColorPalette />
   </button>
-  <ul class="absolute right-[3px] p-2 bg-base-100 border max-h-96 overflow-y-scroll">
+  <ul class="dropdown-menu max-h-96 overflow-y-scroll">
     <form method="POST" use:enhance={submitUpdateTheme}>
       {#each themes as theme}
         <li>
