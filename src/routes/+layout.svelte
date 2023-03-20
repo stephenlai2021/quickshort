@@ -78,7 +78,7 @@
 
 <svelte:head>
   <link rel="icon" type="image/x-icon" href={Icon} />
-  <title>QuickShort</title>
+  <title>ShortMaster</title>
 </svelte:head>
 
 <SvelteToast />
@@ -102,7 +102,7 @@
   {/if}
 
   {#if $openaiKey && $menuOpen && $btnChat}
-    <div class="fixed bottom-[70px] right-[10px] max-[400px]:top-0 max-[400px]:right-0 z-[51] w-full h-full rounded-0">
+    <div class="fixed bottom-[70px] right-[10px] max-[400px]:top-0 max-[400px]:right-0 z-[51] max-[400px]:w-full max-[400px]:h-full max-[400px]:rounded-0">
       <ChatWindow />
     </div>
   {/if}

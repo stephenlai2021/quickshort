@@ -13,7 +13,7 @@
 </script>
 
 <div
-  class="px-8 py- bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50 shadow-neutral/10 shadow-md"
+  class="px-8 py-1 bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50 shadow-neutral/10 shadow-md"
   class:pr-5={$widthLessthan680}
   class:pl-4={$widthLessthan480}
 >

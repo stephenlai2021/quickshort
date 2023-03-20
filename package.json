@@ -1,5 +1,5 @@
 {
-	"name": "quickshort",
+	"name": "shortmaster",
 	"description": "a url shortener web application that shorten original long url to short one",
 	"version": "0.0.1",
 	"private": true,
