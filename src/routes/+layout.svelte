@@ -49,7 +49,7 @@
     if (!$openaiKey && $menuOpen && $btnChat) {
       let temp = prompt(
         "Please enter your OpenAI API key:",
-        "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"
+        "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"
       );
       if (temp === null || temp === "") {
         return;
@@ -73,7 +73,7 @@
     };
   });
 
-  $: console.log(`width < 400: ${$widthLessthan400}, menu open: ${$menuOpen}`);
+  // $: console.log(`width < 400: ${$widthLessthan400}, menu open: ${$menuOpen}`);
 </script>
 
 <svelte:head>
