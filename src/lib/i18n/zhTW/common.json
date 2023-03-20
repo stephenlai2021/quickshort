@@ -1,6 +1,9 @@
 {
-  "logo_long": "快修",
-  "logo_short": "快修",
+  "logo": "網址縮短專家",
+  "logo_long": "網址縮短專家",
+  "logo_short": "網址縮短專家",
+  "chatbot_description": "人工智能驅動的聊天機器人",
+  "chatbot_inital_prompt": "請問我有關縮址專家或其他方面的問題",
   "title": "輕鬆縮短你的網址",
   "subtitle": "魁秀是縮短網址和跟踪分析網站的最簡單方法",
   "action": "現在就修",
@@ -47,5 +50,19 @@
   "register-hint": "已經有了一個帳戶? 登錄",
   "logout": "登出",
   "send": "送出",
-  "chat": "聊天助理"
+  "chat": "聊天助理",
+  "home-title": "像專家一樣縮短、簡化和追踪你的網址。",
+  "home-subtitle": "用網址縮短專家縮短你的網址，並獲得關於點擊率、國家和城市的詳細分析。",
+  "home-testimony": "我喜歡網址縮短專家的簡單和强大，它是我首選的網址縮短器。",
+  "home-testimony-author": "珍妮佛黃",
+  "home-section2-title": "毫不費力地縮短網址。",
+  "home-section2-subtitle": "有了網址縮短專家，你可以輕易將任何長的網址縮短。只需黏貼原始鏈接，就能立即獲得縮短後的網址。",
+  "home-section3-title": "强大的控制台。",
+  "home-section3-subtitle": "網址縮短專家提供了一個强大的控制台，使你能够實时監控你的短網址。你可以查看點擊量、IP地址、國家、城市和其他數據。",
+  "home-section4-title": "追踪你的鏈接。",
+  "home-section4-subtitle": "網址縮短專家對您的短網址提供詳細的分析。你可以追踪一段時間内的點擊率，了解用户行為，並改善你的網站性能。",
+  "home-section5-title": "透過點擊數據分析，我可以清楚知道我的流量来自哪里。",
+  "home-section6-description": "開始用網址縮短專家縮短網址。",
+  "btn-action": "開始"
 }
+

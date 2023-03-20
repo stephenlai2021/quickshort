@@ -1,6 +1,8 @@
 {
+  "logo": "縮める",
   "logo_long": "クイックショート",
   "logo_short": "縮める",
+  "chatbot_inital_prompt": "ショートマスターのこと、その他どんなことでもご相談ください。",
   "title": "URLを簡単に短縮できる.",
   "subtitle": "クイックショートは、あなたのウェブサイトのURLを短縮し、分析を追跡する最も簡単な方法です.",
   "action": "今すぐ始める",
@@ -47,5 +49,18 @@
   "register-hint": "すでにアカウントをお持ちの方 ログイン",
   "logout": "ログアウト",
   "send": "服する",
-  "chat": "喋る"
+  "chat": "喋る",
+  "home-title": "プロ並みにURLを短縮、簡略化、追跡。",
+  "home-subtitle": "ShortMasterでURLを短縮し、クリック数、国、都市に関する詳細な分析を得ることができます。",
+  "home-testimony": "ShortMasterのシンプルさとパワーが大好きで、私がよく使うURL短縮ツールです。",
+  "home-testimony-author": "ジェニファー・ホアン",
+  "home-section2-title": "ウルを楽に短くする。",
+  "home-section2-subtitle": "ShortMaster を使えば、どんな長いURLでも手間をかけずに短いものに短縮することができます。元のリンクを貼り付けるだけで、即座に短縮されたURLを手に入れることができます。",
+  "home-section3-title": "強力なダッシュボード。",
+  "home-section3-subtitle": "ShortMasterは、リアルタイムでショートURLを監視できる強力なダッシュボードを提供します。クリック数、IPアドレス、国、都市、その他のデータを1つのプラットフォームで確認することができます。",
+  "home-section4-title": "リンクを追跡する。",
+  "home-section4-subtitle": "ShortMaster は、あなたの短いURLの詳細な分析を提供します。クリック数を長期的に追跡し、ユーザーの行動を理解し、サイトのパフォーマンスを向上させることができます。",
+  "home-section5-title": "アナリティクスはゲームチェンジャーであり、私のトラフィックがどこから来ているのかがわかるようになりました。",
+  "home-section6-description": "ShortMasterでURLの短縮を開始する。",
+  "btn-action": "今すぐ"
 }

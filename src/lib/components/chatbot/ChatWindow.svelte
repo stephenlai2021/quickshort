@@ -104,11 +104,12 @@
     >
       <IconSister />
       <div class="description ml-[10px] flex flex-col">
-        <span>QuickShort</span>
-        <span class="text-[12px]">AI powered chatbbot</span>
+        <span>{$t('common.logo_long')}</span>
+        <span class="text-[12px]">{$t('common.chatbot_description')}</span>
       </div>
       <div
         class="icon-close-wrapper ml-auto cursor-pointer"
+        on:keydown
         on:click={() => ($menuOpen = false)}
       >
         <IconClose />
@@ -117,7 +118,7 @@
     <div class="mt-[0px] overflow-y-aut flex flex-col gap-2 pt-[0px] px-4">
       <ChatMessage
         type="assistant"
-        message="Please ask me questions about QuickShort or anything else 🥰"
+        message={$t('common.chatbot_inital_prompt')}
       />
       {#each chatMessages as message}
         <ChatMessage type={message.role} message={message.content} />
@@ -132,7 +133,7 @@
     <div class="" bind:this={scrollToDiv} />
   </div>
   <form
-    class="input-form relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-lg bg-base-300"
+    class="input-form relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
     on:submit|preventDefault={handleSubmit}
   >
     <input type="text" class="w-[70%]" bind:value={query} />

@@ -45,7 +45,7 @@
   </div> -->
 
   <div
-    class="chat-bubble text-[14px] rounded-[8px] {type === 'user'
+    class="chat-bubble text-[14px] flex items-center rounded-[8px] {type === 'user'
       ? 'chat-bubble-primary'
       : 'chat-bubble-secondary'}"
   >

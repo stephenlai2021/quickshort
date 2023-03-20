@@ -1,18 +1,12 @@
 <script>
   import chatbot from "$lib/assets/images/sister.png"
 
-  export let width = "30", height = "30"
+  // export let width = "0"
 </script>
 
 <img
   src={chatbot}
   alt=""
-  width="40"
-  class="icon-sister rounded-full"
+  width="56"
+  class="rounded-full"
 />
-
-<style>
-  /* .icon-chatbot {
-    border-radius: 50%;
-  } */
-</style>

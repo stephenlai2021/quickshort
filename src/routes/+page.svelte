@@ -1,29 +1,32 @@
 <script lang="ts">
-  import { t } from '$lib/i18n/translations';
-  import { user } from '$lib/stores'
+  import { user } from "$lib/stores";
+  import Section1 from "$lib/components/page-home/Section1.svelte"
+  import Section2 from "$lib/components/page-home/Section2.svelte"
+  import Section3 from "$lib/components/page-home/Section3.svelte"
+  import Section4 from "$lib/components/page-home/Section4.svelte"
+  import Section5 from "$lib/components/page-home/Section5.svelte"
+  import Section6 from "$lib/components/page-home/Section6.svelte"
 
   import type { PageData } from "./$types";
   export let data: PageData;
-
-  $user = data.user
+  $user = data.user;  
 </script>
 
-<section class="h-screen grid place-items-center bg-base-100">
-  <div class="max-w-3xl mx-auto text-center">
-    <h1 class="text-5xl lg:text-6xl font-bold">
-      {$t('common.title')}
-    </h1>
-    <p class="text-lg w-10/12 md:w-2/3 mx-auto my-10">
-      {$t('common.subtitle')}
-    </p>
-    <a href="/auth" class="py-4 px-8 rounded-full bg-primary text-sm">
-      {$t('common.action')}
-    </a>
-  </div>
-</section>
+<div class="page-home wrapper mt-[70px] w-full">
+  <Section1 />
+  <Section2 />
+  <Section3 />
+  <Section4 />
+  <Section5 />
+  <Section6 />
+</div>
 
-<style>
-  a {
-    text-decoration: none;
-  }
-</style>
+ 
+
+  
+
+  
+
+  
+
+  

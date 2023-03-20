@@ -15,12 +15,23 @@
   // console.log('data | dashboard client: ', data)
 </script>
 
-<section class="pt-28 mx- mx-auto bg-base-100">
-  <h1 class="text-[22px] font-bold">{$t('common.dashboard')}</h1>
-  <LinkForm />
-  <div class="links-wrapper my-10">
-    {#each $linksArray as item}
-      <LinkCard link={item} />
-    {/each}
-  </div>  
-</section>
+<!-- <div class="page"> -->
+  <section class="pt-28 mx- mx-auto bg-base-100">
+    <h1 class="text-[22px] font-bold">{$t('common.dashboard')}</h1>
+    <LinkForm />
+    <div class="links-wrapper my-10">
+      {#each $linksArray as item}
+        <LinkCard link={item} />
+      {/each}
+    </div>  
+  </section>
+<!-- </div> -->
+
+<!-- <style>
+  .page {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+</style> -->

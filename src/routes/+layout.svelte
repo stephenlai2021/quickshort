@@ -1,6 +1,5 @@
 <script lang="ts">
   import "../app.postcss";
-  // import "$lib/styles/toast.css";
   import "../toast.css";
   import {
     btnChat,
@@ -9,7 +8,9 @@
     widthLessthan680,
     widthLessthan560,
     widthLessthan480,
+    widthLessthan425,
     widthLessthan400,
+    widthLessthan382,
     widthLessthan360,
   } from "$lib/stores";
   import { invalidateAll } from "$app/navigation";
@@ -22,9 +23,6 @@
   import MenuBar from "$lib/components/AppBar/MenuBar.svelte";
   import Icon from "$lib/assets/images/favicon.ico";
   import ChatWindow from "$lib/components/chatbot/ChatWindow.svelte";
-  import ModalOpenai from "$lib/components/ModalOpenai.svelte";
-
-  // let openaiKey = "";
 
   const handleRWD = () => {
     if (window.innerWidth <= 680) $widthLessthan680 = true;
@@ -33,8 +31,12 @@
     if (window.innerWidth > 560) $widthLessthan560 = false;
     if (window.innerWidth <= 480) $widthLessthan480 = true;
     if (window.innerWidth > 480) $widthLessthan480 = false;
+    if (window.innerWidth <= 425) $widthLessthan425 = true;
+    if (window.innerWidth > 425) $widthLessthan425 = false;
     if (window.innerWidth <= 400) $widthLessthan400 = true;
     if (window.innerWidth > 400) $widthLessthan400 = false;
+    if (window.innerWidth <= 382) $widthLessthan382 = true;
+    if (window.innerWidth > 382) $widthLessthan382 = false;
     if (window.innerWidth <= 360) $widthLessthan360 = true;
     if (window.innerWidth > 360) $widthLessthan360 = false;
   };
@@ -71,13 +73,7 @@
     };
   });
 
-  // $: if (browser) handlePrompt()
-
-  // $: console.log("openai key: ", $openaiKey);
-
-  $: {
-    console.log(`width < 400: ${$widthLessthan400}, menu open: ${$menuOpen}`)
-  }
+  $: console.log(`width < 400: ${$widthLessthan400}, menu open: ${$menuOpen}`);
 </script>
 
 <svelte:head>
@@ -86,70 +82,28 @@
 </svelte:head>
 
 <SvelteToast />
-<div class="layout">
+<div
+  class="max-w-[1600px] mx-auto relative overflow-auto"
+  style:height={$widthLessthan400 && $menuOpen ? "100vh" : "auto"}
+  style:overflow-y={$widthLessthan400 && $menuOpen ? "hidden" : "auto"}
+>
   <MenuBar />
-  <div
-    class="page"
-    style:height={$widthLessthan400 && $menuOpen ? "100vh" : "auto"}
-    style:overflow-y={$widthLessthan400 && $menuOpen ? "hidden" : "auto"}
-  >
-    <slot />
-  </div>
+  <slot />
 
   {#if $btnChat}
     <div
-      class="icon-chatbot-wrapper"
+      class="fixed bottom-[20px] right-[20px] cursor-pointer"
       on:keydown
       on:click={handlePrompt}
       transition:fade
     >
-      <IconChatbot />
+      <IconChatbot width="50" />
     </div>
   {/if}
 
   {#if $openaiKey && $menuOpen && $btnChat}
-    <div class="chat-window">
+    <div class="fixed bottom-[70px] right-[10px] max-[400px]:top-0 max-[400px]:right-0 z-[51] w-full h-full rounded-0">
       <ChatWindow />
     </div>
   {/if}
 </div>
-
-<style>
-  .layout {
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-  }
-
-  .page {
-    max-width: 800px;
-    margin: auto;
-    padding: 0 20px;
-  }
-
-  .icon-chatbot-wrapper,
-  .icon-admin {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-
-  .chat-window {
-    position: fixed;
-    bottom: 70px;
-    right: 10px;
-  }
-
-  @media (max-width: 400px) {
-    .chat-window {
-      top: 0px;
-      right: 0px;
-      z-index: 51;
-      width: 100%;
-      height: 100vh;
-      border-radius: 0;
-    }
-  }
-</style>

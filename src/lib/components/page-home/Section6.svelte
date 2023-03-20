@@ -1,0 +1,54 @@
+<script>
+  import { t } from "$lib/i18n/translations";
+  import avatar1 from "$lib/assets/images/home/avatar-1.png";
+  import avatar2 from "$lib/assets/images/home/avatar-2.png";
+  import avatar3 from "$lib/assets/images/home/avatar-3.png";
+  import avatar4 from "$lib/assets/images/home/avatar-4.png";
+  import avatar5 from "$lib/assets/images/home/avatar-5.png";
+  import avatar6 from "$lib/assets/images/home/avatar-6.png";
+  import avatar7 from "$lib/assets/images/home/avatar-7.png";
+  import avatar8 from "$lib/assets/images/home/avatar-8.png";
+  import avatar9 from "$lib/assets/images/home/avatar-9.png";
+  import avatar10 from "$lib/assets/images/home/avatar-10.png";
+  import avatar11 from "$lib/assets/images/home/avatar-11.png";
+  import avatar12 from "$lib/assets/images/home/avatar-12.png";
+
+  const avatarGallery = [
+    { imgUrl: avatar1 },
+    { imgUrl: avatar2 },
+    { imgUrl: avatar3 },
+    { imgUrl: avatar4 },
+    { imgUrl: avatar5 },
+    { imgUrl: avatar6 },
+    { imgUrl: avatar7 },
+    { imgUrl: avatar8 },
+    { imgUrl: avatar9 },
+    { imgUrl: avatar10 },
+    { imgUrl: avatar11 },
+    { imgUrl: avatar12 },
+  ];
+</script>
+
+<section
+  class="section6 bg-[url('Vector.png')] bg-no-repeat bg-[bottom_left] max-[680px]:mx-[10px] max-[680px]:px-[10px] rounded-[20px] mt-[90px] mb-[80px] mx-[40px] sm:mx-[90px] border border-[2px] border-neutral/30"
+>
+  <div class="wrapper flex justify-center my-[80px]">
+    <div
+      class="avatar-gallery max-w-[768px] flex flex-wrap justify-center items-center"
+    >
+      {#each avatarGallery as avatar}
+        <img
+          src={avatar.imgUrl}
+          alt=""
+          class="w-[48px] sm:w-[56px] my-[8px] mx-[4px] sm:mx-[24px]"
+        />
+      {/each}
+    </div>
+  </div>
+  <div class="text-center text-[30px] sm:text-[36px] md:text-[46px]">
+    {$t("common.home-section6-description")}
+  </div>
+  <div class="btn-action-wrapper flex justify-center my-[60px]">
+    <div class="btn px-4 text-[16px]">{$t("common.btn-action")}</div>
+  </div>
+</section>

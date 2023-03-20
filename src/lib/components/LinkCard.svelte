@@ -1,6 +1,7 @@
 <script>
   import { fade, fly } from "svelte/transition";
   import { PUBLIC_APP_BASE_URL } from "$env/static/public";
+  import { goto } from "$app/navigation"
   import { toast } from "@zerodevx/svelte-toast";
   import CopyBtn from "$lib/components/CopyBtn.svelte";
 
@@ -25,13 +26,15 @@
   in:fly={{ y: 50, duration: 200 }}
   class="backdrop-blur-lg bg-neutral/10 rounded-xl p-5 min-w- mb-5 flex justify-between gap-5 hover:border-secondary/50 transition-all duration-200"
 >
-  <div class="w-1/2 link">
-    <div class="text-xl text-">
-      <a href={`/dashboard/${link.key}`}>/{link.key}</a>
+  <div class="w-1/2">
+    <div class="cursor-pointer" on:click={() => goto(`/dashboard/${link.key}`)}>
+      <a class="text-[26px]" href={`/dashboard/${link.key}`}>/{link.key}</a>
+      <!-- <div class="text-[30px]">/{link.key}</div> -->
       <!-- <a href="#">/{link.key}</a> -->
     </div>
-    <div class="text-xs sm:text-base">
-      {link.long_url.slice(0, 20) + "..."}
+    <div class="text-sm sm:text-base">
+      <a href={link.long_url} target="_blank">{link.long_url.slice(0, 20) + "..."}</a>      
+      <!-- {link.long_url.slice(0, 20) + "..."} -->
     </div>
   </div>
   <div class="w-1/2 link-ation flex justify-end">
@@ -59,9 +62,9 @@
         <span class="text-xs sm:text-sm">{link.created_at?.slice(0, 10)}</span>
       </div>
     </div>
-    <!-- <CopyBtn /> -->
+
     <button
-      class="bg-secondary/20 hover:border-white/20 transition-all duration-200 py-2 px-4 bg rounded-xl ml-5"
+      class="border border-neutral/20 border-[2px] h-[60px] hover:border-white/20 transition-all duration-200 py- px-4 bg rounded-xl ml-5"
       on:click={handleCopy}
     >
       <svg
@@ -73,18 +76,17 @@
         class="w-5 h-5"
       >
         <path
-          v-if="isCopied"
           stroke-linecap="round"
           stroke-linejoin="round"
           d="M4.5 12.75l6 6 9-13.5"
         />
         <path
-          v-else
           stroke-linecap="round"
           stroke-linejoin="round"
           d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"
         />
       </svg>
     </button>
+
   </div>
 </div>

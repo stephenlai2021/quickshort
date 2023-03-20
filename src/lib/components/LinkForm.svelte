@@ -5,6 +5,8 @@
   import { nanoid } from "nanoid";
   import { supabaseClient } from "$lib/supabase";
   import { toast } from "@zerodevx/svelte-toast";
+  import IconQuestionMark from "$lib/components/icon/IconQuestionMark.svelte";
+  import { goto } from "$app/navigation";
 
   let isLoading = false;
   let link = {};
@@ -43,7 +45,7 @@
           "--toastBorderRadius": "8px",
           "--toastBarBackground": "#FA193F",
           "--toastMsgPadding": "0.5rem 1rem",
-          "--toastMinHeight": "3.0rem"
+          "--toastMinHeight": "3.0rem",
         },
       });
       form.long_url = "";
@@ -112,10 +114,10 @@
       placeholder={$t("common.long_url_placeholder")}
     />
   </div>
-  <div class="form-group w-full sm:w-4/12">
-    <label for="key" class="text- text-xs mb-1 block"
-      >{$t("common.short_key")}</label
-    >
+  <div class="form-group relative w-full sm:w-4/12">
+    <label for="key" class="text- text-xs mb-1 block">
+      {$t("common.short_key")}
+    </label>
     <input
       id="key"
       type="text"
@@ -124,6 +126,9 @@
       placeholder={$t("common.short_key_placeholder")}
       min="6"
     />
+    <div on:click={() => goto('/help')} class="icon-questionmark-wrapper absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer">
+      <IconQuestionMark />
+    </div>
   </div>
   <div class="btn-submit-wrapper w-full sm:w-2/12 flex justify-end self-end">
     <button

@@ -8,6 +8,8 @@
   import LogoutBtn from "./LogoutBtn.svelte";
   import LangMenu from "./LangMenu.svelte";
   import UserMenu from "./UserMenu.svelte";
+
+  console.log('user: ', $user?.email)
 </script>
 
 <div
@@ -15,24 +17,33 @@
   class:pr-5={$widthLessthan680}
   class:pl-4={$widthLessthan480}
 >
-  <nav class="py-1 flex justify-between items-center">
+  <nav class="py-2 relative flex justify-between items-center">
     <Logo />
 
-    {#if $page.url.pathname !== "/dashboard"}
+    <!-- {#if $page.url.pathname !== "/dashboard"} -->
+    {#if !$page.url.pathname.startsWith("/dashboard")}
+    <div class="menu-middle absolute left-[50%] translate-x-[-50%]">
       <MiddleMenu />
+    </div>
     {/if}
 
     <ul class="flex items-center">
       <div class="side-menu">
         <ul class="menu menu-horizontal px-1 z-50 flex items-center">
+
+           {#if $page.url.pathname.startsWith("/dashboard/")}
+            <!-- <UserMenu /> -->
+            <a href="/dashboard" class="border btn">Dashboard</a>
+          {/if}
+
           <ThemeMenu />
           <LangMenu />
 
-          {#if $page.url.pathname === "/" && !$user}
+          {#if $page.url.pathname === "/" && !$user?.email}
             <LoginBtn />
           {/if}
 
-          {#if $page.url.pathname === "/" && !$user}
+          {#if $page.url.pathname === "/" && $user?.email}
             <LogoutBtn />
           {/if}
 

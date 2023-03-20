@@ -1,11 +1,13 @@
 <script>
   import chatbot from "$lib/assets/images/chat.png";
+
+  export let width = "40"
 </script>
 
 <img
   src={chatbot}
   alt=""
-  width="40"
+  {width}
   class="icon-chatbot"
 />
 
