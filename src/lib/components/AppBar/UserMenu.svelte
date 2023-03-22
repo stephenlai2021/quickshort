@@ -52,8 +52,9 @@
         <button 
           on:click={toggleChatbot}
           class:bg-base-300={$btnChat}
-          >
-          <!-- class:bg-base-100={!$btnChat} -->
+          class:underline-offset-4={$btnChat}
+          style:font-weight={$btnChat ? "bold": ""}
+        >
           {$t("common.chat")}
         </button>
       </li>

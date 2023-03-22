@@ -2,9 +2,9 @@
   import { t } from "$lib/i18n/translations";
   import { page } from "$app/stores";
   import { enhance } from "$app/forms";
-  import IconColorPalette from '../icon/IconColorPalette.svelte'
+  import IconColorPalette from "../icon/IconColorPalette.svelte";
 
-  let currentMenu = "pastel"
+  let currentTheme = "cupcake";
 
   const themes = [
     "dark",
@@ -36,6 +36,30 @@
       document.documentElement.setAttribute("data-theme", theme);
     }
   };
+
+  const handleTheme = (theme) => {
+    if (theme === "dark") currentTheme = "dark";
+    if (theme === "cupcake") currentTheme = "cupcake";
+    if (theme === "bumblebee") currentTheme = "bumblebee";
+    if (theme === "emerald") currentTheme = "emerald";
+    if (theme === "synthwave") currentTheme = "synthwave";
+    if (theme === "retro") currentTheme = "retro";
+    if (theme === "cyberpunk") currentTheme = "cyberpunk";
+    if (theme === "valentine") currentTheme = "valentine";
+    if (theme === "halloween") currentTheme = "halloween";
+    if (theme === "garden") currentTheme = "garden";
+    if (theme === "forest") currentTheme = "forest";
+    if (theme === "pastel") currentTheme = "pastel";
+    if (theme === "wireframe") currentTheme = "wireframe";
+    if (theme === "black") currentTheme = "black";
+    if (theme === "luxury") currentTheme = "luxury";
+    if (theme === "dracula") currentTheme = "dracula";
+    if (theme === "autumn") currentTheme = "autumn";
+    if (theme === "business") currentTheme = "business";
+    if (theme === "acid") currentTheme = "acid";
+    if (theme === "lemonade") currentTheme = "lemonade";
+    if (theme === "night") currentTheme = "night";
+  };
 </script>
 
 <li class="relative cursor-pointer">
@@ -49,6 +73,10 @@
           <button
             formaction="/?/setTheme&theme={theme}&redirectTo={$page.url
               .pathname}"
+            on:click={() => handleTheme(theme)}
+            class:bg-base-200={currentTheme === theme}
+            class:underline-offset-4={currentTheme === theme}
+            style:font-weight={currentTheme === theme ? "bold" : ""}
           >
             {#if theme === "dark"}{$t("common.dark")}{/if}
             {#if theme === "cupcake"}{$t("common.cupcake")}{/if}
