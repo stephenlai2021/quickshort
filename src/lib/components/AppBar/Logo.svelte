@@ -7,7 +7,6 @@
     widthLessthan400,
     widthLessthan382,
   } from "$lib/stores";
-  // import logo from "$lib/assets/images/logo.png";
   import logo from "$lib/assets/images/logo-128x128.png";
 </script>
 
@@ -17,22 +16,14 @@
   class="logo flex items-center relative navbar-brand text-2xl font-bold"
 >
   <div class="logo-wrapper">
-    <img class="logo-image mr-[6px]" src={logo} alt="" width="28" height="28" />
+    <img 
+      class="logo-image mr-[6px]" 
+      src={logo} 
+      alt="" 
+      style:width={$widthLessthan382 && ($locale === 'ja' || $locale === 'zh-TW') ? "22px" : "18px"}
+    />
   </div>
-  <span class="title" style:display={$widthLessthan425 && $locale === 'en' ? "none" : $widthLessthan382 && ($locale === 'ja' || $locale === 'zh-TW') ? "none" : "block"}>
+  <span class="text-[18px]" style:display={$widthLessthan425 && $locale === 'en' ? "none" : $widthLessthan382 && ($locale === 'ja' || $locale === 'zh-TW') ? "none" : "block"}>
     {$t("common.logo")}
   </span>
 </a>
-
-<style>
-  
-  @media (max-width: 480px) {
-    .logo-image {
-      /* margin-left: 15px; */
-    }
-
-    .title {
-      /* margin-left: 8px; */
-    }
-  }
-</style>

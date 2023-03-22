@@ -126,7 +126,7 @@
       placeholder={$t("common.short_key_placeholder")}
       min="6"
     />
-    <div on:click={() => goto('/help')} class="icon-questionmark-wrapper absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer">
+    <div on:keydown on:click={() => goto('/help')} class="icon-questionmark-wrapper absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer">
       <IconQuestionMark />
     </div>
   </div>
@@ -188,7 +188,12 @@
     width: 100%;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 420px) {
+    .link-form {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
     .btn-submit-wrapper {
       justify-content: flex-start;
     }

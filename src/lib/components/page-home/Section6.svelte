@@ -1,5 +1,6 @@
 <script>
   import { t } from "$lib/i18n/translations";
+  import { goto } from '$app/navigation'
   import avatar1 from "$lib/assets/images/home/avatar-1.png";
   import avatar2 from "$lib/assets/images/home/avatar-2.png";
   import avatar3 from "$lib/assets/images/home/avatar-3.png";
@@ -27,6 +28,11 @@
     { imgUrl: avatar11 },
     { imgUrl: avatar12 },
   ];
+
+  const handleAction = () => {
+    alert('hi, there !')
+    goto('/dashboard')
+  }
 </script>
 
 <section
@@ -48,7 +54,9 @@
   <div class="text-center text-[30px] sm:text-[36px] md:text-[46px]">
     {$t("common.home-section6-description")}
   </div>
-  <div class="btn-action-wrapper flex justify-center my-[60px]">
-    <div class="btn px-4 text-[16px]">{$t("common.btn-action")}</div>
+  <div class="flex justify-center my-[60px]">
+    <!-- <button class="btn px-4 text-[16px]" on:click={handleAction}>{$t("common.btn-action")}</button> -->
+    <!-- <div class="btn px-4 text-[16px]" on:keydown on:click={() => goto('/dashboard')}>{$t("common.btn-action")}</div> -->
+    <a href="/dashboard" class="btn px-8 text-[16px]">{$t("common.btn-action")}</a>
   </div>
 </section>

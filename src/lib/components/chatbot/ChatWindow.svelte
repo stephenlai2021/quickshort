@@ -92,17 +92,17 @@
 
 <div
   transition:slidefade
-  class="chat-window pt-[0px] flex flex-col pt-4 w- px-0 items-center gap-"
+  class="pt-[0px] flex flex-col pt-4 w- px-0 items-center gap-"
   on:click|stopPropagation
   on:keydown
 >
   <div
-    class="inner-wrapper shadow-neutral/50 shadow-md h-[300px] w-[350px] pt-[0px] bg-base-200 backdrop-blur-2xl rounded-t-[8px] overflow-y-auto flex flex-col gap-4"
+    class="inner-wrapper max-[400px]:w-full shadow-neutral/50 shadow-md h-[300px] w-[350px] pt-[0px] bg-base-200 backdrop-blur-2xl max-[400px]:rounded-t-[0px] rounded-t-[8px] overflow-y-auto flex flex-col gap-4"
   >
     <div
       class="chat-window-header w-full px-4 bg-base-100 backdrop-blur-2xl py-3 flex items-center shadow-neutral/10 shadow-md"
     >
-      <IconSister />
+      <IconSister width="40" />
       <div class="description ml-[10px] flex flex-col">
         <span>{$t('common.logo_long')}</span>
         <span class="text-[12px]">{$t('common.chatbot_description')}</span>
@@ -133,13 +133,13 @@
     <div class="" bind:this={scrollToDiv} />
   </div>
   <form
-    class="input-form relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
+    class="relative flex w-full rounded-bl-lg max-[400px]:rounded-none shadow-neutral/20 shadow-md bg-base-300"
     on:submit|preventDefault={handleSubmit}
   >
-    <input type="text" class="w-[70%]" bind:value={query} />
+    <input type="text" class="w-[70%] border-none rouned-bl-lg max-[400px]:rounded-none outline-none" bind:value={query} />
     <button
       type="submit"
-      class="text-[14px] rounded-[4px] px-[10px] btn- w-[30%]"
+      class="text-[14px] rounded-[4px] px-[10px] w-[30%]"
     >
       <span>{$t("common.send")}</span>
     </button>
@@ -148,10 +148,7 @@
 
 <style>
   input[type="text"] {
-    border: none;
-    border-radius: 0;
     border-bottom-left-radius: 8px;
-    outline: none;
   }
 
   /* width */
@@ -181,7 +178,6 @@
 
   @media (max-width: 400px) {
     .inner-wrapper {
-      width: 100%;
       height: calc(100vh - 40px);
     }
 

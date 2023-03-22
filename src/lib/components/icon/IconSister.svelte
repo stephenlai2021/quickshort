@@ -1,12 +1,12 @@
 <script>
   import chatbot from "$lib/assets/images/sister.png"
 
-  // export let width = "0"
+  export let width = "56"
 </script>
 
 <img
   src={chatbot}
   alt=""
-  width="56"
+  {width}
   class="rounded-full"
 />

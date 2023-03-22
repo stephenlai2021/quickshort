@@ -2,7 +2,9 @@
   import { t } from "$lib/i18n/translations";
   import { page } from "$app/stores";
   import { enhance } from "$app/forms";
-  import IconColorPalette from '../IconColorPalette.svelte'
+  import IconColorPalette from '../icon/IconColorPalette.svelte'
+
+  let currentMenu = "pastel"
 
   const themes = [
     "dark",

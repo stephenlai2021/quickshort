@@ -1,5 +1,5 @@
 <script>
-  import IconSetting from "$lib/components/IconSetting.svelte";
+  import IconSetting from "$lib/components/icon/IconSetting.svelte";
 </script>
 
 <li class="icon-setting hidden">

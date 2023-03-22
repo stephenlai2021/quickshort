@@ -5,7 +5,7 @@
 
 <style>
   .page {
-    max-width: 900px;
+    max-width: 800px;
     margin: auto;
     padding: 0 20px;
     overflow: hidden;

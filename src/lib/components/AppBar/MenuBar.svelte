@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { t } from "$lib/i18n/translations"
   import { widthLessthan680, widthLessthan480, user } from "$lib/stores";
   import Logo from "$lib/components/AppBar/Logo.svelte";
   import MiddleMenu from "$lib/components/AppBar/MiddleMenu.svelte";
@@ -13,7 +14,7 @@
 </script>
 
 <div
-  class="px-8 py-1 bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50 shadow-neutral/10 shadow-md"
+  class="px-4 py-0 bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50 shadow-neutral/10 shadow-md"
   class:pr-5={$widthLessthan680}
   class:pl-4={$widthLessthan480}
 >
@@ -31,9 +32,12 @@
       <div class="side-menu">
         <ul class="menu menu-horizontal px-1 z-50 flex items-center">
 
-           {#if $page.url.pathname.startsWith("/dashboard/")}
+          {#if $page.url.pathname.startsWith("/dashboard/") && !$widthLessthan480}
             <!-- <UserMenu /> -->
-            <a href="/dashboard" class="border btn">Dashboard</a>
+            <li>
+              <a href="/dashboard" class="">{$t('common.dashboard')}</a>
+              <!-- <button class="">Dashboard</button> -->
+            </li>
           {/if}
 
           <ThemeMenu />
