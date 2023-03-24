@@ -48,8 +48,7 @@
     <div class="flex flex-col items-end justify-center">
       <div class="flex max-[420px]:w-full">
         <span class="leading-none text-">
-          <!-- {link.total_clicks} -->
-          12
+          {link.total_clicks}
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +70,7 @@
       </div>
     </div>
 
-    <div class="btn-copy-wrapper py-">
+    <div class="">
       <CopyBtn isCopied={false} key={link.key} />
     </div>
   </div>

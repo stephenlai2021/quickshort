@@ -22,6 +22,7 @@
   import { SvelteToast } from "@zerodevx/svelte-toast";
   import IconChatbot from "$lib/components/icon/IconChatbot.svelte";
   import MenuBar from "$lib/components/AppBar/MenuBar.svelte";
+  // import Icon from "$lib/assets/images/favicon.ico";
   import Icon from "$lib/assets/images/favicon.ico";
   import ChatWindow from "$lib/components/chatbot/ChatWindow.svelte";
 

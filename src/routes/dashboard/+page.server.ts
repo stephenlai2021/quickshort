@@ -3,20 +3,18 @@ import type { PageServerLoad } from "./$types";
 import { supabaseClient } from "$lib/supabase";
 
 export const load: PageServerLoad = async ({ locals }) => {
-  if (!locals.session) {
-    throw redirect(303, "/");
-  }
+  // if (!locals.session) {
+  //   throw redirect(303, "/");
+  // }
 
   const { data, error } = await supabaseClient
     .from("url_shortener_links")
     .select("*")
     .order('created_at', { ascending: true })
-    // .eq("user_id", locals.session.user.id)
-    .eq("user_id", locals.session.user.email)
+    .eq("user_id", locals.session?.user.email)
+  console.log(`${locals.session?.user.email}'s dashboard: `, data);
   
   if (error) console.log('error loading links | dashboard server: ', error)
-
-  // console.log('links | dashboard server: ', data)
 
   return {
     user: locals.session,

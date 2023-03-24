@@ -102,7 +102,7 @@
     <div
       class="chat-window-header w-full px-4 bg-base-100 backdrop-blur-2xl py-3 flex items-center shadow-neutral/10 shadow-md"
     >
-      <IconSister width="40" />
+      <IconSister width="46" />
       <div class="description ml-[10px] flex flex-col">
         <span>{$t('common.logo_long')}</span>
         <span class="text-[12px]">{$t('common.chatbot_description')}</span>
@@ -118,7 +118,7 @@
     <div class="mt-[0px] overflow-y-aut flex flex-col gap-2 pt-[0px] px-4">
       <ChatMessage
         type="assistant"
-        message={$t('common.chatbot_inital_prompt')}
+        message={$t('common.chatbot_initial_prompt')}
       />
       {#each chatMessages as message}
         <ChatMessage type={message.role} message={message.content} />
@@ -133,10 +133,10 @@
     <div class="" bind:this={scrollToDiv} />
   </div>
   <form
-    class="relative flex w-full rounded-bl-lg max-[400px]:rounded-none shadow-neutral/20 shadow-md bg-base-300"
+    class="relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
     on:submit|preventDefault={handleSubmit}
   >
-    <input type="text" class="w-[70%] border-none rouned-bl-lg max-[400px]:rounded-none outline-none" bind:value={query} />
+    <input type="text" class="w-[70%] border-none rounded-none outline-none" bind:value={query} />
     <button
       type="submit"
       class="text-[14px] rounded-[4px] px-[10px] w-[30%]"
@@ -148,32 +148,8 @@
 
 <style>
   input[type="text"] {
+    border-radius: 0;
     border-bottom-left-radius: 8px;
-  }
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: 16px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    /* border-radius: 10px; */
-    border-top-right-radius: 10px;
-    /* border-bottom-right-radius: 10px; */
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-top-right-radius: 10px;
-    /* border-bottom-right-radius: 10px; */
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
   }
 
   @media (max-width: 400px) {

@@ -1,16 +1,28 @@
 import "$lib/supabase";
 import { getSupabase } from "@supabase/auth-helpers-sveltekit";
-import type { Handle } from "@sveltejs/kit";
+import { redirect, type Handle } from "@sveltejs/kit";
 
 export const handle: Handle = async ({ event, resolve }) => {
 
-  // Supabase Config
+  /* Supabase  */
   const { session, supabaseClient } = await getSupabase(event);
 
   event.locals.sb = supabaseClient;
   event.locals.session = session;
 
-  // Theme Config
+  if (event.url.pathname.startsWith('/dashboard')) {
+    if (!event.locals.session) {
+      throw redirect(303, '/')
+    }
+  }
+
+  // if (event.url.pathname === "/') {
+  //   if (!event.locals.session) {
+  //     throw redirect(303, '/')
+  //   }
+  // }
+
+  /* Theme  */
   let theme: string | null = null;
 
   const newTheme = event.url.searchParams.get("theme");
@@ -21,12 +33,11 @@ export const handle: Handle = async ({ event, resolve }) => {
   } else if (cookieTheme) {
     theme = cookieTheme;
   }
-  // event.locals.theme = theme
 
   if (theme) {
     return await resolve(event, {
       transformPageChunk: ({ html }) =>
-        html.replace('data-theme="dark"', `data-theme="${theme}"`),
+        html.replace('data-theme="cupcake"', `data-theme="${theme}"`),
     });
   }
 
