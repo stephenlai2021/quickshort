@@ -4,17 +4,14 @@
   import { onMount, onDestroy } from "svelte";
   import dateFormat from "dateformat";
   import CopyBtn from "$lib/components/utils/CopyBtn.svelte";
+  import IconAvatar from "$lib/assets/avatar.png"
+  import IconCenter from "$lib/components/icon/shormaster_logo-removebg.png";
 
   export let data: PageData;
 
   const { clickDetails } = data;
-  const { 
-    key, 
-    long_url, 
-    created_at,
-    total_clicks, 
-    url_shortener_clicks
-  } = clickDetails;
+  const { key, long_url, created_at, total_clicks, url_shortener_clicks } =
+    clickDetails;
 
   let mapElement;
   let map;
@@ -35,11 +32,45 @@
       })
       .addTo(map);
 
-    marker = leaflet.marker([51.505, -0.09]).addTo(map).bindPopup('<h1>Center:</h1><span>latitude: 51.505</span><br/><span>longitude: -0.09</span>').openPopup();
+    const centerIcon = leaflet.icon({
+      iconUrl: IconCenter,
+      // shadowUrl: "leaf-shadow.png",
+
+      iconSize: [38, 95], // size of the icon
+      shadowSize: [50, 64], // size of the shadow
+      iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+      shadowAnchor: [4, 62], // the same for the shadow
+      popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+    });
+
+    const avatarIcon = leaflet.icon({
+      iconUrl: IconAvatar,
+      // shadowUrl: "leaf-shadow.png",
+
+      iconSize: [38, 95], // size of the icon
+      shadowSize: [50, 64], // size of the shadow
+      iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+      shadowAnchor: [4, 62], // the same for the shadow
+      popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+    });
+
+    marker = leaflet
+      .marker([51.505, -0.09], { icon: centerIcon })
+      .addTo(map)
+      .bindPopup(
+        "<h1>Center:</h1><span>latitude: 51.505</span><br/><span>longitude: -0.09</span>"
+      )
+      .openPopup();
     // marker._icon.style.filter = "hue-rotate(120deg)";
 
     url_shortener_clicks.forEach((loc) => {
-      leaflet.marker([loc.latitude, loc.longitude]).addTo(map).bindPopup(`<span>latitude: ${loc.latitude}</span><br/><span>longitude: ${loc.longitude}</span>`).openPopup();
+      leaflet
+        .marker([loc.latitude, loc.longitude], { icon: avatarIcon })
+        .addTo(map)
+        .bindPopup(
+          `<span>latitude: ${loc.latitude}</span><br/><span>longitude: ${loc.longitude}</span>`
+        )
+        .openPopup();
     });
   });
 
@@ -64,13 +95,13 @@
 
   <div
     bind:this={mapElement}
-    class="relative z-0 car w-full h-[400px] mt-10 bg-[url('/image-placeholder.png')] bg-cover bg-center"
+    class="relative z-0 car w-full h-[400px] mt-10 bg-[url('/image-placeholder.png')] bg-cover bg-center rounded-[8px]"
   />
 
   <div class="stats flex mt-10 flex-wrap md:flex-nowrap">
     <div class="card border-none bg-neutral/20">
       <div class="text-4xl font-bold">{total_clicks}</div>
-      <div class="text-">{$t('common.total_clicks')}</div>
+      <div class="text-">{$t("common.total_clicks")}</div>
     </div>
 
     <div
@@ -92,10 +123,10 @@
           </div>
           <div class="">
             {#if click.country}
-              <div>{$t('common.country')}: {click.country}</div>
+              <div>{$t("common.country")}: {click.country}</div>
             {/if}
             {#if click.city}
-              <div>{$t('common.city')}: {click.city}</div>
+              <div>{$t("common.city")}: {click.city}</div>
             {/if}
           </div>
         </div>
