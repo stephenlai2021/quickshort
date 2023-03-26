@@ -16,13 +16,11 @@
   let mapElement;
   let map;
   let marker;
-  // let mapLoadedDone = false
 
   onMount(async () => {
     const leaflet = await import("leaflet");
 
     // 設置中心點
-    // map = leaflet.map(mapElement).setView([25.0504,  121.5324], 6);
     map = leaflet.map(mapElement).setView([51.505, -0.09], 2);
 
     leaflet
@@ -36,7 +34,7 @@
       iconUrl: IconCenter,
       // shadowUrl: "leaf-shadow.png",
 
-      iconSize: [30, 30], // size of the icon
+      iconSize: [50, 50], // size of the icon
       // shadowSize: [50, 64], // size of the shadow
       // iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
       // shadowAnchor: [4, 62], // the same for the shadow
