@@ -24,20 +24,24 @@
       });
     }, 100);
   }
+
   const handleSubmit = async () => {
     loading = true;
     chatMessages = [...chatMessages, { role: "user", content: query }];
+    
     const eventSource = new SSE("/api/chat", {
       headers: {
         "Content-Type": "application/json",
       },
       payload: JSON.stringify({
         messages: chatMessages,
-        openaiKey: $openaiKey,
+        // openaiKey: $openaiKey,
       }),
     });
     query = "";
+
     eventSource.addEventListener("error", handleError);
+    
     eventSource.addEventListener("message", (e) => {
       scrollToBottom();
       try {
