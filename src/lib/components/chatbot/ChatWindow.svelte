@@ -10,7 +10,6 @@
 
   let query: string = "";
   let answer: string = "";
-  let apiKey: string = "";
   let loading: boolean = false;
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
@@ -34,8 +33,7 @@
         "Content-Type": "application/json",
       },
       payload: JSON.stringify({
-        messages: chatMessages,
-        // openaiKey: $openaiKey,
+        messages: chatMessages
       }),
     });
     query = "";

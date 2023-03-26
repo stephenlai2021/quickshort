@@ -7,20 +7,20 @@
   export let type: ChatCompletionRequestMessageRoleEnum;
   export let message: string;
 
-  let userAvatar: string = "";
+  // let userAvatar: string = "";
 
-  $: if ($user) console.log("user | chat message: ", $user);
+  // $: if ($user) console.log("user | chat message: ", $user);
 
-  $: if ($user && $user.user_metadata?.avatar_url) {
-    userAvatar = $user.user_metadata.avatar_url;
-    console.log(
-      "user avatar url | chat message: ",
-      $user.user_metadata.avatar_url
-    );
-  } 
-	else {
-    userAvatar = avatar
-  }
+  // $: if ($user && $user.user_metadata?.avatar_url) {
+  //   userAvatar = $user.user_metadata.avatar_url;
+  //   console.log(
+  //     "user avatar url | chat message: ",
+  //     $user.user_metadata.avatar_url
+  //   );
+  // } 
+	// else {
+  //   userAvatar = avatar
+  // }
 </script>
 
 <div class="chat {type === 'user' ? 'chat-end' : 'chat-start'} justify-end">

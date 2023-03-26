@@ -4,7 +4,6 @@
   import {
     btnChat,
     menuOpen,
-    openaiKey,
     widthLessthan680,
     widthLessthan560,
     widthLessthan530,
@@ -50,21 +49,9 @@
 
   $: if (browser) window.addEventListener("resize", () => handleRWD());
 
-  const handlePrompt = () => {
-    $menuOpen = !$menuOpen;
-
-    // if (!$openaiKey && $menuOpen && $btnChat) {
-    //   let temp = prompt(
-    //     "Please enter your OpenAI API key:",
-    //     "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"
-    //   );
-    //   if (temp === null || temp === "") {
-    //     return;
-    //   } else {
-    //     $openaiKey = temp;
-    //   }
-    // }
-  };
+  // const handlePrompt = () => {
+  //   $menuOpen = !$menuOpen;
+  // };
 
   onMount(() => {
     handleRWD();
@@ -101,14 +88,13 @@
     <div
       class="fixed bottom-[20px] right-[20px] cursor-pointer"
       on:keydown
-      on:click={handlePrompt}
+      on:click={() => $menuOpen = !$menuOpen}
       transition:fade
     >
       <IconChatbot width="50" />
     </div>
   {/if}
-
-  <!-- {#if $openaiKey && $menuOpen && $btnChat} -->
+  
   {#if $menuOpen && $btnChat}
     <div class="fixed bottom-[70px] right-[10px] max-[400px]:top-0 max-[400px]:right-0 z-[51] max-[400px]:w-full max-[400px]:h-full max-[400px]:rounded-0">
       <ChatWindow />
