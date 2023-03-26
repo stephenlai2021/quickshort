@@ -5,6 +5,10 @@
   import { user, widthLessthan360 } from "$lib/stores";
   import type { Provider } from "@supabase/supabase-js";
   import GoogleIcon from "$lib/assets/images/google-icon.png";
+  import IconGithub from "$lib/assets/images/icons/icon-github.png";
+  import IconGoogle from "$lib/assets/images/icons/icon-google.png";
+  import IconFacebook from "$lib/assets/images/icons/icon-facebook.png";
+  import IconDiscord from "$lib/assets/images/icons/icon-discord.png";
 
   const signInWithProvider = async (provider: Provider) => {
     const { data, error } = await supabaseClient.auth.signInWithOAuth({
@@ -40,11 +44,11 @@
 <div class="h-screen grid place-content-center">
   <div class="mt-[0px] mx-auto">
     <div
-      class="card shadow-neutral/50 shadow-md bg-white/5 borde border-neutral/10 rounded-2xl p-5 w-[300px]"
-      style:width={$widthLessthan360 ? '90vw' : '300px'}
+      class="shadow-neutral/50 shadow-md bg-white/5 borde border-neutral/10 rounded-2xl p-5 w-[360px]"
+      >
+      <!-- style:width={$widthLessthan360 ? '90vw' : '300px'}
       class:card={!$widthLessthan360}
-      class:p-3={$widthLessthan360}
-    >
+      class:p-3={$widthLessthan360} -->
       <div class="text-center flex justify-center">
         <div class="p-4 mt-2 border rounded-full border-white/10">
           <svg
@@ -65,74 +69,66 @@
       </div>
 
       <form method="POST" use:enhance={submitSocialLogin} class="pb-2">
-        <button
-          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-black text-white"
-          formaction="?/login&provider=github"
-        >
-          <img
-            class="mr-[20px]"
-            src="https://cdn.iconscout.com/icon/free/png-256/github-3691248-3073768.png?f=webp&w=128"
-            alt=""
-            width="25"
-          />
-          {$t("common.btn-github")}
-        </button>
-        <button
-          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-white text-black font-weight-bold"
-          formaction="?/login&provider=google"
-        >
-          <img
-            class="mr-[20px]"
-            src="https://cdn-icons-png.flaticon.com/512/2965/2965278.png"
-            alt=""
-            width="25"
-          />
-          {$t("common.btn-google")}
-        </button>
-        <button
-          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-[#1877F2] text-white font-weight-bold"
-          formaction="?/login&provider=facebook"
-        >
-          <img
-            class="mr-[20px]"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
-            alt=""
-            width="25"
-          />
-          {$t("common.btn-facebook")}
-        </button>
-        <button
-          class="py-4 pl-8 rounded-[8px] w-full mt-5 btn-github bg-white  [#8C9EFF] text-black font-weight-bold"
-          formaction="?/login&provider=discord"
-        >
-          <img
-            class="mr-[20px]"
-            src="https://icon2.cleanpng.com/20180512/vve/kisspng-discord-computer-icons-logo-computer-software-5af6ee32eff047.5576594815261322749828.jpg"
-            alt=""
-            width="25"
-          />
-          {$t("common.btn-discord")}
-        </button>
+        <div class="flex justify-center">
+          <button
+            class="py-4 flex justify-center items-center rounded-[8px] w-full max-[360px]:w-[90vw] mt-5 bg-black text-white"
+            formaction="?/login&provider=github"
+          >
+            <img
+              class="mr-[10px]"
+              src={IconGithub}
+              alt=""
+              width="25"
+            />
+            {$t("common.btn-github")}
+          </button>
+        </div>
+
+        <div class="flex justify-center">
+          <button
+            class="py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white text-black font-weight-bold"
+            formaction="?/login&provider=google"
+          >
+            <img
+              class="mr-[10px]"
+              src={IconGoogle}
+              alt=""
+              width="22"
+            />
+            {$t("common.btn-google")}
+          </button>
+        </div>
+
+        <div class="flex justify-center">
+          <button
+            class="py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-[#1877F2] text-white font-weight-bold"
+            formaction="?/login&provider=facebook"
+          >
+            <img
+              class="mr-[10px]"
+              src={IconFacebook}
+              alt=""
+              width="25"
+            />
+            {$t("common.btn-facebook")}
+          </button>
+        </div>
+
+        <div class="flex justify-center">
+          <button
+            class="py-4 pl- flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white  [#8C9EFF] text-black font-weight-bold"
+            formaction="?/login&provider=discord"
+          >
+            <img
+              class="mr-[10px]"
+              src={IconDiscord}
+              alt=""
+              width="25"
+            />
+            {$t("common.btn-discord")}
+          </button>
+        </div>
       </form>
     </div>
   </div>
 </div>
-
-<style>
-  .btn-github {
-    width: 100%;
-    margin-bottom: 10px;
-    display: flex;
-  }
-
-  @media (max-width: 360px) {
-    button {
-      padding-left: 12px;
-      padding-right: 8px;
-    }
-
-    img {
-      margin-right: 10px;
-    }
-  }
-</style>

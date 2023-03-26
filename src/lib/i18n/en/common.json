@@ -63,5 +63,8 @@
   "home-section4-subtitle": "ShortMaster provides detailed analytics on your short URLs. You can track clicks over time, understand the user behavior and improve the performance of your site.",
   "home-section5-title": "The analytics is a game changer, I now know where my traffic is coming from.",
   "home-section6-description": "Start Shortening URLs with ShortMaster.",
-  "btn-action": "Start Now"
+  "btn-action": "Start Now",
+  "total_clicks": "Total Clicks",
+  "country": "Country",
+  "city": "City"
 }

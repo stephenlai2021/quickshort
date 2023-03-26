@@ -1,11 +1,15 @@
 <script lang="ts">
   import { enhance, type SubmitFunction } from "$app/forms";
   import { supabaseClient } from "$lib/supabase";
-  import { user, btnChat, menuOpen, widthLessthan480 } from "$lib/stores";
+  import {
+    user,
+    btnChat,
+    menuOpen,
+    widthLessthan530,
+  } from "$lib/stores";
   import { t } from "$lib/i18n/translations";
-  import { goto } from "$app/navigation"
-
-  // console.log('user | user menu: ', $user)
+  import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
 
   const submitLogout: SubmitFunction = async ({ cancel }) => {
     const { error } = await supabaseClient.auth.signOut();
@@ -40,20 +44,21 @@
           {$user?.email}
         </button>
       </li>
-      {#if $widthLessthan480}
-        <li>
-          <button 
-            on:click={() => goto("/dashboard")}
-          >{$t("common.dashboard")}
-          </button>
-        </li>
+      {#if $widthLessthan530}
+        {#if $user?.email && $page.url.pathname !== "/dashboard"}
+          <li>
+            <button on:click={() => goto("/dashboard")}
+              >{$t("common.dashboard")}
+            </button>
+          </li>
+        {/if}
       {/if}
       <li>
-        <button 
+        <button
           on:click={toggleChatbot}
           class:bg-base-300={$btnChat}
           class:underline-offset-4={$btnChat}
-          style:font-weight={$btnChat ? "bold": ""}
+          style:font-weight={$btnChat ? "bold" : ""}
         >
           {$t("common.chat")}
         </button>
@@ -66,13 +71,3 @@
     </ul>
   </li>
 {/if}
-
-<style>
-  /* .user-avatar {
-    border-radius: 50%;
-    padding: -1px;
-    background-image: url(https://www.shareicon.net/data/256x256/2015/09/18/103159_user_512x512.png);
-    background-size: cover;
-    overflow: hidden;
-  } */
-</style>

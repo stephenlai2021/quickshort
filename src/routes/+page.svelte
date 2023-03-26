@@ -10,6 +10,7 @@
   import type { PageData } from "./$types";
   export let data: PageData;
   $user = data.user;  
+  console.log('user | home client:', $user)
 </script>
 
 <div class="page-home wrapper mt-[70px] w-full">

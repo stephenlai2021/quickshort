@@ -34,7 +34,7 @@
   "long_url_placeholder": "輸入或貼上長網址",
   "short_key": "短網址",
   "short_key_placeholder": "輸入短網址 (可選)",
-  "shorten": "快修",
+  "shorten": "縮短",
   "pricing": "方案",
   "features": "特點",
   "help": "幫助",
@@ -63,6 +63,9 @@
   "home-section4-subtitle": "縮短專家對您的短網址提供詳細的分析。你可以追踪一段時間内的點擊率，了解用户行為，並改善你的網站性能。",
   "home-section5-title": "透過點擊數據分析，我可以清楚知道我的流量来自哪里。",
   "home-section6-description": "開始用縮短專家縮短網址。",
-  "btn-action": "開始"
+  "btn-action": "開始",
+  "total_clicks": "總點擊數",
+  "country": "國家",
+  "city": "城市"
 }
 

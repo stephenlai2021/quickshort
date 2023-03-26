@@ -43,5 +43,10 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
   if (err) console.log("error message: ", err.message);
   console.log("clicks table: ", clicks);
 
+  /* update total clicks */
+  const { data:totalClicks, error: errMsg } = await supabaseClient
+    .from("url_shortener_links")
+    .insert([{ total_clicks: data?.total_clicks + 1 }]);
+
   throw redirect(303, data?.long_url);
 };

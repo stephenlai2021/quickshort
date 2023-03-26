@@ -16,7 +16,7 @@
 </script>
 
 <section class="pt-28 mx- mx-auto bg-base-100">
-  <h1 class="text-[22px] font-bold">{$t("common.dashboard")}</h1>
+  <h1 class="text-[22px] font-bold max-[410px]:px-[10px]">{$t("common.dashboard")}</h1>
   <LinkForm />
   <div class="links-wrapper my-10">
     {#each $linksArray as item}

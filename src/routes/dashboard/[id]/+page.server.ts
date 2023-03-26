@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ params }) => {
     .select("*, url_shortener_clicks(*)")
     .eq("key", params.id)
     .single();
-  console.log("click details: ", clickDetails);
+  // console.log("click details: ", clickDetails);
 
   if (err) console.log('error message: ', err.message)
 

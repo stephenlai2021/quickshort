@@ -14,11 +14,10 @@
 <a
   href="/"
   data-sveltekit-reload
-  class="logo flex items-center relative navbar-brand text-2xl font-bold"
+  class="ml-[10px] flex items-center relative navbar-brand text-2xl font-bold"
 >
-  <div class="logo-wrapper">
-    <img 
-      class="mr-[6px]" 
+  <div class="">
+    <img  
       src={logo} 
       alt=""
       width="40" 

@@ -7,6 +7,7 @@
     openaiKey,
     widthLessthan680,
     widthLessthan560,
+    widthLessthan530,
     widthLessthan480,
     widthLessthan490,
     widthLessthan425,
@@ -31,6 +32,8 @@
     if (window.innerWidth > 680) $widthLessthan680 = false;
     if (window.innerWidth <= 560) $widthLessthan560 = true;
     if (window.innerWidth > 560) $widthLessthan560 = false;
+    if (window.innerWidth <= 530) $widthLessthan530 = true;
+    if (window.innerWidth > 530) $widthLessthan530 = false;
     if (window.innerWidth <= 490) $widthLessthan490 = true;
     if (window.innerWidth > 490) $widthLessthan490 = false;
     if (window.innerWidth <= 480) $widthLessthan480 = true;

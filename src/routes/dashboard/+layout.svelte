@@ -1,13 +1,4 @@
-<div class="page">
+<div class="max-w-[800px] mx-auto py-0 px-[20px] max-[410px]:px-0">
   <slot />
 </div>
 
-
-<style>
-  .page {
-    max-width: 800px;
-    margin: auto;
-    padding: 0 20px;
-    overflow: hidden;
-  }
-</style>

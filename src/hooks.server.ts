@@ -2,25 +2,22 @@ import "$lib/supabase";
 import { getSupabase } from "@supabase/auth-helpers-sveltekit";
 import { redirect, type Handle } from "@sveltejs/kit";
 
-export const handle: Handle = async ({ event, resolve }) => {
+interface ShortKey {
+  details: string
+}
 
+export const handle: Handle = async ({ event, resolve }) => {
   /* Supabase  */
   const { session, supabaseClient } = await getSupabase(event);
 
   event.locals.sb = supabaseClient;
   event.locals.session = session;
 
-  if (event.url.pathname.startsWith('/dashboard')) {
+  if (event.url.pathname.startsWith("/dashboard/")) {
     if (!event.locals.session) {
-      throw redirect(303, '/')
+      throw redirect(303, "/auth");
     }
   }
-
-  // if (event.url.pathname === "/') {
-  //   if (!event.locals.session) {
-  //     throw redirect(303, '/')
-  //   }
-  // }
 
   /* Theme  */
   let theme: string | null = null;
@@ -43,5 +40,4 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   // return await resolve(event);
   return resolve(event);
-}
-
+};

@@ -1,12 +1,18 @@
-<script>
+<script lang="ts">
   import { fade, fly } from "svelte/transition";
   import { PUBLIC_APP_BASE_URL } from "$env/static/public";
-  import { goto } from "$app/navigation"
+  import { goto } from "$app/navigation";
   import { toast } from "@zerodevx/svelte-toast";
   import { widthLessthan400 } from "$lib/stores";
   import CopyBtn from "$lib/components/utils/CopyBtn.svelte";
 
-  export let link;
+  export let link: Link
+  // export let link: Link = {
+  //   key: "",
+  //   long_url: "",
+  //   total_clicks: 0,
+  //   created_at: "",
+  // };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`${PUBLIC_APP_BASE_URL}/${link.key}`);
@@ -18,32 +24,33 @@
         "--toastBackground": "#10754E",
         "--toastBtnWidth": "0",
         "--toastBtnHeight": "0",
-        "--toastBtnContent" : " ",
+        "--toastBtnContent": " ",
         "--toastMsgPadding": "0.5rem 1rem",
         "--toastMinHeight": "3.0rem",
-        "--toastWidth": "13rem"
-      }
+        "--toastWidth": "13rem",
+      },
     });
   };
 </script>
 
 <div
   class="wrapper w-full bg-neutral/10 rounded-xl p-5 mb-5 flex justify-between items-center gap-5 hover:border-secondary/50 transition-all duration-200"
-  >
+>
   <!-- class:card={$widthLessthan382} -->
   <div class="url-links w-1/2">
     <div class="cursor-pointer">
       <a class="text-[20px]" href={`/dashboard/${link.key}`}>/{link.key}</a>
+      <!-- <div class="text-[20px]" on:click={() => goto(`/dashboard/${link.key}`)}>/{link.key}</div> -->
     </div>
     <div class="text-sm sm:text-base">
       {#if $widthLessthan400}
-        <span>{link.long_url.slice(0,30) + "..."}</span>      
-        {:else}
-        <span>{link.long_url.slice(0,20) + "..."}</span>      
+        <span>{link.long_url.slice(0, 30) + "..."}</span>
+      {:else}
+        <span>{link.long_url.slice(0, 20) + "..."}</span>
       {/if}
     </div>
   </div>
-  
+
   <div class="statics w-1/2 flex justify-end">
     <div class="flex flex-col items-end justify-center">
       <div class="flex max-[420px]:w-full">
@@ -66,12 +73,13 @@
         </svg>
       </div>
       <div>
-        <span class="text-sm sm:text-base">{link.created_at?.slice(0, 10)}</span>
+        <span class="text-sm sm:text-base">{link.created_at?.slice(0, 10)}</span
+        >
       </div>
     </div>
 
     <div class="">
-      <CopyBtn isCopied={false} key={link.key} />
+      <CopyBtn key={link.key} />
     </div>
   </div>
 </div>
@@ -87,6 +95,5 @@
     .statics {
       width: 100%;
     }
-
   }
 </style>

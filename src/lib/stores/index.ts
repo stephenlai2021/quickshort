@@ -15,6 +15,7 @@ export const linksArray = writable([]);
 export const doneConfirm = writable(false)
 export const widthLessthan680 = writable(false)
 export const widthLessthan560 = writable(false)
+export const widthLessthan530 = writable(false)
 export const widthLessthan480 = writable(false)
 export const widthLessthan490 = writable(false)
 export const widthLessthan425 = writable(false)

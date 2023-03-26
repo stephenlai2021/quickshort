@@ -7,6 +7,7 @@ declare global {
     interface Locals {
       sb: TypedSupabaseClient;
       session: Session | null;
+      details: ShortKey;
       // theme: null
     }
     interface PageData {
@@ -14,6 +15,20 @@ declare global {
     }
     interface Platform {}
   }
+}
+
+interface Link {
+  key: string
+  long_url: string
+  total_clicks: number
+  created_at: string
+}
+
+interface ClickDetails {
+  ip: string
+  created_at: string
+  country: string
+  city: string
 }
 
 export {};

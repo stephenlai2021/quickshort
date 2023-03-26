@@ -8,42 +8,24 @@
       title: "Pricing",
     },
     {
-      url: "/features",
-      title: "Features",
-    },
-    {
       url: "/help",
       title: "Help",
     },
   ];
 </script>
 
-<ul
-  class="middle-menu relative flex-nowrap flex items-center justify-between"
-  style:left={$page.url.pathname === "/login" ||
-  $page.url.pathname === "/register"
-    ? "-30px"
-    : "0px"}
->
+<ul class="flex">
   {#each links as link}
-    <li class="px-8 text-1xl">
-      {#if link.title === "Pricing"}
+    {#if link.title === "Pricing"}
+      <li class="px-4 text-1xl">
         <a href={`${link.url}`}>{$t("common.pricing")}</a>
-      {/if}
-      {#if link.title === "Features"}
-        <a href={`${link.url}`}>{$t("common.features")}</a>
-      {/if}
-      {#if link.title === "Help"}
+      </li>
+    {/if}
+
+    {#if link.title === "Help"}
+      <li class="px-4 text-1xl">
         <a href={`${link.url}`}>{$t("common.help")}</a>
-      {/if}
-    </li>
+      </li>
+    {/if}
   {/each}
 </ul>
-
-<style>
-  @media (max-width: 837px) {
-    .middle-menu {
-      display: none;
-    }
-  }
-</style>
