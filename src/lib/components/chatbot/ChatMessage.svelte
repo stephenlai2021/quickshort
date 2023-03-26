@@ -24,26 +24,6 @@
 </script>
 
 <div class="chat {type === 'user' ? 'chat-end' : 'chat-start'} justify-end">
-  <!-- <div class="chat-image avatar">
-    <div class="w-10 rounded-full">
-      {#if userAvatar}
-        <img
-          src={type === "user"
-            ? userAvatar
-            : chatbot}
-          alt="{type} avatar"
-        />
-      {:else}
-        <img
-          src={type === "user"
-            ? avatar
-            : chatbot}
-          alt="{type} avatar"
-        />
-      {/if}
-    </div>
-  </div> -->
-
   <div
     class="chat-bubble text-[14px] flex items-center rounded-[8px] {type === 'user'
       ? 'chat-bubble-primary'
