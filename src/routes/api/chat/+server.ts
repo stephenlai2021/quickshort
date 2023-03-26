@@ -19,7 +19,7 @@ export const POST: RequestHandler = async ({ request }) => {
     }
 
     const requestData = await request.json();
-    console.log("chat data: ", requestData);
+    // console.log("chat data: ", requestData);
 
     if (!requestData) {
       throw new Error("No request data");
@@ -41,8 +41,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const moderationRes = await fetch("https://api.openai.com/v1/moderations", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_KEY}`,
-        // Authorization: `Bearer ${openaiKey}`,
+        Authorization: `Bearer ${OPENAI_KEY}`
       },
       method: "POST",
       body: JSON.stringify({
@@ -81,7 +80,6 @@ export const POST: RequestHandler = async ({ request }) => {
       "https://api.openai.com/v1/chat/completions",
       {
         headers: {
-          // Authorization: `Bearer ${openaiKey}`,
           Authorization: `Bearer ${OPENAI_KEY}`,
           "Content-Type": "application/json",
         },

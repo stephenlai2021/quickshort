@@ -3,7 +3,7 @@
   import { SSE } from "sse.js";
   import { cubicOut } from "svelte/easing";
   import { t } from "$lib/i18n/translations";
-  import { menuOpen, openaiKey } from "$lib/stores";
+  import { menuOpen } from "$lib/stores";
   import ChatMessage from "./ChatMessage.svelte";
   import IconSister from "$lib/components/icon/IconSister.svelte";
   import IconClose from "$lib/components/icon/IconClose.svelte";
@@ -41,7 +41,7 @@
     query = "";
 
     eventSource.addEventListener("error", handleError);
-    
+
     eventSource.addEventListener("message", (e) => {
       scrollToBottom();
       try {
@@ -70,13 +70,8 @@
   function handleError<T>(err: T) {
     loading = false;
     query = "";
-    answer = "";
-    console.error("request error: ", err);
-    alert(
-      "Your OpenAI API key is invalid, please enter a valid key or create a new one 😀"
-    );
-    $menuOpen = false;
-    $openaiKey = "";
+    answer = ""; 
+    console.error(err)
   }
 
   function slidefade(node, params) {
