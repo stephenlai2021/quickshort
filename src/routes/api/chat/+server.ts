@@ -19,9 +19,7 @@ export const POST: RequestHandler = async ({ request }) => {
     }
 
     const requestData = await request.json();
-    // const { openaiKey } = requestData
     console.log("chat data: ", requestData);
-    // console.log("openaiKey: ", openaiKey);
 
     if (!requestData) {
       throw new Error("No request data");
@@ -63,7 +61,7 @@ export const POST: RequestHandler = async ({ request }) => {
       "You are an assistant for an url shortener application named ShortMaster, users will be redirected to dashboard after loggedin with their social accounts, in dashboard users can enter original long url link and shorten it by a click of a button, ShortMaster generates a list about that short link. when the short link is clicked, ShortMaster collects user ip, country, city, latitdude & longitude display in analytics and also place user on the map, so you will know where the users / audiences coming from";
     tokenCount += getTokens(prompt);
 
-    if (tokenCount >= 1000) {
+    if (tokenCount >= 500) {
       throw new Error("Query too large");
     }
 
