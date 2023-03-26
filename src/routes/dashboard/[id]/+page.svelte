@@ -36,7 +36,7 @@
       .addTo(map);
 
     marker = leaflet.marker([51.505, -0.09]).addTo(map).bindPopup('<h1>Center:</h1><span>latitude: 51.505</span><br/><span>longitude: -0.09</span>').openPopup();
-    marker._icon.style.filter = "hue-rotate(120deg)";
+    // marker._icon.style.filter = "hue-rotate(120deg)";
 
     url_shortener_clicks.forEach((loc) => {
       leaflet.marker([loc.latitude, loc.longitude]).addTo(map).bindPopup(`<span>latitude: ${loc.latitude}</span><br/><span>longitude: ${loc.longitude}</span>`).openPopup();
