@@ -4,7 +4,7 @@
   import { onMount, onDestroy } from "svelte";
   import dateFormat from "dateformat";
   import CopyBtn from "$lib/components/utils/CopyBtn.svelte";
-  import IconAvatar from "$lib/assets/avatar.png"
+  import IconAvatar from "$lib/assets/images/avatar.png"
   import IconCenter from "$lib/components/icon/shormaster_logo-removebg.png";
 
   export let data: PageData;
