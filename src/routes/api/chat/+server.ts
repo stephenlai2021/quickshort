@@ -59,15 +59,11 @@ export const POST: RequestHandler = async ({ request }) => {
       throw new Error("Query flagged by openai");
     }
 
-    // const prompt =
-    //   "You are a virtual assistant for a company called Huntabyte. Your name is Axel Smith";
-
     const prompt =
-      // "You are a specialist for an url shortener application named ShortMaster, specializing shorten long url links, you know everything ins and outs of this technology and the competitors in the area";
       "You are an assistant for an url shortener application named ShortMaster, users will be redirected to dashboard after loggedin with their social accounts, in dashboard users can enter original long url link and shorten it by a click of a button, ShortMaster generates a list about that short link. when the short link is clicked, ShortMaster collects user ip, country, city, latitdude & longitude display in analytics and also place user on the map, so you will know where the users / audiences coming from";
     tokenCount += getTokens(prompt);
 
-    if (tokenCount >= 4000) {
+    if (tokenCount >= 1000) {
       throw new Error("Query too large");
     }
 
@@ -87,7 +83,8 @@ export const POST: RequestHandler = async ({ request }) => {
       "https://api.openai.com/v1/chat/completions",
       {
         headers: {
-          Authorization: `Bearer ${openaiKey}`,
+          // Authorization: `Bearer ${openaiKey}`,
+          Authorization: `Bearer ${OPENAI_KEY}`,
           "Content-Type": "application/json",
         },
         method: "POST",
