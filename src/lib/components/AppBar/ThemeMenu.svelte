@@ -73,8 +73,6 @@
           <button
             formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}"
             on:click={() => handleTheme(theme)}
-            class:bg-base-200={currentTheme === theme}
-            class:underline-offset-4={currentTheme === theme}
             style:font-weight={currentTheme === theme ? "bold" : ""}
           >
             {#if theme === "dark"}{$t("common.dark")}{/if}

@@ -80,17 +80,17 @@
 
   <div
     bind:this={mapElement}
-    class="relative z-0 car w-full h-[400px] mt-10 bg-[url('/image-placeholder.png')] bg-cover bg-center rounded-[8px]"
+    class="max-[410px]:rounded-none max-[410px]:w-full relative z-0 car w-full h-[400px] mt-10 bg-[url('/image-placeholder.png')] bg-cover bg-center rounded-[0.75rem]"
   />
 
-  <div class="stats flex mt-10 flex-wrap md:flex-nowrap">
-    <div class="card border-none bg-neutral/20">
+  <div class="flex mt-10 flex-wrap md:flex-nowrap">
+    <div class="max-[410px]:rounded-none rounded-[0.75rem] p-[20px] max-[410px]:w-full w-1/2 border-none bg-neutral/20">
       <div class="text-4xl font-bold">{total_clicks}</div>
       <div class="text-">{$t("common.total_clicks")}</div>
     </div>
 
     <div
-      class="card border-none bg-neutral/20 mt-5 md:mt-0 md:ml-5 w-full relative"
+      class="max-[410px]:rounded-none rounded-[0.75rem] p-[20px] max-[410px]:w-full border-none bg-neutral/20 mt-5 md:mt-0 md:ml-5 w-full relative"
     >
       <div class="w-full break-all">{long_url}</div>
     </div>
@@ -98,7 +98,7 @@
 
   <div class="mt-10">
     {#each url_shortener_clicks as click}
-      <div class="card border-none w-full mb-5 bg-neutral/20">
+      <div class="max-[410px]:rounded-none rounded-[0.75rem] p-[20px] max-[410px]:w-full border-none w-full mb-5 bg-neutral/20">
         <div class="flex justify-between max-[510px]:flex-col">
           <div class="div">
             <div class="text-">{click.ip}</div>

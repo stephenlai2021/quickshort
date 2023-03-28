@@ -32,8 +32,6 @@
     {#each langs as lang}
       <li>
         <button
-          class:bg-base-200={currentMenu === lang}
-          class:underline-offset-4={currentMenu === lang}
           style:font-weight={currentMenu === lang ? "bold": ""}
           on:click={() => handleLocale(lang)}
         >

@@ -10,7 +10,10 @@ export const load: PageServerLoad = async ({ params }) => {
     .single();
   // console.log("click details: ", clickDetails);
 
-  if (err) console.log('error message: ', err.message)
+  if (err) {
+    console.log('error message: ', err.message)
+    throw redirect(303, '/dashboard')
+  }
 
   return { clickDetails }
 }

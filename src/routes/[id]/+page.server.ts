@@ -15,7 +15,7 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
 
   if (error) {
     console.log("error: ", error.message);
-    throw redirect(303, "/dashboard");
+    throw redirect(303, "/");
   }
 
   const jsonRes = await fetch(IPAPI);

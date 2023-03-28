@@ -99,7 +99,7 @@
   method="POST"
   action=""
   on:submit|preventDefault={handleSubmit}
-  class="link-form flex-column bg-neutral/20 rounded-[8px] py-6 px-5 mt-[16px] flex flex-wrap justify-between items-middle gap-5"
+  class="link-form max-[420px]:rounded-none flex-column bg-neutral/20 rounded-[8px] py-6 px-5 mt-[16px] flex flex-wrap justify-between items-middle gap-5"
 >
   <div class="form-group w-full sm:w-6/12">
     <label for="long_url" class="text- text-xs mb-1 block"

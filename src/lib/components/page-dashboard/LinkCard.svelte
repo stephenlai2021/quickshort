@@ -4,15 +4,13 @@
   import { goto } from "$app/navigation";
   import { toast } from "@zerodevx/svelte-toast";
   import { widthLessthan400 } from "$lib/stores";
+  import { supabaseClient } from "$lib/supabase";
+  import { linksArray } from "$lib/stores";
   import CopyBtn from "$lib/components/utils/CopyBtn.svelte";
+  import IconTrashcan from "$lib/components/icon/IconTrashcan.svelte";
 
-  export let link: Link
-  // export let link: Link = {
-  //   key: "",
-  //   long_url: "",
-  //   total_clicks: 0,
-  //   created_at: "",
-  // };
+  export let link: Link;
+  // console.log("link | dashboard: ", link);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`${PUBLIC_APP_BASE_URL}/${link.key}`);
@@ -31,16 +29,27 @@
       },
     });
   };
+
+  const handleDelete = async (key) => {
+    alert(`Are you sure to delete key "${key}" ?`);
+
+    const { data, error } = await supabaseClient
+      .from("url_shortener_links")
+      .delete()
+      .eq("key", key);
+    
+    if (error) console.log('error message: ', error.message)
+
+    $linksArray = $linksArray.filter(link => link.key !== key)    
+  };
 </script>
 
 <div
-  class="wrapper w-full bg-neutral/10 rounded-xl p-5 mb-5 flex justify-between items-center gap-5 hover:border-secondary/50 transition-all duration-200"
+  class="wrapper max-[420px]:rounded-none max-[420px]:p-[10px] max-[420px]:flex-col w-full bg-neutral/10 rounded-xl p-5 mb-5 flex justify-between items-center gap-5 hover:border-secondary/50 transition-all duration-200"
 >
-  <!-- class:card={$widthLessthan382} -->
-  <div class="url-links w-1/2">
+  <div class="max-[420px]:w-full w-1/2">
     <div class="cursor-pointer">
       <a class="text-[20px]" href={`/dashboard/${link.key}`}>/{link.key}</a>
-      <!-- <div class="text-[20px]" on:click={() => goto(`/dashboard/${link.key}`)}>/{link.key}</div> -->
     </div>
     <div class="text-sm sm:text-base">
       {#if $widthLessthan400}
@@ -51,7 +60,7 @@
     </div>
   </div>
 
-  <div class="statics w-1/2 flex justify-end">
+  <div class="relative max-[420px]:w-full w-1/2 flex justify-end">
     <div class="flex flex-col items-end justify-center">
       <div class="flex max-[420px]:w-full">
         <span class="leading-none text-">
@@ -73,27 +82,21 @@
         </svg>
       </div>
       <div>
-        <span class="text-sm sm:text-base">{link.created_at?.slice(0, 10)}</span
-        >
+        <span class="text-sm sm:text-base">
+          {link.created_at?.slice(0, 10)}
+        </span>
       </div>
     </div>
 
-    <div class="">
+    <div class="mr-[10px]">
       <CopyBtn key={link.key} />
+    </div>
+
+    <!-- <div class="absolute bottom-[-18px] right-[-13px]"> -->
+    <div class="border flex items-center">
+      <button on:click={() => handleDelete(link.key)}>
+        <IconTrashcan width="18" />
+      </button>
     </div>
   </div>
 </div>
-
-<style>
-  @media (max-width: 420px) {
-    .wrapper {
-      flex-direction: column;
-      padding: 10px;
-    }
-
-    .url-links,
-    .statics {
-      width: 100%;
-    }
-  }
-</style>
