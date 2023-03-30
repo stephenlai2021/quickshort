@@ -62,7 +62,8 @@
         </button>
       </li>
       <li>
-        <form action="/logout" method="POST" use:enhance={submitLogout}>
+        <!-- <form action="/logout" method="POST" use:enhance={submitLogout}> -->
+        <form action="/logout" method="POST">
           <button type="submit" class="">{$t("common.logout")}</button>
         </form>
       </li>
