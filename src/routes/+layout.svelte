@@ -88,9 +88,9 @@
   style:height={$widthLessthan400 && $menuOpen ? "100vh" : "auto"}
   style:overflow-y={$widthLessthan400 && $menuOpen ? "hidden" : "auto"}
 >
-  <!-- {#if localUser} -->
+  {#if localUser}
     <MenuBar {localUser} />
-  <!-- {/if} -->
+  {/if}
   <slot />
 
   {#if $btnChat}
