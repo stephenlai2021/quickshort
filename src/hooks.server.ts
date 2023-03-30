@@ -15,6 +15,12 @@ export const handle: Handle = async ({ event, resolve }) => {
     }
   }
 
+  if (event.url.pathname === "/") {
+    if (event.locals.session && event.params) {
+      throw redirect(303, `/dashboard/${event.params.id}`);
+    }
+  }
+
   /* Theme  */
   let theme: string | null = null;
 

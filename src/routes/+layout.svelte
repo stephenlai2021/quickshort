@@ -55,6 +55,8 @@
   };
 
   onMount(() => {
+    location.reload()
+    
     handleRWD();
 
     const {

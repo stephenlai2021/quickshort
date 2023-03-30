@@ -12,7 +12,6 @@ export const load: PageServerLoad = async ({ locals }) => {
     .select("*")
     .order('created_at', { ascending: true })
     .eq("user_id", locals.session?.user.email)
-  // console.log(`${locals.session?.user.email}'s dashboard: `, data);
   
   if (error) console.log('error loading links | dashboard server: ', error)
 
