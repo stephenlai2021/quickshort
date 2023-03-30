@@ -4,7 +4,7 @@ import { supabaseClient } from "$lib/supabase";
 
 export const load: PageServerLoad = async ({ locals }) => {
    if (!locals.session) {
-     throw redirect(303, "/auth");
+     throw redirect(303, "/");
    }
   
   const { data, error } = await supabaseClient

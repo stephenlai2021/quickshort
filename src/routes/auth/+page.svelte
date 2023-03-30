@@ -42,14 +42,8 @@
 </script>
 
 <div class="max-w-[360px] mx-auto h-scree gri place-content-cente overflow-hidden">
-<!-- <div class="max-w-[360px] mx-auto"> -->
   <div class="mt-[80px] mx-auto">
-    <div
-      class="p-5 w-[360px] max-[360px]:w-full"
-      >
-      <!-- style:width={$widthLessthan360 ? '90vw' : '300px'}
-      class:card={!$widthLessthan360}
-      class:p-3={$widthLessthan360} -->
+    <div class="p-5 w-[360px] max-[360px]:w-full">
       <div class="text-center flex justify-center">
         <div class="p-4 mt-2 border shadow shadow-sm rounded-full">
           <svg
