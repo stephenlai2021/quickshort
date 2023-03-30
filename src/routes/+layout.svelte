@@ -13,6 +13,7 @@
     widthLessthan400,
     widthLessthan382,
     widthLessthan360,
+    widthLessthan320,
   } from "$lib/stores";
   import { invalidateAll } from "$app/navigation";
   import { supabaseClient } from "$lib/supabase";
@@ -49,6 +50,8 @@
     if (window.innerWidth > 382) $widthLessthan382 = false;
     if (window.innerWidth <= 360) $widthLessthan360 = true;
     if (window.innerWidth > 360) $widthLessthan360 = false;
+    if (window.innerWidth <= 320) $widthLessthan320 = true;
+    if (window.innerWidth > 320) $widthLessthan320 = false;
   };
 
   onMount(() => {

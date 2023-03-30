@@ -5,6 +5,7 @@
   import { t } from "$lib/i18n/translations";
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
+  import imageAvatar from "$lib/assets/images/avatar.png"
 
   export let localUser;
   console.log("user | user menu: ", localUser);
@@ -30,33 +31,37 @@
       alt=""
       width="30"
       height="30"
-      class="rounded-full bg-cover bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT_bZVtu-PddY_qhswZvb8mjbcupdRazjY_w&usqp=CAU')]"
-    />
+      class="rounded-full bg-cover bg-[url('/avatar.png')]"
+      />
+      <!-- class="image-avatar rounded-full bg-cover" -->
   </span>
   <ul class="dropdown-menu">
     {#if localUser.email}
       <li>
         <button style:background="none" class="cursor-default">
-          <!-- {localUser.email} -->
           {localUser.email.substring(0, localUser.email.indexOf("@"))}
         </button>
       </li>
     {/if}
 
     {#if $widthLessthan530}
-      <li>
-        <button on:click={() => goto("/dashboard")}>
-          <!-- {#if localUser.email} -->
-          {#if localUser.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
+      {#if localUser.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
+        <li>
+          <button on:click={() => goto("/dashboard")}>
             {$t("common.dashboard")}
-          {/if}
+          </button>
+        </li>
+      {/if}
 
-          {#if !localUser.email && $page.url.pathname !== "/auth"}
+      {#if !localUser.email && $page.url.pathname !== "/auth"}
+        <li>
+          <button on:click={() => goto("/dashboard")}>
             {$t("common.login")}
-          {/if}
-        </button>
-      </li>
+          </button>
+        </li>
+      {/if}
     {/if}
+
     <li>
       <button
         on:click={toggleChatbot}
@@ -75,3 +80,9 @@
     {/if}
   </ul>
 </li>
+
+<style>
+  .image-avatar {
+    background-image: url();
+  }
+</style>

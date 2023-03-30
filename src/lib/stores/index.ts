@@ -22,6 +22,7 @@ export const widthLessthan425 = writable(false)
 export const widthLessthan400 = writable(false)
 export const widthLessthan382 = writable(false)
 export const widthLessthan360 = writable(false)
+export const widthLessthan320 = writable(false)
 
 export const openaiKey = writable<string>(initialValue)
 openaiKey.subscribe((value) => {

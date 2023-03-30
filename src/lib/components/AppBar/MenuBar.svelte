@@ -1,14 +1,9 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { t } from "$lib/i18n/translations";
-  import { user } from "$lib/stores";
   import Logo from "$lib/components/AppBar/Logo.svelte";
   import ThemeMenu from "./ThemeMenu.svelte";
-  import LoginBtn from "./LoginBtn.svelte";
   import LangMenu from "./LangMenu.svelte";
   import UserMenu from "./UserMenu.svelte";
-  import IconPanel from "../icon/IconPanel.svelte"; 
-  import IconLogin from "../icon/IconLogin.svelte"; 
   import imagePanel from "$lib/assets/images/icons/panel.png"
   import imageLogin from "$lib/assets/images/icons/enter.png"
 
@@ -28,13 +23,10 @@
 
           {#if $page.url.pathname === "/" && !localUser.email}
               <a href="/auth" class="mr-4 borde max-[530px]:hidden">
-                <!-- <IconLogin width="26" height="26" /> -->
                 <img src={imageLogin} width="24" alt="">
               </a>
           {/if}
 
-          <!-- {#if $page.url.pathname !== "/dashboard"} -->
-          <!-- {#if localUser.email && $page.url.pathname !== "/dashboard"} -->
           {#if localUser.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
             <li>
               <a href="/dashboard" class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100">
