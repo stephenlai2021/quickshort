@@ -4,11 +4,27 @@
   import { supabaseClient } from "$lib/supabase";
   import { user, widthLessthan360 } from "$lib/stores";
   import type { Provider } from "@supabase/supabase-js";
+  import { page } from "$app/stores"
+  import { onMount } from "svelte";
+  import { browser } from "$app/environment";
   import GoogleIcon from "$lib/assets/images/google-icon.png";
   import IconGithub from "$lib/assets/images/icons/icon-github.png";
   import IconGoogle from "$lib/assets/images/icons/icon-google.png";
   import IconFacebook from "$lib/assets/images/icons/icon-facebook.png";
   import IconDiscord from "$lib/assets/images/icons/icon-discord.png";
+
+  let userLogout = false
+
+  console.log('user | auth: ', $page.data.user)
+  
+  $: if (!$page.data.user) {    
+    userLogout = true
+  }
+
+  $: if (userLogout) {
+    location.reload() 
+    userLogout = false
+  }
 
   const signInWithProvider = async (provider: Provider) => {
     const { data, error } = await supabaseClient.auth.signInWithOAuth({

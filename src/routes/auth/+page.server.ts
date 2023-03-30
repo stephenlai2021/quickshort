@@ -8,6 +8,10 @@ export const load: PageServerLoad = ({ locals }) => {
   if (locals.session) {
     throw redirect(303, "/dashboard");
   }
+
+  return {
+    user: locals.session
+  }
 };
 
 export const actions: Actions = {
