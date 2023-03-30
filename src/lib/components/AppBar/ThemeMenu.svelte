@@ -3,6 +3,7 @@
   import { page } from "$app/stores";
   import { enhance } from "$app/forms";
   import IconColorPalette from "../icon/IconColorPalette.svelte";
+  import imagePalette from "$lib/assets/images/icons/palette.png"
 
   let currentTheme = "cupcake";
 
@@ -64,7 +65,7 @@
 
 <li class="relative cursor-pointer">
   <span class="pl-0 hover:bg-base-100">
-    <IconColorPalette />
+    <img src={imagePalette} width="24" alt="">
   </span>
   <ul class="dropdown-menu max-h-96 overflow-y-scroll">
     <form method="POST" use:enhance={submitUpdateTheme}>

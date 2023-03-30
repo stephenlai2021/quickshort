@@ -6,18 +6,14 @@
   import { user } from "$lib/stores"
   import dateFormat from "dateformat";
   import CopyBtn from "$lib/components/utils/CopyBtn.svelte";
-  // import IconAvatar from "$lib/assets/images/icons/user-map-avatar.png"
   import IconAvatar from "$lib/assets/images/icons/user-avatar-v3.png"
   import IconCenter from "$lib/assets/images/shormaster_logo-removebg.png";
 
-  export let data: PageData;
-  
-  const { clickDetails } = data;
+  console.log('$page.data: ', $page.data)
+
+  const { clickDetails } = $page.data;
   const { key, long_url, created_at, total_clicks, url_shortener_clicks } =
   clickDetails;
-  
-  // $user = data.user?.user;
-  // console.log(`user | dashboard/${$page.params.id}: `, data.user?.user)
 
   let mapElement;
   let map;

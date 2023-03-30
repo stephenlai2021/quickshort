@@ -20,11 +20,15 @@
   import { browser } from "$app/environment";
   import { fade } from "svelte/transition";
   import { SvelteToast } from "@zerodevx/svelte-toast";
+  import { page } from "$app/stores"
+  import { goto } from "$app/navigation"
   import IconChatbot from "$lib/components/icon/IconChatbot.svelte";
   import MenuBar from "$lib/components/AppBar/MenuBar.svelte";
-  // import Icon from "$lib/assets/images/favicon.ico";
   import Icon from "$lib/assets/images/favicon.ico";
   import ChatWindow from "$lib/components/chatbot/ChatWindow.svelte";
+
+  // console.log('user | layout', $page.data.user?.user)
+  let localUser = {}
 
   const handleRWD = () => {
     if (window.innerWidth <= 680) $widthLessthan680 = true;
@@ -47,12 +51,6 @@
     if (window.innerWidth > 360) $widthLessthan360 = false;
   };
 
-  $: if (browser) window.addEventListener("resize", () => handleRWD());
-
-  // const handlePrompt = () => {
-  //   $menuOpen = !$menuOpen;
-  // };
-
   onMount(() => {
     handleRWD();
 
@@ -67,7 +65,13 @@
     };
   });
 
-  // $: console.log(`width < 400: ${$widthLessthan400}, menu open: ${$menuOpen}`);
+  $: if ($page.data.user?.user) {
+    localUser = $page.data.user.user     
+  }
+
+  $: console.log('user | layout: ', localUser)
+  
+  $: if (browser) window.addEventListener("resize", () => handleRWD());
 </script>
 
 <svelte:head>
@@ -81,7 +85,9 @@
   style:height={$widthLessthan400 && $menuOpen ? "100vh" : "auto"}
   style:overflow-y={$widthLessthan400 && $menuOpen ? "hidden" : "auto"}
 >
-  <MenuBar />
+  {#if localUser}
+    <MenuBar {localUser} />
+  {/if}
   <slot />
 
   {#if $btnChat}

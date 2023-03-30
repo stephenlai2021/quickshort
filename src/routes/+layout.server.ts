@@ -6,6 +6,7 @@ export const load: LayoutServerLoad = async (event) => {
   console.log("Root layout server load");
 
   return {
+    user: event.locals.session,
     session: await getServerSession(event),
   };
 };

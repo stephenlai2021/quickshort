@@ -5,21 +5,19 @@
   import { user, auth, linksArray } from "$lib/stores";
   import { onMount } from "svelte";
   import { supabaseClient } from "$lib/supabase";
+  import { page } from "$app/stores"
   import type { PageData } from "./$types";
+  import { goto } from "$app/navigation"
 
-  export let data: PageData;
-  const { links } = data;
-  $linksArray = links;
-  $user = data.user.user;
-
-  // console.log('data | dashboard client: ', data)
+  $: console.log('user | dashboard: ', $page.data.user.user)
 </script>
 
 <section class="pt-28 mx- mx-auto bg-base-100">
   <h1 class="text-[22px] font-bold max-[410px]:px-[10px]">{$t("common.dashboard")}</h1>
   <LinkForm />
   <div class="links-wrapper my-10">
-    {#each $linksArray as item}
+    <!-- {#each $linksArray as item} -->
+    {#each $page.data.links as item}
       <LinkCard link={item} />
     {/each}
   </div>

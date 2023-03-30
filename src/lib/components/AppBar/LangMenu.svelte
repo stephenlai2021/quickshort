@@ -1,8 +1,7 @@
 <script>
   import { locale } from "$lib/i18n/translations";
-  import IconLang from "$lib/components/icon/IconLang.svelte";
-
-  // const langs = ["English", "日本語", "繁體中文", "簡體中文"];
+  import imageI18n from "$lib/assets/images/icons/lang.png"
+  
   let currentMenu = "繁體中文";
   const langs = ["English", "日本語", "繁體中文"];
 
@@ -24,7 +23,7 @@
 
 <li class="relative cursor-pointer">
     <span class="pl-0 hover:bg-base-100">
-      <IconLang />
+      <img src={imageI18n} width="24" alt="">
     </span>
   <ul class="dropdown-menu">
     {#each langs as lang}

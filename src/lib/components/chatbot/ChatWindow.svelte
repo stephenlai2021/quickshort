@@ -101,8 +101,8 @@
     >
       <IconSister width="46" />
       <div class="description ml-[10px] flex flex-col">
-        <span>{$t('common.logo_long')}</span>
-        <span class="text-[12px]">{$t('common.chatbot_description')}</span>
+        <span class="text-[18px]">{$t('common.logo_long')}</span>
+        <span class="text-[14px]">{$t('common.chatbot_description')}</span>
       </div>
       <div
         class="icon-close-wrapper ml-auto cursor-pointer"
@@ -130,7 +130,7 @@
     <div class="" bind:this={scrollToDiv} />
   </div>
   <form
-    class="relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
+    class="max-[400px]:h-[50px] relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
     on:submit|preventDefault={handleSubmit}
   >
     <input type="text" class="w-[70%] border-none rounded-none outline-none" bind:value={query} />
@@ -151,7 +151,7 @@
 
   @media (max-width: 400px) {
     .inner-wrapper {
-      height: calc(100vh - 40px);
+      height: calc(100vh - 50px);
     }
 
     input[type="text"] {

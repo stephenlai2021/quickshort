@@ -8,13 +8,11 @@ export const load: PageServerLoad = async ({ params, locals }) => {
     .select("*, url_shortener_clicks(*)")
     .eq("key", params.id)
     .single();
-  // console.log("click details: ", clickDetails);
 
   if (err) {
     console.log("error message: ", err.message);
     throw redirect(303, "/dashboard");
   }
 
-  // return { clickDetails, user: locals.session };
-  return { clickDetails };
+  return { clickDetails, user: locals.session };
 };

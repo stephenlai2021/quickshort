@@ -8,7 +8,6 @@ export const POST: RequestHandler = async ({ locals }) => {
     throw error(500, "Something went wrong logging you out.");
   }
 
-  // locals.session = null
-  // return new Response(JSON.stringify({ user: null }))
+  locals.session = null
   throw redirect(303, "/");
 };

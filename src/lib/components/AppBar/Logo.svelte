@@ -7,7 +7,6 @@
     widthLessthan400,
     widthLessthan382,
   } from "$lib/stores";
-  // import logo from "$lib/assets/images/logo-128x128.png";
   import logo from "$lib/assets/images/shormaster_logo-removebg.png";
 </script>
 
@@ -22,7 +21,6 @@
       alt=""
       width="50" 
       />
-      <!-- style:width={$widthLessthan382 && ($locale === 'ja' || $locale === 'zh-TW') ? "22px" : "18px"} -->
   </div>
   <span class="text-[18px]" style:display={$widthLessthan425 && $locale === 'en' ? "none" : $widthLessthan382 && ($locale === 'ja' || $locale === 'zh-TW') ? "none" : "block"}>
     {$t("common.logo")}
