@@ -28,7 +28,6 @@
   import Icon from "$lib/assets/images/favicon.ico";
   import ChatWindow from "$lib/components/chatbot/ChatWindow.svelte";
 
-  // console.log('user | layout', $page.data.user?.user)
   let localUser = {}
 
   const handleRWD = () => {

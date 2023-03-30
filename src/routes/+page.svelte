@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { page } from "$app / stores"
   import Section1 from "$lib/components/page-home/Section1.svelte"
   import Section2 from "$lib/components/page-home/Section2.svelte"
   import Section3 from "$lib/components/page-home/Section3.svelte"

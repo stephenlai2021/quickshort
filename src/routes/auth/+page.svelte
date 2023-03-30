@@ -2,7 +2,6 @@
   import { t } from "$lib/i18n/translations";
   import { enhance, type SubmitFunction } from "$app/forms";
   import { supabaseClient } from "$lib/supabase";
-  import { user, widthLessthan360 } from "$lib/stores";
   import type { Provider } from "@supabase/supabase-js";
   import { page } from "$app/stores"
   import { onMount } from "svelte";
