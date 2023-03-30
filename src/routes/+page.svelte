@@ -7,10 +7,10 @@
   import Section5 from "$lib/components/page-home/Section5.svelte"
   import Section6 from "$lib/components/page-home/Section6.svelte"
 
-  import type { PageData } from "./$types";
-  export let data: PageData;
-  $user = data.user;  
-  console.log('user | home client:', $user)
+  // import type { PageData } from "./$types";
+  // export let data: PageData;
+  // $user = data.user;  
+  // console.log('user | home client:', $user)
 </script>
 
 <div class="page-home wrapper mt-[70px] w-full">

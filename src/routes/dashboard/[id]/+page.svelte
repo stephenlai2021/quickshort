@@ -16,7 +16,7 @@
   const { key, long_url, created_at, total_clicks, url_shortener_clicks } =
   clickDetails;
   
-  $user = data.user?.user;
+  // $user = data.user?.user;
   // console.log(`user | dashboard/${$page.params.id}: `, data.user?.user)
 
   let mapElement;

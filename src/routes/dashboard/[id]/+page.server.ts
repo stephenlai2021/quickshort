@@ -15,6 +15,6 @@ export const load: PageServerLoad = async ({ params, locals }) => {
     throw redirect(303, "/dashboard");
   }
 
-  return { clickDetails, user: locals.session };
-  // return { clickDetails };
+  // return { clickDetails, user: locals.session };
+  return { clickDetails };
 };

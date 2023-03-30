@@ -6,8 +6,8 @@ export const load: PageServerLoad = async ({ locals }) => {
     throw redirect(303, "/dashboard");
   }
 
-  // return { user: {} };
-  return { user: locals.session };
+  return { user: {} };
+  // return { user: locals.session };
 };
 
 export const actions: Actions = {
