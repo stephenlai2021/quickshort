@@ -23,7 +23,7 @@
 </script>
 
 <li class="relative cursor-pointer">
-    <span class="pl-0">
+    <span class="pl-0 hover:bg-base-100">
       <IconLang />
     </span>
   <ul class="dropdown-menu">

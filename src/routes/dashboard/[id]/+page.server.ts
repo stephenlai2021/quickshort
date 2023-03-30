@@ -16,4 +16,5 @@ export const load: PageServerLoad = async ({ params, locals }) => {
   }
 
   return { clickDetails, user: locals.session };
+  // return { clickDetails };
 };

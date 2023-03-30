@@ -7,6 +7,8 @@
   import LoginBtn from "./LoginBtn.svelte";
   import LangMenu from "./LangMenu.svelte";
   import UserMenu from "./UserMenu.svelte";
+  import IconPanel from "../icon/IconPanel.svelte"; 
+  import IconLogin from "../icon/IconLogin.svelte"; 
 
   $: console.log("user | home page: ", $user?.user);
 </script>
@@ -33,19 +35,28 @@
 
           <!-- {#if $page.url.pathname === "/" && !$user?.email} -->
           {#if $page.url.pathname === "/" && !$user?.user}
-            <span class="border pl-0">
-              <LoginBtn />
-            </span>
+          <!-- {#if $page.url.pathname === "/"} -->
+            <!-- <span class="pr-2"> -->
+              <!-- <LoginBtn /> -->
+              <a href="/auth" class="pr-2">
+                <IconLogin width="26" height="26" />
+              </a>
+            <!-- </span> -->
           {:else if $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
             <li>
-              <a href="/dashboard" class="max-[530px]:hidden">
-                {$t("common.dashboard")}
+              <a href="/dashboard" class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100">
+                <!-- {$t("common.dashboard")} -->
+                <IconPanel />
               </a>
             </li>
           {/if}
 
           {#if $page.url.pathname.startsWith("/dashboard")}
-            <UserMenu />
+            <!-- <span class="pl-0"> -->
+              <!-- <li> -->
+                <UserMenu />
+              <!-- </li> -->
+            <!-- </span> -->
           {/if}
         </ul>
       </div>

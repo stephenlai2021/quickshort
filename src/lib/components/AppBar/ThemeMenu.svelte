@@ -63,15 +63,16 @@
 </script>
 
 <li class="relative cursor-pointer">
-  <button>
+  <span class="pl-0 hover:bg-base-100">
     <IconColorPalette />
-  </button>
+  </span>
   <ul class="dropdown-menu max-h-96 overflow-y-scroll">
     <form method="POST" use:enhance={submitUpdateTheme}>
       {#each themes as theme}
         <li>
           <button
-            formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}"
+            formaction="/?/setTheme&theme={theme}&redirectTo={$page.url
+              .pathname}"
             on:click={() => handleTheme(theme)}
             style:font-weight={currentTheme === theme ? "bold" : ""}
           >

@@ -27,8 +27,8 @@
 
 {#if $user}
   <li class="">
-    <button>
-      <span>
+    <!-- <button> -->
+      <span class="pl-0 hover:bg-base-100">
         <img
           src={$user.user_metadata?.avatar_url}
           alt=""
@@ -37,7 +37,7 @@
           class="rounded-full"
         />
       </span>
-    </button>
+    <!-- </button> -->
     <ul class="dropdown-menu">
       <li>
         <button style:background="none" class="cursor-default">
