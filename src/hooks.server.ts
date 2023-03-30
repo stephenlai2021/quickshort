@@ -13,11 +13,11 @@ export const handle: Handle = async ({ event, resolve }) => {
   event.locals.sb = supabaseClient;
   event.locals.session = session;
 
-  if (event.url.pathname.startsWith("/dashboard/")) {
-    if (!event.locals.session) {
-      throw redirect(303, "/auth");
-    }
-  }
+  // if (event.url.pathname.startsWith("/dashboard/")) {
+  //   if (!event.locals.session) {
+  //     throw redirect(303, "/auth");
+  //   }
+  // }
 
   /* Theme  */
   let theme: string | null = null;
