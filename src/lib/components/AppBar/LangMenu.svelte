@@ -23,11 +23,9 @@
 </script>
 
 <li class="relative cursor-pointer">
-  <button class="">
-    <span class="">
+    <span class="pl-0">
       <IconLang />
     </span>
-  </button>
   <ul class="dropdown-menu">
     {#each langs as lang}
       <li>

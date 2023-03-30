@@ -126,7 +126,7 @@
       placeholder={$t("common.short_key_placeholder")}
       min="6"
     />
-    <div on:keydown on:click={() => goto('/help')} class="icon-questionmark-wrapper absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer">
+    <div on:keydown on:click={() => goto('/help')} class="tooltip tooltip-bottom tooltip-neutral absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer" data-tip="You can create a meaningful name for the short url if you don't like system generated key 😉">
       <IconQuestionMark />
     </div>
   </div>

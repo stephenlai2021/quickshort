@@ -92,11 +92,10 @@
       <CopyBtn key={link.key} />
     </div>
 
-    <!-- <div class="absolute bottom-[-18px] right-[-13px]"> -->
-    <div class="border flex items-center">
+    <!-- <div class="border flex items-center">
       <button on:click={() => handleDelete(link.key)}>
         <IconTrashcan width="18" />
       </button>
-    </div>
+    </div> -->
   </div>
 </div>

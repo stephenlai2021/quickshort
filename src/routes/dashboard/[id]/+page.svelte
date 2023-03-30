@@ -1,17 +1,23 @@
 <script lang="ts">
-  import type { PageData } from "./$types";
   import { t } from "$lib/i18n/translations";
+  import { page } from "$app/stores"
+  import type { PageData } from "./$types";
   import { onMount, onDestroy } from "svelte";
+  import { user } from "$lib/stores"
   import dateFormat from "dateformat";
   import CopyBtn from "$lib/components/utils/CopyBtn.svelte";
-  import IconAvatar from "$lib/assets/images/avatar.png"
+  // import IconAvatar from "$lib/assets/images/icons/user-map-avatar.png"
+  import IconAvatar from "$lib/assets/images/icons/user-avatar-v3.png"
   import IconCenter from "$lib/assets/images/shormaster_logo-removebg.png";
 
   export let data: PageData;
-
+  
   const { clickDetails } = data;
   const { key, long_url, created_at, total_clicks, url_shortener_clicks } =
-    clickDetails;
+  clickDetails;
+  
+  $user = data.user?.user;
+  // console.log(`user | dashboard/${$page.params.id}: `, data.user?.user)
 
   let mapElement;
   let map;
@@ -32,7 +38,7 @@
 
     const centerIcon = leaflet.icon({
       iconUrl: IconCenter,
-      iconSize: [50, 50]
+      iconSize: [56, 56]
     });
 
     const avatarIcon = leaflet.icon({
@@ -44,7 +50,7 @@
       .marker([51.505, -0.09], { icon: centerIcon })
       .addTo(map)
       .bindPopup(
-        "<h1>Center:</h1><span>latitude: 51.505</span><br/><span>longitude: -0.09</span>"
+        "<h1>ShortMaster</h1><span>latitude: 51.505</span><br/><span>longitude: -0.09</span>"
       )
       .openPopup();
 
@@ -99,14 +105,14 @@
   <div class="mt-10">
     {#each url_shortener_clicks as click}
       <div class="max-[410px]:rounded-none rounded-[0.75rem] p-[20px] max-[410px]:w-full border-none w-full mb-5 bg-neutral/20">
-        <div class="flex justify-between max-[510px]:flex-col">
+        <div class="flex justify-between max-[540px]:flex-col">
           <div class="div">
-            <div class="text-">{click.ip}</div>
+            <div class="text-">IP: {click.ip}</div>
             <div class="">
               {dateFormat(click.created_at, "dddd, mmmm dS, yyyy, h:MM:ss TT")}
             </div>
           </div>
-          <div class="">
+          <div class="min-w-[140px]">
             {#if click.country}
               <div>{$t("common.country")}: {click.country}</div>
             {/if}

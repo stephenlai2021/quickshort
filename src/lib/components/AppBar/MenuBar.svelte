@@ -33,7 +33,9 @@
 
           <!-- {#if $page.url.pathname === "/" && !$user?.email} -->
           {#if $page.url.pathname === "/" && !$user?.user}
-            <LoginBtn />
+            <span class="border pl-0">
+              <LoginBtn />
+            </span>
           {:else if $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
             <li>
               <a href="/dashboard" class="max-[530px]:hidden">

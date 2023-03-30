@@ -20,7 +20,7 @@
     <img  
       src={logo} 
       alt=""
-      width="40" 
+      width="50" 
       />
       <!-- style:width={$widthLessthan382 && ($locale === 'ja' || $locale === 'zh-TW') ? "22px" : "18px"} -->
   </div>
