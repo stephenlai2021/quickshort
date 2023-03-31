@@ -7,7 +7,7 @@
   import Section5 from "$lib/components/page-home/Section5.svelte"
   import Section6 from "$lib/components/page-home/Section6.svelte"
 
-  // console.log('page data: ', $page.data.user)
+  console.log('page data: ', $page.data.user)
 </script>
 
 <div class="page-home wrapper mt-[70px] w-full">
