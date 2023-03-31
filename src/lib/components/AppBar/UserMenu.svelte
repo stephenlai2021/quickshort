@@ -30,7 +30,7 @@
   <span class="pl-0 hover:bg-base-100">
     <!-- src={localUser.user_metadata?.avatar_url} -->
     <img
-      src={$page.data.user?.user.user_metadata.avatar_url}
+      src={$page.data.user?.user.user_metadata.avatar_url ? $page.data.user.user.user_metadata.avatar_url : ""}
       alt=""
       width="30"
       height="30"
