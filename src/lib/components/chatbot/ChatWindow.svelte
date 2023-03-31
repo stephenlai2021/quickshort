@@ -130,13 +130,13 @@
     <div class="" bind:this={scrollToDiv} />
   </div>
   <form
-    class="max-[400px]:h-[50px] relative flex w-full rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
+    class="max-[400px]:h-[50px] relative flex w-full max-[400px]:rounded-none rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
     on:submit|preventDefault={handleSubmit}
   >
     <input type="text" class="w-[70%] border-none rounded-none outline-none" bind:value={query} />
     <button
       type="submit"
-      class="text-[14px] rounded-[4px] px-[10px] w-[30%]"
+      class="text-[14px] rounded-[04px] px-[10px] w-[30%]"
     >
       <span>{$t("common.send")}</span>
     </button>

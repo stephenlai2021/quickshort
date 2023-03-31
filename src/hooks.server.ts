@@ -26,6 +26,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   const newTheme = event.url.searchParams.get("theme");
   const cookieTheme = event.cookies.get("colortheme");
+  event.locals.currentTheme = cookieTheme
 
   if (newTheme) {
     theme = newTheme;

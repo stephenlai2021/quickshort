@@ -8,6 +8,7 @@ declare global {
       sb: TypedSupabaseClient;
       session: Session | null;
       details: ShortKey;
+      currentTheme: Theme;
       // theme: null
     }
     interface PageData {

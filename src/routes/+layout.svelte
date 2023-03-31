@@ -22,13 +22,17 @@
   import { fade } from "svelte/transition";
   import { SvelteToast } from "@zerodevx/svelte-toast";
   import { page } from "$app/stores"
-  import { goto } from "$app/navigation"
+  import Cookies from 'js-cookie'
   import IconChatbot from "$lib/components/icon/IconChatbot.svelte";
   import MenuBar from "$lib/components/AppBar/MenuBar.svelte";
   import Icon from "$lib/assets/images/favicon.ico";
   import ChatWindow from "$lib/components/chatbot/ChatWindow.svelte";
 
   let localUser = {}
+  // let currentTheme = Cookies.get('colortheme')
+  // let cookie = Cookies.get()
+  let theme = $page.data.theme
+  console.log('theme | layout: ', $page.data)
 
   const handleRWD = () => {
     if (window.innerWidth <= 680) $widthLessthan680 = true;
