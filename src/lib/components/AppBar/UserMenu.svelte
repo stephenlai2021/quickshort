@@ -7,8 +7,10 @@
   import { page } from "$app/stores";
   import imageAvatar from "$lib/assets/images/avatar.png"
 
-  export let localUser;
-  console.log("user | user menu: ", localUser);
+  // export let localUser;
+  // console.log("user | user menu: ", localUser);
+
+  console.log("user | user menu: ", $page.data.user.user);
 
   const submitLogout: SubmitFunction = async ({ cancel }) => {
     const { error } = await supabaseClient.auth.signOut();
@@ -26,26 +28,29 @@
 
 <li class="">
   <span class="pl-0 hover:bg-base-100">
+    <!-- src={localUser.user_metadata?.avatar_url} -->
     <img
-      src={localUser.user_metadata?.avatar_url}
+      src={$page.data.user.user?.user_metadata?.avatar_url}
       alt=""
       width="30"
       height="30"
       class="rounded-full bg-cover bg-[url('/avatar.png')]"
-      />
-      <!-- class="image-avatar rounded-full bg-cover" -->
+    />
   </span>
   <ul class="dropdown-menu">
-    {#if localUser.email}
+    <!-- {#if localUser.email} -->
+    {#if $page.data.user.user?.email}
       <li>
         <button style:background="none" class="cursor-default">
-          {localUser.email.substring(0, localUser.email.indexOf("@"))}
+          <!-- {localUser.email.substring(0, localUser.email.indexOf("@"))} -->
+          {$page.data.user.user?.email.substring(0, $page.data.user.user?.email.indexOf("@"))}
         </button>
       </li>
     {/if}
 
     {#if $widthLessthan530}
-      {#if localUser.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
+      <!-- {#if localUser.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"} -->
+      {#if $page.data.user.user?.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
         <li>
           <button on:click={() => goto("/dashboard")}>
             {$t("common.dashboard")}
@@ -53,7 +58,8 @@
         </li>
       {/if}
 
-      {#if !localUser.email && $page.url.pathname !== "/auth"}
+      <!-- {#if !localUser.email && $page.url.pathname !== "/auth"} -->
+      {#if !$page.data.user.user?.email && $page.url.pathname !== "/auth"}
         <li>
           <button on:click={() => goto("/dashboard")}>
             {$t("common.login")}
@@ -71,7 +77,8 @@
       </button>
     </li>
 
-    {#if localUser.email}
+    <!-- {#if localUser.email} -->
+    {#if $page.data.user.user?.email}
       <li>
         <form action="/logout" method="POST" use:enhance={submitLogout}>
           <button type="submit" class="">{$t("common.logout")}</button>
@@ -80,9 +87,3 @@
     {/if}
   </ul>
 </li>
-
-<style>
-  .image-avatar {
-    background-image: url();
-  }
-</style>

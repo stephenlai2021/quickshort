@@ -12,19 +12,6 @@
   import IconFacebook from "$lib/assets/images/icons/icon-facebook.png";
   import IconDiscord from "$lib/assets/images/icons/icon-discord.png";
 
-  // let userLogout = false
-
-  // console.log('user | auth: ', $page.data.user)
-  
-  // $: if (!$page.data.user) {    
-  //   userLogout = true
-  // }
-
-  // $: if (userLogout) {
-  //   location.reload() 
-  //   userLogout = false
-  // }
-
   const signInWithProvider = async (provider: Provider) => {
     const { data, error } = await supabaseClient.auth.signInWithOAuth({
       provider,
