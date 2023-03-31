@@ -5,7 +5,8 @@
   import IconColorPalette from "../icon/IconColorPalette.svelte";
   import imagePalette from "$lib/assets/images/icons/palette.png"
 
-  let currentTheme = "cupcake";
+  // let currentTheme = "cupcake";
+  let currentTheme = "";
 
   const themes = [
     "dark",
