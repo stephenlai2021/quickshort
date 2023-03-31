@@ -30,12 +30,13 @@
   <span class="pl-0 hover:bg-base-100">
     <!-- src={localUser.user_metadata?.avatar_url} -->
     <img
-      src={$page.data.user?.user.user_metadata.avatar_url ? $page.data.user.user.user_metadata.avatar_url : ""}
+      src={$page.data.user?.user.user_metadata.avatar_url ? $page.data.user.user.user_metadata.avatar_url : imageAvatar}
       alt=""
       width="30"
       height="30"
-      class="rounded-full bg-cover bg-[url('/avatar.png')]"
-    />
+      class="rounded-full"
+      />
+      <!-- class="rounded-full bg-cover bg-[url('/avatar.png')]" -->
   </span>
   <ul class="dropdown-menu">
     <!-- {#if localUser.email} -->
