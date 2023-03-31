@@ -71,7 +71,8 @@
     localUser = $page.data.user.user     
   }
 
-  $: console.log('user | layout: ', localUser)
+  // $: console.log('user | layout: ', localUser)
+  // $: console.log('user | layout: ', $page.data.user?.user)
   
   $: if (browser) window.addEventListener("resize", () => handleRWD());
 </script>
