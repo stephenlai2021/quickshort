@@ -5,9 +5,9 @@ import { fail, redirect } from "@sveltejs/kit";
 const OAUTH_PROVIDERS = ["google", "discord", "github"];
 
 export const load: PageServerLoad = ({ locals }) => {
-  if (locals.session) {
-    throw redirect(303, "/dashboard");
-  }
+  // if (locals.session) {
+  //   throw redirect(303, "/dashboard");
+  // }
 
   return {
     user: locals.session
