@@ -14,6 +14,7 @@
   const { clickDetails } = $page.data;
   const { key, long_url, created_at, total_clicks, url_shortener_clicks } =
   clickDetails;
+  // const {}
 
   let mapElement;
   let map;
@@ -23,7 +24,7 @@
     const leaflet = await import("leaflet");
 
     // 設置中心點
-    map = leaflet.map(mapElement).setView([51.505, -0.09], 2);
+    map = leaflet.map(mapElement).setView([25.619, 121.35], 2);
 
     leaflet
       .tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -55,7 +56,7 @@
         .marker([loc.latitude, loc.longitude], { icon: avatarIcon })
         .addTo(map)
         .bindPopup(
-          `<span>latitude: ${loc.latitude}</span><br/><span>longitude: ${loc.longitude}</span>`
+          `<span>IP: ${loc.ip}</span><br/><span>latitude: ${loc.latitude}</span><br/><span>longitude: ${loc.longitude}</span>`
         )
         .openPopup();
     });
