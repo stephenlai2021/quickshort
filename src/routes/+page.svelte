@@ -6,6 +6,7 @@
   import Section4 from "$lib/components/page-home/Section4.svelte"
   import Section5 from "$lib/components/page-home/Section5.svelte"
   import Section6 from "$lib/components/page-home/Section6.svelte"
+  import Section7 from "$lib/components/page-home/Section7.svelte"
 
   console.log('page data: ', $page.data.user)
 </script>
@@ -17,6 +18,7 @@
   <Section4 />
   <Section5 />
   <Section6 />
+  <Section7 />
 </div>
 
  
