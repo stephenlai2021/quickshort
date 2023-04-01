@@ -9,7 +9,7 @@
   import GoogleIcon from "$lib/assets/images/google-icon.png";
   import IconGithub from "$lib/assets/images/icons/icon-github.png";
   import IconGoogle from "$lib/assets/images/icons/icon-google.png";
-  import IconFacebook from "$lib/assets/images/icons/icon-facebook.png";
+  import IconNotion from "$lib/assets/images/icons/icon-notion.png";
   import IconDiscord from "$lib/assets/images/icons/icon-discord.png";
 
   const signInWithProvider = async (provider: Provider) => {
@@ -34,7 +34,7 @@
         await signInWithProvider("github");
         break;
       case "facebook":
-        await signInWithProvider("facebook");
+        await signInWithProvider("notion");
         break;
       default:
         break;
@@ -68,7 +68,7 @@
       <form method="POST" use:enhance={submitSocialLogin} class="pb-2">
         <div class="flex justify-center">
           <button
-            class="py-4 flex justify-center items-center rounded-[8px] w-full max-[360px]:w-[90vw] mt-5 bg-black text-white"
+            class="shadow shadow-sm py-4 flex justify-center items-center rounded-[8px] w-full max-[360px]:w-[90vw] mt-5 bg-white text-black"
             formaction="?/login&provider=github"
           >
             <img
@@ -83,7 +83,7 @@
 
         <div class="flex justify-center">
           <button
-            class="py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white text-black font-weight-bold"
+            class="shadow shadow-sm py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white text-black font-weight-bold"
             formaction="?/login&provider=google"
           >
             <img
@@ -98,22 +98,22 @@
 
         <div class="flex justify-center">
           <button
-            class="py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-[#1877F2] text-white font-weight-bold"
-            formaction="?/login&provider=facebook"
+            class="shadow shadow-sm py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white text-black font-weight-bold"
+            formaction="?/login&provider=notion"
           >
             <img
               class="mr-[10px]"
-              src={IconFacebook}
+              src={IconNotion}
               alt=""
               width="25"
             />
-            {$t("common.btn-facebook")}
+            {$t("common.btn-notion")}
           </button>
         </div>
 
         <div class="flex justify-center">
           <button
-            class="py-4 pl- flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white  [#8C9EFF] text-black font-weight-bold"
+            class="shadow shadow-sm py-4 pl- flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white  [#8C9EFF] text-black font-weight-bold"
             formaction="?/login&provider=discord"
           >
             <img
