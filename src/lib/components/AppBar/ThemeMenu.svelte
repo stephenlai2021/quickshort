@@ -64,7 +64,7 @@
 
 <li class="relative cursor-pointer">
   <span class="pl-0 hover:bg-base-100">
-    <img src={imagePalette} width="24" alt="">
+    <img src={imagePalette} width="22" alt="">
   </span>
   <ul class="dropdown-menu max-h-96 overflow-y-scroll">
     <form method="POST" use:enhance={submitUpdateTheme}>
