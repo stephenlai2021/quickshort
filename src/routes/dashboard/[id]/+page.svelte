@@ -24,7 +24,7 @@
     const leaflet = await import("leaflet");
 
     // 設置中心點
-    map = leaflet.map(mapElement).setView([25.619, 121.35], 2);
+    map = leaflet.map(mapElement).setView([51.505, -0.09], 2);
 
     leaflet
       .tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
