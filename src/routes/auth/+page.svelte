@@ -33,7 +33,7 @@
       case "github":
         await signInWithProvider("github");
         break;
-      case "facebook":
+      case "notion":
         await signInWithProvider("notion");
         break;
       default:
