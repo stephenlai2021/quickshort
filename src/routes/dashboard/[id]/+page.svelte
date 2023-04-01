@@ -42,13 +42,13 @@
       iconSize: [40, 40]
     });
 
-    marker = leaflet
-      .marker([51.505, -0.09], { icon: centerIcon })
-      .addTo(map)
-      .bindPopup(
-        "<h1>ShortMaster</h1><span>latitude: 51.505</span><br/><span>longitude: -0.09</span>"
-      )
-      .openPopup();
+    // marker = leaflet
+    //   .marker([51.505, -0.09], { icon: centerIcon })
+    //   .addTo(map)
+    //   .bindPopup(
+    //     "<h1>ShortMaster</h1><span>latitude: 51.505</span><br/><span>longitude: -0.09</span>"
+    //   )
+    //   .openPopup();
 
     url_shortener_clicks.forEach((loc) => {
       leaflet
