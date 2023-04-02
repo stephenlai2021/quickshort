@@ -14,6 +14,9 @@
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
 
+  let openaiErr = false
+  let errMsg = ''
+
   function scrollToBottom() {
     setTimeout(function () {
       scrollToDiv.scrollIntoView({
@@ -69,7 +72,9 @@
     loading = false;
     query = "";
     answer = ""; 
-    console.error(err)
+    openaiErr = true
+    errMsg = err.data.error
+    console.error('error message | chat window: ', errMsg)
   }
 
   function slidefade(node, params) {
@@ -125,6 +130,9 @@
       {/if}
       {#if loading}
         <ChatMessage type="assistant" message="Loading.." />
+        {/if}
+        {#if openaiErr}
+        <ChatMessage type="assistant" message={errMsg} />
       {/if}
     </div>
     <div class="" bind:this={scrollToDiv} />
