@@ -45,7 +45,7 @@
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
 ## Routes
----
+
 There client route, server routes, api route. Client routes are User interface that displayed text, images, animations, transition, and executes javascript to interact with visitors. Server routes handle tasks on servers side and return the data to pages for rendering. Each page has its own server route, Sveltekit is well known a powerful `SSR` framework, it does all sorts of rendering, and server side render it most used render stategy because with SSR users see the fully rendered page, there will be no loaind indicators shown, it provides the best user experiences
 
 Each client side page has its own server, all the data are fetched on server side and then injected to be rendered on fontend pages.
@@ -57,6 +57,7 @@ Each client side page has its own server, all the data are fetched on server sid
 - it is expressed in the form of `/` in codes, it is the root directory of the entire application. The home page is composed of six sections, each section is two column row contains text descriptions and illustration. There is a fixed menu bar at the top, user can login through login menu.
 
 **Auth Page** 
+
 - `/auth` route as it self-explanins is a page where shows login options that allow users to gain authentication / authorization to access functionality. _**SmartShort**_ provides social accounts login such as `Github`, `Google`, `Facebook` and `Discord` for users to easily complete authentication process with a click of a button.
 
 **Dashboard Page** 
