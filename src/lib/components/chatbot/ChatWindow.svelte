@@ -11,11 +11,12 @@
   let query: string = "";
   let answer: string = "";
   let loading: boolean = false;
+  let errMsg: string = "";
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
 
   let openaiErr = false
-  let errMsg = ''
+  // let errMsg = ''
 
   function scrollToBottom() {
     setTimeout(function () {
@@ -72,9 +73,10 @@
     loading = false;
     query = "";
     answer = ""; 
-    openaiErr = true
-    errMsg = err.data.error
-    console.error('error message | chat window: ', errMsg)
+    // openaiErr = true
+    // errMsg = err.error.data
+    // console.error('error message | chat window: ', err)
+    console.error('error | chat window: ', err)
   }
 
   function slidefade(node, params) {
@@ -130,10 +132,10 @@
       {/if}
       {#if loading}
         <ChatMessage type="assistant" message="Loading.." />
-        {/if}
-        {#if openaiErr}
-        <ChatMessage type="assistant" message={errMsg} />
       {/if}
+      <!-- {#if err}
+        <ChatMessage type="assistant" message={err} />
+      {/if} -->
     </div>
     <div class="" bind:this={scrollToDiv} />
   </div>
