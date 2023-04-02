@@ -11,15 +11,11 @@
 
 ## Table of Contents
 
-[Features](#Features)
-
-[Routes](#Routes)
-
-[Tech Stack](#Tech_Stack)
-
-[Third Party APIs](#Third_Party_APIs)
-
-[Environment Variables](#Environment_Variables)
+- [Features](#Features)
+- [Routes](#Routes)
+- [Tech Stack](#Tech_Stack)
+- [Third Party APIs](#Third_Party_APIs)
+- [Environment Variables](#Environment_Variables)
   
 
 ## Features
@@ -125,7 +121,7 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 - `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
 
 
-## Third_Party _APIs
+## Third_Party_APIs
 
 **Supabase** 
 
