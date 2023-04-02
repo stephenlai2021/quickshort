@@ -74,7 +74,8 @@
     query = "";
     answer = ""; 
     // openaiErr = true
-    errMsg = JSON.stringify(err.data.error)
+    // errMsg = JSON.stringify(err.data.error)
+    errMsg = err.data
     // console.error('error message | chat window: ', err)
     console.error('error | chat window: ', errMsg)
   }
