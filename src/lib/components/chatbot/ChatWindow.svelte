@@ -76,7 +76,7 @@
     // openaiErr = true
     // errMsg = err.error.data
     // console.error('error message | chat window: ', err)
-    console.error('error | chat window: ', err)
+    console.error('error | chat window: ', err?.data)
   }
 
   function slidefade(node, params) {
