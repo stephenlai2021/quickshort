@@ -72,7 +72,7 @@
             formaction="?/login&provider=github"
           >
             <img
-              class="mr-[10px]"
+              class="mr-[10px] border rounded-full"
               src={IconGithub}
               alt=""
               width="26"
@@ -105,7 +105,7 @@
               class="mr-[10px]"
               src={IconNotion}
               alt=""
-              width="26"
+              width="24"
             />
             {$t("common.btn-notion")}
           </button>

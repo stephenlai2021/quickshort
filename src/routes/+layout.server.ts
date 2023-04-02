@@ -7,7 +7,7 @@ export const load: LayoutServerLoad = async (event) => {
 
   return {
     user: event.locals.session,
-    theme: event.locals.currentTheme,
+    // theme: event.locals.currentTheme,
     session: await getServerSession(event),
   };
 };
