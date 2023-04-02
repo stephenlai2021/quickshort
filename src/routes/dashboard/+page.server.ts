@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({ locals }) => {
   const { data, error } = await supabaseClient
     .from("url_shortener_links")
     .select("*")
-    .order('created_at', { ascending: true })
+    .order('created_at', { ascending: false })
     .eq("user_id", locals.session?.user.email)
   
   if (error) console.log('error loading links | dashboard server: ', error)

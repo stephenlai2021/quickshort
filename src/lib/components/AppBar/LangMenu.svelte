@@ -2,7 +2,7 @@
   import { locale } from "$lib/i18n/translations";
   import imageI18n from "$lib/assets/images/icons/lang.png"
   
-  let currentMenu = "繁體中文";
+  let currentMenu = "English";
   const langs = ["English", "日本語", "繁體中文"];
 
   const handleLocale = (lang) => {

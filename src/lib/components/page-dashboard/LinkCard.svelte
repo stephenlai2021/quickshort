@@ -30,18 +30,18 @@
     });
   };
 
-  const handleDelete = async (key) => {
-    alert(`Are you sure to delete key "${key}" ?`);
+  // const handleDelete = async (key) => {
+  //   alert(`Are you sure to delete key "${key}" ?`);
 
-    const { data, error } = await supabaseClient
-      .from("url_shortener_links")
-      .delete()
-      .eq("key", key);
+  //   const { data, error } = await supabaseClient
+  //     .from("url_shortener_links")
+  //     .delete()
+  //     .eq("key", key);
     
-    if (error) console.log('error message: ', error.message)
+  //   if (error) console.log('error message: ', error.message)
 
-    $linksArray = $linksArray.filter(link => link.key !== key)    
-  };
+  //   $linksArray = $linksArray.filter(link => link.key !== key)    
+  // };
 </script>
 
 <div

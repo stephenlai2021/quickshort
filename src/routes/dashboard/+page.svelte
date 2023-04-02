@@ -9,15 +9,16 @@
   import type { PageData } from "./$types";
   import { goto } from "$app/navigation"
 
-  // $: console.log('user | dashboard: ', $page.data.user?.user)
+  $: console.log('user | dashboard: ', $page.data.user?.user)
+  $: $linksArray = $page.data.links
 </script>
 
 <section class="pt-28 mx- mx-auto bg-base-100">
   <h1 class="text-[22px] font-bold max-[410px]:px-[10px]">{$t("common.dashboard")}</h1>
   <LinkForm />
   <div class="links-wrapper my-10">
-    <!-- {#each $linksArray as item} -->
-    {#each $page.data.links as item}
+    {#each $linksArray as item}
+    <!-- {#each $page.data.links as item} -->
       <LinkCard link={item} />
     {/each}
   </div>

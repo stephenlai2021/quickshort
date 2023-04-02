@@ -20,9 +20,10 @@
         "--toastBtnWidth": "0",
         "--toastBtnHeight": "0",
         "--toastBtnContent" : " ",
-        "--toastMsgPadding": "0.5rem 1rem",
+        "--toastMsgPadding": "0.35rem 1rem",
         "--toastMinHeight": "3.0rem",
-        "--toastWidth": "174px"
+        "--toastWidth": "174px",
+        "--toastBtnFont": "14px"
       }
     });
   };

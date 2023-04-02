@@ -5,8 +5,11 @@
   import { nanoid } from "nanoid";
   import { supabaseClient } from "$lib/supabase";
   import { toast } from "@zerodevx/svelte-toast";
-  import IconQuestionMark from "$lib/components/icon/IconQuestionMark.svelte";
   import { goto } from "$app/navigation";
+  import { page } from "$app/stores"
+  import IconQuestionMark from "$lib/components/icon/IconQuestionMark.svelte";
+
+  // console.log('user email | link form: ', $page.data.user?.user.email)
 
   let isLoading = false;
   let link = {};
@@ -54,18 +57,20 @@
       link = {
         long_url: form.long_url,
         key: form.key === "" ? createShortKey() : form.key,
-        user_id: $user?.email,
+        // user_id: $user?.email,
+        user_id: $page.data.user?.user.email,
       };
 
       try {
-        const { data, error } = await supabaseClient
+        const { data, error: err } = await supabaseClient
           .from("url_shortener_links")
           .insert(link);
 
-        console.log({ data, error });
-
-        if (error) {
-          alert(error.message);
+        console.log('inserted link row: ', data);
+        
+        if (err) {
+          // alert(err.message);
+          console.log('error message: ', err.message);
           return;
         }
 
@@ -81,7 +86,7 @@
           ...$linksArray,
         ];
       } catch (error) {
-        console.log(error);
+        console.log('error message: ', error);
       }
     }
   };
@@ -126,7 +131,8 @@
       placeholder={$t("common.short_key_placeholder")}
       min="6"
     />
-    <div on:keydown on:click={() => goto('/help')} class="tooltip tooltip-bottom tooltip-neutral absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer" data-tip="You can create a meaningful name for the short url if you don't like system generated key 😉">
+    <!-- <div on:keydown on:click={() => goto('/help')} class="tooltip tooltip-bottom tooltip-neutral absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer" data-tip="You can create a meaningful name for the short url if you don't like system generated key 😉"> -->
+    <div class="tooltip tooltip-bottom tooltip-neutral absolute top-[35%] translate-y-[28%] right-[4px] cursor-pointer" data-tip="You can create a meaningful name for the short url if you don't like system generated key 😉">
       <IconQuestionMark />
     </div>
   </div>
