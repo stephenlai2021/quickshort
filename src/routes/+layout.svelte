@@ -82,7 +82,7 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" type="image/x-icon" href={Icon} />
+  <!-- <link rel="icon" type="image/x-icon" href={Icon} /> -->
   <title>ShortMaster</title>
 </svelte:head>
 
