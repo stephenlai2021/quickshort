@@ -74,9 +74,9 @@
     query = "";
     answer = ""; 
     // openaiErr = true
-    errMsg = err.data.error
+    errMsg = err?.data.error
     // console.error('error message | chat window: ', err)
-    console.error('error | chat window: ', err.data.error)
+    console.error('error | chat window: ', err?.data.error)
   }
 
   function slidefade(node, params) {
