@@ -10,12 +10,16 @@
   
 
 ## Table of Contents
----
+
 [Features](#Features)
+
 [Routes](#Routes)
-[Tech_Stack](#Tech Stack)
-[Third Party APIs](#Third Party APIs)
-[Environment Variables](#Environment Variables)
+
+[Tech Stack](#Tech_Stack)
+
+[Third Party APIs](#Third_Party_APIs)
+
+[Environment Variables](#Environment_Variables)
   
 
 ## Features
@@ -51,35 +55,54 @@ There client route, server routes, api route. Client routes are User interface t
 Each client side page has its own server, all the data are fetched on server side and then injected to be rendered on fontend pages.
 
 ### Client Route / Page
----
-**Home Page / Landing Page -** it is expressed in the form of `/` in codes, it is the root directory of the entire application. The home page is composed of six sections, each section is two column row contains text descriptions and illustration. There is a fixed menu bar at the top, user can login through login menu.
 
-**Auth Page -** `/auth` route as it self-explanins is a page where shows login options that allow users to gain authentication / authorization to access functionality. _**SmartShort**_ provides social accounts login such as `Github`, `Google`, `Facebook` and `Discord` for users to easily complete authentication process with a click of a button.
+**Home Page / Landing Page** 
 
-**Dashboard Page -** `/dashboard` route is where authenticated users enter long url and get shortened url or key~`https://domain/3qlms7`, users can get the shortened key by clicking copy button, once the shortend key is pasted into the address bar users will be taken to the original url.
+- it is expressed in the form of `/` in codes, it is the root directory of the entire application. The home page is composed of six sections, each section is two column row contains text descriptions and illustration. There is a fixed menu bar at the top, user can login through login menu.
 
-**Key Page -** `https://domain/3qlms7` route displayed detailed statistics of the click. When the shortened url link you post on social media or in any other pages is clicked, _**ShortMaster**_ collects ip address, country, city, latitude, longitude information and display the location of the person who clicked the link on the map. It helps you visucalize and track who is interested in the content from the link you provide and you can move further to promote your services / products, etc.
+**Auth Page** 
+- `/auth` route as it self-explanins is a page where shows login options that allow users to gain authentication / authorization to access functionality. _**SmartShort**_ provides social accounts login such as `Github`, `Google`, `Facebook` and `Discord` for users to easily complete authentication process with a click of a button.
 
-**+page.svelte -** represents the file is a client side route or page. For instance, a home page dwells in the `src/routes/` directory, any pages other than home page must live within a folder, for example, an About page is defined in `src/routes/about/+page.svelte`.
+**Dashboard Page** 
 
-**+page.svelte.js -** This file handle tasks on server of that particular page, it belongs to the server of that particular page. For example, dashboard route `src/routes/dashboard` has `src/routes/dashboard/+page.svelte` as UI page and `src/routes/dashboard/+page.server.js` as server route that fetching third party API and return the data to be displayed in UI.
+- `/dashboard` route is where authenticated users enter long url and get shortened url or key~`https://domain/3qlms7`, users can get the shortened key by clicking copy button, once the shortend key is pasted into the address bar users will be taken to the original url.
+
+**Key Page** 
+
+- `https://domain/3qlms7` route displayed detailed statistics of the click. When the shortened url link you post on social media or in any other pages is clicked, _**ShortMaster**_ collects ip address, country, city, latitude, longitude information and display the location of the person who clicked the link on the map. It helps you visucalize and track who is interested in the content from the link you provide and you can move further to promote your services / products, etc.
+
+**+page.svelte** 
+
+- represents the file is a client side route or page. For instance, a home page dwells in the `src/routes/` directory, any pages other than home page must live within a folder, for example, an About page is defined in `src/routes/about/+page.svelte`.
+
+**+page.svelte.js** 
+
+- This file handle tasks on server of that particular page, it belongs to the server of that particular page. For example, dashboard route `src/routes/dashboard` has `src/routes/dashboard/+page.svelte` as UI page and `src/routes/dashboard/+page.server.js` as server route that fetching third party API and return the data to be displayed in UI.
 
 **+page.js -** This file works both on client and server side, if we `console.log` the messages will appears on browser and terminal console. it is an optional. 
 
-**+layout.page -** All of the client side pages are confined by the layout and share same components such as menu bar, header, footer, etc. It is optional.
+**+layout.page** 
 
-**+layout.js -**
+- All of the client side pages are confined by the layout and share same components such as menu bar, header, footer, etc. It is optional.
 
-**+layout.server.js -** 
+**+layout.js**
 
-**+server.js -**
+-
+
+**+layout.server.js** 
+
+=
+
+**+server.js**
+
+-
 
 
 ### Server Route
----
+
 
 ### API Route
----
+
 API rounte is a standalone server route
 
 Sveltekit has a very powerful routing system on both client and server side. We can create a stand alone API route that not only access by client side but alos outside the application. 
@@ -87,28 +110,44 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 
 
 
-# Tech Stack  
+## Tech_Stack  
 
-**Sveltekit -** `Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in an easy and pleasant manner. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api), it also has the simpliest, cleaniest, most intuitive, easiest to read and understand syntax, template engine, expressions to provide best developer experiences, it is a master piece from **Rich Harris** and **Svelte core team** 🤩🤩🤩
+**Sveltekit** 
 
-**Supabase -** `Supabase` is a backend as a service, it has database, authentication, storage, edge function, etc. It provides simple, clean, easy to read and understand functions / expressions / api to perform CRUD operation. We can go to API Docs page and copy the codes and paste into our project, modify table name and the column data to get job done like piece of cake. It makes developing backend functionality way so much easy, it is the altervative of the popular `firebase` but even better.
+- `Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in an easy and pleasant manner. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api), it also has the simpliest, cleaniest, most intuitive, easiest to read and understand syntax, template engine, expressions to provide best developer experiences, it is a master piece from **Rich Harris** and **Svelte core team** 🤩🤩🤩
 
-**Tailwindcss / Daisyui -** `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
+**Supabase** 
+
+- `Supabase` is a backend as a service, it has database, authentication, storage, edge function, etc. It provides simple, clean, easy to read and understand functions / expressions / api to perform CRUD operation. We can go to API Docs page and copy the codes and paste into our project, modify table name and the column data to get job done like piece of cake. It makes developing backend functionality way so much easy, it is the altervative of the popular `firebase` but even better.
+
+**Tailwindcss / Daisyui** 
+
+- `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
 
 
-## Third Party APIs
----
-**Supabase -** 
+## Third_Party _APIs
 
-**OpenAI -** 
+**Supabase** 
 
-**IPIFY -** 
+-
 
-**IPAPI -** 
+**OpenAI** 
 
-## Environment Variables
----
+-
+
+**IPIFY** 
+
+-
+
+**IPAPI**
+
+-
+
+
+## Environment_Variables
+
 In order to make the application gets up and running, we need to fill out the environment variables. There are four different third party services leveraged in this application and all of them require API key, they are `supabasebase`, `openai`, `ipify`, `ipapi` respectively. One thing to notify is the abbreviation~ `PUBLIC_`, it means the API is exposed on the browser, it is because we perform _CRUD_ operation on client side and _Sveltekit_ requires the environment variables have to be public.
+
 ```
 # Supabase Config
 PUBLIC_SUPABASE_URL = "Your key"
