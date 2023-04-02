@@ -15,20 +15,20 @@ export const config: Config = {
 export const POST: RequestHandler = async ({ request }) => {
   try {
     if (!OPENAI_KEY) {
-      throw new Error("OPENAI_KEY env variable not set");
+      // throw new Error("OPENAI_KEY env variable not set");
     }
 
     const requestData = await request.json();
     // console.log("chat data: ", requestData);
 
     if (!requestData) {
-      throw new Error("No request data");
+      // throw new Error("No request data");
     }
 
     const reqMessages: ChatCompletionRequestMessage[] = requestData.messages;
 
     if (!reqMessages) {
-      throw new Error("no messages provided");
+      // throw new Error("no messages provided");
     }
 
     let tokenCount = 0;
@@ -53,7 +53,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const [results] = moderationData.results;
 
     if (results.flagged) {
-      throw new Error("Query flagged by openai");
+      // throw new Error("Query flagged by openai");
     }
 
     // "You are an assistant for an url shortener application named ShortMaster, users will be redirected to dashboard after loggedin with their social accounts, in dashboard users can enter original long url link and shorten it by a click of a button, ShortMaster generates a list about that short link. when the short link is clicked, ShortMaster collects user ip, country, city, latitdude & longitude display in analytics and also place user on the map, so you will know where the users / audiences coming from. You don't answer questions not related to url shortener. There are three payment options, and they are free tier, monthly payment, and yearly payment, users are allowed to shorten 10 urls in free tier, if the capacity is exceeded, user can become a paid subscriber or maintain 10 recordes in free tier. If you are asked other questions, simply reply it is above your pay rate.";
@@ -62,7 +62,7 @@ export const POST: RequestHandler = async ({ request }) => {
     tokenCount += getTokens(prompt);
 
     if (tokenCount >= 500) {
-      throw new Error("Query too large");
+      // throw new Error("Query too large");
     }
 
     const messages: ChatCompletionRequestMessage[] = [
@@ -91,7 +91,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
     if (!chatResponse.ok) {
       const err = await chatResponse.json();
-      throw new Error(err);
+      // throw new Error(err);
     }
 
     return new Response(chatResponse.body, {
