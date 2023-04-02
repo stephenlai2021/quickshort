@@ -4694,13 +4694,13 @@ function _sessionResponse(data) {
     session = Object.assign({}, data);
     session.expires_at = expiresAt(data.expires_in);
   }
-  const user2 = (_a = data.user) !== null && _a !== void 0 ? _a : data;
-  return { data: { session, user: user2 }, error: null };
+  const user = (_a = data.user) !== null && _a !== void 0 ? _a : data;
+  return { data: { session, user }, error: null };
 }
 function _userResponse(data) {
   var _a;
-  const user2 = (_a = data.user) !== null && _a !== void 0 ? _a : data;
-  return { data: { user: user2 }, error: null };
+  const user = (_a = data.user) !== null && _a !== void 0 ? _a : data;
+  return { data: { user }, error: null };
 }
 function _ssoResponse(data) {
   return { data, error: null };
@@ -4714,11 +4714,11 @@ function _generateLinkResponse(data) {
     redirect_to,
     verification_type
   };
-  const user2 = Object.assign({}, rest);
+  const user = Object.assign({}, rest);
   return {
     data: {
       properties,
-      user: user2
+      user
     },
     error: null
   };
@@ -5375,12 +5375,12 @@ var init_GoTrueClient = __esm({
               return { data: { user: null, session: null }, error: error2 };
             }
             const session = data.session;
-            const user2 = data.user;
+            const user = data.user;
             if (data.session) {
               yield this._saveSession(data.session);
               this._notifyAllSubscribers("SIGNED_IN", session);
             }
-            return { data: { user: user2, session }, error: null };
+            return { data: { user, session }, error: null };
           } catch (error2) {
             if (isAuthError(error2)) {
               return { data: { user: null, session: null }, error: error2 };
@@ -5579,12 +5579,12 @@ var init_GoTrueClient = __esm({
               throw "An error occurred on token verification.";
             }
             const session = data.session;
-            const user2 = data.user;
+            const user = data.user;
             if (session === null || session === void 0 ? void 0 : session.access_token) {
               yield this._saveSession(session);
               this._notifyAllSubscribers("SIGNED_IN", session);
             }
-            return { data: { user: user2, session }, error: null };
+            return { data: { user, session }, error: null };
           } catch (error2) {
             if (isAuthError(error2)) {
               return { data: { user: null, session: null }, error: error2 };
@@ -5863,7 +5863,7 @@ var init_GoTrueClient = __esm({
             const { data, error: error2 } = yield this.getUser(access_token);
             if (error2)
               throw error2;
-            const user2 = data.user;
+            const user = data.user;
             const session = {
               provider_token,
               provider_refresh_token,
@@ -5872,7 +5872,7 @@ var init_GoTrueClient = __esm({
               expires_at,
               refresh_token,
               token_type,
-              user: user2
+              user
             };
             const redirectType = getParameterByName("type");
             window.location.hash = "";
@@ -6403,11 +6403,11 @@ var init_GoTrueClient = __esm({
        */
       _listFactors() {
         return __awaiter13(this, void 0, void 0, function* () {
-          const { data: { user: user2 }, error: userError } = yield this.getUser();
+          const { data: { user }, error: userError } = yield this.getUser();
           if (userError) {
             return { data: null, error: userError };
           }
-          const factors = (user2 === null || user2 === void 0 ? void 0 : user2.factors) || [];
+          const factors = (user === null || user === void 0 ? void 0 : user.factors) || [];
           const totp = factors.filter((factor) => factor.factor_type === "totp" && factor.status === "verified");
           return {
             data: {
@@ -6734,7 +6734,7 @@ function parseSupabaseCookie(str) {
     }
     const [_header, payloadStr, _signature] = session[0].split(".");
     const payload = decodeBase64URL2(payloadStr);
-    const { exp, sub, ...user2 } = JSON.parse(payload);
+    const { exp, sub, ...user } = JSON.parse(payload);
     return {
       expires_at: exp,
       expires_in: exp - Math.round(Date.now() / 1e3),
@@ -6745,7 +6745,7 @@ function parseSupabaseCookie(str) {
       provider_refresh_token: session[3],
       user: {
         id: sub,
-        ...user2
+        ...user
       }
     };
   } catch (err) {
@@ -9248,7 +9248,7 @@ var init_layout_server_ts = __esm({
       console.log("Root layout server load");
       return {
         user: event.locals.session,
-        theme: event.locals.currentTheme,
+        // theme: event.locals.currentTheme,
         session: await getServerSession(event)
       };
     };
@@ -9256,13 +9256,12 @@ var init_layout_server_ts = __esm({
 });
 
 // .svelte-kit/output/server/chunks/SvelteToast.svelte_svelte_type_style_lang.js
-var defaultValue, initialValue, user, mobile, btnChat, menuOpen, linksArray, widthLessthan680, widthLessthan560, widthLessthan530, widthLessthan480, widthLessthan490, widthLessthan425, widthLessthan400, widthLessthan382, widthLessthan360, widthLessthan320, openaiKey;
+var defaultValue, initialValue, mobile, btnChat, menuOpen, linksArray, widthLessthan680, widthLessthan560, widthLessthan530, widthLessthan480, widthLessthan490, widthLessthan425, widthLessthan400, widthLessthan382, widthLessthan360, widthLessthan320, openaiKey;
 var init_SvelteToast_svelte_svelte_type_style_lang = __esm({
   ".svelte-kit/output/server/chunks/SvelteToast.svelte_svelte_type_style_lang.js"() {
     init_index2();
     defaultValue = "";
     initialValue = defaultValue;
-    user = writable({});
     mobile = writable(false);
     btnChat = writable(true);
     menuOpen = writable(false);
@@ -9280,33 +9279,6 @@ var init_SvelteToast_svelte_svelte_type_style_lang = __esm({
     openaiKey = writable(initialValue);
     openaiKey.subscribe((value) => {
     });
-  }
-});
-
-// .svelte-kit/output/server/chunks/stores.js
-var getStores, page;
-var init_stores = __esm({
-  ".svelte-kit/output/server/chunks/stores.js"() {
-    init_index3();
-    getStores = () => {
-      const stores = getContext("__svelte__");
-      return {
-        page: {
-          subscribe: stores.page.subscribe
-        },
-        navigating: {
-          subscribe: stores.navigating.subscribe
-        },
-        updated: stores.updated
-      };
-    };
-    page = {
-      /** @param {(value: any) => void} fn */
-      subscribe(fn) {
-        const store = getStores().page;
-        return store.subscribe(fn);
-      }
-    };
   }
 });
 
@@ -9410,6 +9382,33 @@ var init_js_cookie = __esm({
       }
     };
     api = init2(defaultConverter, { path: "/" });
+  }
+});
+
+// .svelte-kit/output/server/chunks/stores.js
+var getStores, page;
+var init_stores = __esm({
+  ".svelte-kit/output/server/chunks/stores.js"() {
+    init_index3();
+    getStores = () => {
+      const stores = getContext("__svelte__");
+      return {
+        page: {
+          subscribe: stores.page.subscribe
+        },
+        navigating: {
+          subscribe: stores.navigating.subscribe
+        },
+        updated: stores.updated
+      };
+    };
+    page = {
+      /** @param {(value: any) => void} fn */
+      subscribe(fn) {
+        const store = getStores().page;
+        return store.subscribe(fn);
+      }
+    };
   }
 });
 
@@ -9711,15 +9710,15 @@ function check(prop, kind = "undefined") {
 function getCss(theme4) {
   return Object.keys(theme4).reduce((a, c) => `${a}${c}:${theme4[c]};`, "");
 }
-var import_sse, defaults, createToast, toast, css$4, ToastItem, css$3, SvelteToast, chatbot2, css$2, IconChatbot, IconCenter, Logo, imagePalette, css$1, ThemeMenu, imageI18n, LangMenu, imageAvatar, UserMenu, imagePanel, imageLogin, MenuBar, Icon, ChatMessage, IconClose, css, ChatWindow, Layout;
+var import_sse, defaults, createToast, toast, css$4, ToastItem, css$3, SvelteToast, chatbot2, css$2, IconChatbot, IconCenter, Logo, imagePalette, css$1, ThemeMenu, imageI18n, LangMenu, imageAvatar, UserMenu, imagePanel, imageLogin, MenuBar, ChatMessage, IconClose, css, ChatWindow, Layout;
 var init_layout_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/_layout.svelte.js"() {
     init_index3();
     init_SvelteToast_svelte_svelte_type_style_lang();
     init_supabase();
     init_index2();
-    init_stores();
     init_js_cookie();
+    init_stores();
     init_translations();
     init_devalue();
     import_sse = __toESM(require_sse(), 1);
@@ -10037,7 +10036,6 @@ var init_layout_svelte = __esm({
 
           ${validate_component(UserMenu, "UserMenu").$$render($$result, {}, {}, {})}</ul></div></ul></nav></div>`;
     });
-    Icon = "/_app/immutable/assets/favicon.af3f5040.ico";
     ChatMessage = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { type } = $$props;
       let { message } = $$props;
@@ -10105,7 +10103,6 @@ var init_layout_svelte = __esm({
 </div>`;
     });
     Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $page, $$unsubscribe_page;
       let $$unsubscribe_widthLessthan320;
       let $$unsubscribe_widthLessthan360;
       let $$unsubscribe_widthLessthan382;
@@ -10118,7 +10115,6 @@ var init_layout_svelte = __esm({
       let $$unsubscribe_widthLessthan680;
       let $menuOpen, $$unsubscribe_menuOpen;
       let $btnChat, $$unsubscribe_btnChat;
-      $$unsubscribe_page = subscribe(page, (value) => $page = value);
       $$unsubscribe_widthLessthan320 = subscribe(widthLessthan320, (value) => value);
       $$unsubscribe_widthLessthan360 = subscribe(widthLessthan360, (value) => value);
       $$unsubscribe_widthLessthan382 = subscribe(widthLessthan382, (value) => value);
@@ -10131,12 +10127,6 @@ var init_layout_svelte = __esm({
       $$unsubscribe_widthLessthan680 = subscribe(widthLessthan680, (value) => value);
       $$unsubscribe_menuOpen = subscribe(menuOpen, (value) => $menuOpen = value);
       $$unsubscribe_btnChat = subscribe(btnChat, (value) => $btnChat = value);
-      {
-        if ($page.data.user?.user) {
-          $page.data.user.user;
-        }
-      }
-      $$unsubscribe_page();
       $$unsubscribe_widthLessthan320();
       $$unsubscribe_widthLessthan360();
       $$unsubscribe_widthLessthan382();
@@ -10149,7 +10139,7 @@ var init_layout_svelte = __esm({
       $$unsubscribe_widthLessthan680();
       $$unsubscribe_menuOpen();
       $$unsubscribe_btnChat();
-      return `${$$result.head += `<!-- HEAD_svelte-1ci68od_START --><link rel="${"icon"}" type="${"image/x-icon"}"${add_attribute("href", Icon, 0)}>${$$result.title = `<title>ShortMaster</title>`, ""}<!-- HEAD_svelte-1ci68od_END -->`, ""}
+      return `${$$result.head += `<!-- HEAD_svelte-sxcpqc_START -->${$$result.title = `<title>ShortMaster</title>`, ""}<!-- HEAD_svelte-sxcpqc_END -->`, ""}
 
 ${validate_component(SvelteToast, "SvelteToast").$$render($$result, {}, {}, {})}
 <div class="${"max-w-[1600px] mx-auto relative overflow-auto"}"${add_styles({
@@ -10188,11 +10178,11 @@ var init__ = __esm({
     init_layout_server_ts();
     index = 0;
     component = async () => (await Promise.resolve().then(() => (init_layout_svelte(), layout_svelte_exports))).default;
-    file = "_app/immutable/entry/_layout.svelte.93379fa1.js";
+    file = "_app/immutable/entry/_layout.svelte.8e5d8a81.js";
     universal_id = "src/routes/+layout.ts";
     server_id = "src/routes/+layout.server.ts";
-    imports = ["_app/immutable/entry/_layout.svelte.93379fa1.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/SvelteToast.svelte_svelte_type_style_lang.68aafece.js", "_app/immutable/chunks/index.c5f87819.js", "_app/immutable/chunks/navigation.29a5591a.js", "_app/immutable/chunks/singletons.4452e133.js", "_app/immutable/chunks/supabase.1462ff8c.js", "_app/immutable/chunks/_commonjsHelpers.725317a4.js", "_app/immutable/chunks/preload-helper.41c905a7.js", "_app/immutable/chunks/public.a3178c66.js", "_app/immutable/chunks/stores.784d6eaa.js", "_app/immutable/chunks/translations.1a06fbbc.js", "_app/immutable/chunks/shormaster_logo-removebg.deb12ba5.js", "_app/immutable/chunks/forms.d59be634.js", "_app/immutable/chunks/parse.d12b0d5b.js", "_app/immutable/chunks/IconSister.8868d701.js", "_app/immutable/entry/_layout.ts.c1689312.js", "_app/immutable/chunks/translations.1a06fbbc.js", "_app/immutable/chunks/preload-helper.41c905a7.js", "_app/immutable/chunks/index.c5f87819.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/_layout.9dabe1ec.js"];
-    stylesheets = ["_app/immutable/assets/_layout.6da4d1fc.css", "_app/immutable/assets/SvelteToast.42b1db04.css"];
+    imports = ["_app/immutable/entry/_layout.svelte.8e5d8a81.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/SvelteToast.svelte_svelte_type_style_lang.3cf276ba.js", "_app/immutable/chunks/index.c5f87819.js", "_app/immutable/chunks/navigation.b3b4bf49.js", "_app/immutable/chunks/singletons.2d7ccb68.js", "_app/immutable/chunks/supabase.1462ff8c.js", "_app/immutable/chunks/_commonjsHelpers.725317a4.js", "_app/immutable/chunks/preload-helper.41c905a7.js", "_app/immutable/chunks/public.a3178c66.js", "_app/immutable/chunks/stores.897b46c1.js", "_app/immutable/chunks/translations.1a06fbbc.js", "_app/immutable/chunks/shormaster_logo-removebg.deb12ba5.js", "_app/immutable/chunks/forms.e30f43e0.js", "_app/immutable/chunks/parse.d12b0d5b.js", "_app/immutable/chunks/IconSister.8868d701.js", "_app/immutable/entry/_layout.ts.c1689312.js", "_app/immutable/chunks/translations.1a06fbbc.js", "_app/immutable/chunks/preload-helper.41c905a7.js", "_app/immutable/chunks/index.c5f87819.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/_layout.9dabe1ec.js"];
+    stylesheets = ["_app/immutable/assets/_layout.ed1f1536.css", "_app/immutable/assets/SvelteToast.42b1db04.css"];
     fonts = [];
   }
 });
@@ -10232,8 +10222,8 @@ var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     index2 = 1;
     component2 = async () => (await Promise.resolve().then(() => (init_error_svelte(), error_svelte_exports))).default;
-    file2 = "_app/immutable/entry/error.svelte.1e48dcac.js";
-    imports2 = ["_app/immutable/entry/error.svelte.1e48dcac.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/stores.784d6eaa.js", "_app/immutable/chunks/singletons.4452e133.js", "_app/immutable/chunks/index.c5f87819.js"];
+    file2 = "_app/immutable/entry/error.svelte.0ef59c90.js";
+    imports2 = ["_app/immutable/entry/error.svelte.0ef59c90.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/stores.897b46c1.js", "_app/immutable/chunks/singletons.2d7ccb68.js", "_app/immutable/chunks/index.c5f87819.js"];
     stylesheets2 = [];
     fonts2 = [];
   }
@@ -60690,6 +60680,7 @@ var init_server_ts = __esm({
         if (!OPENAI_KEY)
           ;
         const requestData = await request.json();
+        console.log("chat data: ", requestData);
         if (!requestData) {
           throw new Error("No request data");
         }
@@ -60745,7 +60736,6 @@ var init_server_ts = __esm({
         );
         if (!chatResponse.ok) {
           const err = await chatResponse.json();
-          throw new Error(err);
         }
         return new Response(chatResponse.body, {
           headers: {
@@ -60893,7 +60883,7 @@ var options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en" data-theme="cupcake">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en" data-theme="cupcake">\n	<head>\n		<meta charset="utf-8" />\n		<!-- <link rel="icon" href="' + assets2 + '/favicon.png" /> -->\n		<link rel="icon" type="image/x-icon" href="favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -60941,7 +60931,7 @@ var options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "131ddgd"
+  version_hash: "1pb56ep"
 };
 function get_hooks() {
   return Promise.resolve().then(() => (init_hooks_server(), hooks_server_exports));
@@ -63628,10 +63618,10 @@ _manifest = new WeakMap();
 var manifest = {
   appDir: "_app",
   appPath: "_app",
-  assets: /* @__PURE__ */ new Set(["avatar.png", "favicon.png", "image-placeholder.png", "Vector-1.png", "Vector.png"]),
-  mimeTypes: { ".png": "image/png" },
+  assets: /* @__PURE__ */ new Set(["avatar.png", "favicon.ico", "favicon.png", "image-placeholder.png", "Vector-1.png", "Vector.png"]),
+  mimeTypes: { ".png": "image/png", ".ico": "image/vnd.microsoft.icon" },
   _: {
-    client: { "start": { "file": "_app/immutable/entry/start.4f87c3e4.js", "imports": ["_app/immutable/entry/start.4f87c3e4.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/singletons.4452e133.js", "_app/immutable/chunks/index.c5f87819.js", "_app/immutable/chunks/parse.d12b0d5b.js"], "stylesheets": [], "fonts": [] }, "app": { "file": "_app/immutable/entry/app.257721df.js", "imports": ["_app/immutable/entry/app.257721df.js", "_app/immutable/chunks/preload-helper.41c905a7.js", "_app/immutable/chunks/supabase.1462ff8c.js", "_app/immutable/chunks/_commonjsHelpers.725317a4.js", "_app/immutable/chunks/public.a3178c66.js", "_app/immutable/chunks/index.c1267f9a.js"], "stylesheets": [], "fonts": [] } },
+    client: { "start": { "file": "_app/immutable/entry/start.a9e96f53.js", "imports": ["_app/immutable/entry/start.a9e96f53.js", "_app/immutable/chunks/index.c1267f9a.js", "_app/immutable/chunks/singletons.2d7ccb68.js", "_app/immutable/chunks/index.c5f87819.js", "_app/immutable/chunks/parse.d12b0d5b.js"], "stylesheets": [], "fonts": [] }, "app": { "file": "_app/immutable/entry/app.4b590879.js", "imports": ["_app/immutable/entry/app.4b590879.js", "_app/immutable/chunks/preload-helper.41c905a7.js", "_app/immutable/chunks/supabase.1462ff8c.js", "_app/immutable/chunks/_commonjsHelpers.725317a4.js", "_app/immutable/chunks/public.a3178c66.js", "_app/immutable/chunks/index.c1267f9a.js"], "stylesheets": [], "fonts": [] } },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2))

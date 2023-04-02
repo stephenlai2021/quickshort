@@ -4,7 +4,7 @@ const load = async (event) => {
   console.log("Root layout server load");
   return {
     user: event.locals.session,
-    theme: event.locals.currentTheme,
+    // theme: event.locals.currentTheme,
     session: await getServerSession(event)
   };
 };

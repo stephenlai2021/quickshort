@@ -4,7 +4,6 @@ import { I as IPAPI, a as IPIFY } from "../../../chunks/private.js";
 const load = async ({ params, fetch }) => {
   console.log("key: ", params.id);
   const { data, error } = await supabaseClient.from("url_shortener_links").select("*").eq("key", params.id).single();
-  console.log("link data: ", data);
   if (error) {
     console.log("error: ", error.message);
     throw redirect(303, "/");

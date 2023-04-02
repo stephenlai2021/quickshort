@@ -2,8 +2,8 @@ import { a as assign, n as now, l as loop, i as identity, c as create_ssr_compon
 import { w as widthLessthan320, m as menuOpen, b as btnChat, a as widthLessthan530, c as widthLessthan360, d as widthLessthan382, e as widthLessthan400, f as widthLessthan425, g as widthLessthan480, h as widthLessthan490, i as widthLessthan560, j as widthLessthan680 } from "../../chunks/SvelteToast.svelte_svelte_type_style_lang.js";
 import "../../chunks/supabase.js";
 import { w as writable } from "../../chunks/index2.js";
-import { p as page } from "../../chunks/stores.js";
 import "js-cookie";
+import { p as page } from "../../chunks/stores.js";
 import { t, l as locale } from "../../chunks/translations.js";
 import "devalue";
 import "sse.js";
@@ -427,7 +427,6 @@ const MenuBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
           ${validate_component(UserMenu, "UserMenu").$$render($$result, {}, {}, {})}</ul></div></ul></nav></div>`;
 });
-const Icon = "/_app/immutable/assets/favicon.af3f5040.ico";
 const ChatMessage = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { type } = $$props;
   let { message } = $$props;
@@ -496,7 +495,6 @@ const ChatWindow = create_ssr_component(($$result, $$props, $$bindings, slots) =
 </div>`;
 });
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $page, $$unsubscribe_page;
   let $$unsubscribe_widthLessthan320;
   let $$unsubscribe_widthLessthan360;
   let $$unsubscribe_widthLessthan382;
@@ -509,7 +507,6 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$unsubscribe_widthLessthan680;
   let $menuOpen, $$unsubscribe_menuOpen;
   let $btnChat, $$unsubscribe_btnChat;
-  $$unsubscribe_page = subscribe(page, (value) => $page = value);
   $$unsubscribe_widthLessthan320 = subscribe(widthLessthan320, (value) => value);
   $$unsubscribe_widthLessthan360 = subscribe(widthLessthan360, (value) => value);
   $$unsubscribe_widthLessthan382 = subscribe(widthLessthan382, (value) => value);
@@ -522,12 +519,6 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_widthLessthan680 = subscribe(widthLessthan680, (value) => value);
   $$unsubscribe_menuOpen = subscribe(menuOpen, (value) => $menuOpen = value);
   $$unsubscribe_btnChat = subscribe(btnChat, (value) => $btnChat = value);
-  {
-    if ($page.data.user?.user) {
-      $page.data.user.user;
-    }
-  }
-  $$unsubscribe_page();
   $$unsubscribe_widthLessthan320();
   $$unsubscribe_widthLessthan360();
   $$unsubscribe_widthLessthan382();
@@ -540,7 +531,7 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_widthLessthan680();
   $$unsubscribe_menuOpen();
   $$unsubscribe_btnChat();
-  return `${$$result.head += `<!-- HEAD_svelte-1ci68od_START --><link rel="${"icon"}" type="${"image/x-icon"}"${add_attribute("href", Icon, 0)}>${$$result.title = `<title>ShortMaster</title>`, ""}<!-- HEAD_svelte-1ci68od_END -->`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-sxcpqc_START -->${$$result.title = `<title>ShortMaster</title>`, ""}<!-- HEAD_svelte-sxcpqc_END -->`, ""}
 
 ${validate_component(SvelteToast, "SvelteToast").$$render($$result, {}, {}, {})}
 <div class="${"max-w-[1600px] mx-auto relative overflow-auto"}"${add_styles({

@@ -1,9 +1,9 @@
-import { c as create_ssr_component, d as add_attribute, b as subscribe, f as escape, v as validate_component, e as each } from "../../../chunks/index3.js";
+import { c as create_ssr_component, d as add_attribute, b as subscribe, f as escape, v as validate_component, e as each, j as set_store_value } from "../../../chunks/index3.js";
 import { t } from "../../../chunks/translations.js";
-import { l as linksArray, u as user, k as mobile, e as widthLessthan400 } from "../../../chunks/SvelteToast.svelte_svelte_type_style_lang.js";
+import { l as linksArray, k as mobile, e as widthLessthan400 } from "../../../chunks/SvelteToast.svelte_svelte_type_style_lang.js";
 import "../../../chunks/supabase.js";
-import { C as CopyBtn } from "../../../chunks/CopyBtn.js";
 import { p as page } from "../../../chunks/stores.js";
+import { C as CopyBtn } from "../../../chunks/CopyBtn.js";
 const IconQuestionMark = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { width = "24" } = $$props;
   if ($$props.width === void 0 && $$bindings.width && width !== void 0)
@@ -17,17 +17,17 @@ const css = {
 };
 const LinkForm = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$unsubscribe_linksArray;
-  let $$unsubscribe_user;
+  let $$unsubscribe_page;
   let $$unsubscribe_mobile;
   let $t, $$unsubscribe_t;
   $$unsubscribe_linksArray = subscribe(linksArray, (value) => value);
-  $$unsubscribe_user = subscribe(user, (value) => value);
+  $$unsubscribe_page = subscribe(page, (value) => value);
   $$unsubscribe_mobile = subscribe(mobile, (value) => value);
   $$unsubscribe_t = subscribe(t, (value) => $t = value);
   const form = { long_url: "", key: "" };
   $$result.css.add(css);
   $$unsubscribe_linksArray();
-  $$unsubscribe_user();
+  $$unsubscribe_page();
   $$unsubscribe_mobile();
   $$unsubscribe_t();
   return `<form method="${"POST"}" action="${""}" class="${"link-form max-[420px]:rounded-none flex-column bg-neutral/20 rounded-[8px] py-6 px-5 mt-[16px] flex flex-wrap justify-between items-middle gap-5 svelte-18nogjd"}"><div class="${"form-group w-full sm:w-6/12"}"><label for="${"long_url"}" class="${"text- text-xs mb-1 block"}">${escape($t("common.long_url"))}</label>
@@ -41,14 +41,11 @@ const LinkForm = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 </form>`;
 });
 const LinkCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$unsubscribe_linksArray;
   let $widthLessthan400, $$unsubscribe_widthLessthan400;
-  $$unsubscribe_linksArray = subscribe(linksArray, (value) => value);
   $$unsubscribe_widthLessthan400 = subscribe(widthLessthan400, (value) => $widthLessthan400 = value);
   let { link } = $$props;
   if ($$props.link === void 0 && $$bindings.link && link !== void 0)
     $$bindings.link(link);
-  $$unsubscribe_linksArray();
   $$unsubscribe_widthLessthan400();
   return `<div class="${"wrapper max-[420px]:rounded-none max-[420px]:p-[10px] max-[420px]:flex-col w-full bg-neutral/10 rounded-xl p-5 mb-5 flex justify-between items-center gap-5 hover:border-secondary/50 transition-all duration-200"}"><div class="${"max-[420px]:w-full w-1/2"}"><div class="${"cursor-pointer"}"><a class="${"text-[20px]"}"${add_attribute("href", `/dashboard/${link.key}`, 0)}>/${escape(link.key)}</a></div>
     <div class="${"text-sm sm:text-base"}">${$widthLessthan400 ? `<span>${escape(link.long_url.slice(0, 30) + "...")}</span>` : `<span>${escape(link.long_url.slice(0, 20) + "...")}</span>`}</div></div>
@@ -62,17 +59,25 @@ const LinkCard = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     </div></div>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $t, $$unsubscribe_t;
   let $page, $$unsubscribe_page;
-  $$unsubscribe_t = subscribe(t, (value) => $t = value);
+  let $linksArray, $$unsubscribe_linksArray;
+  let $t, $$unsubscribe_t;
   $$unsubscribe_page = subscribe(page, (value) => $page = value);
-  $$unsubscribe_t();
+  $$unsubscribe_linksArray = subscribe(linksArray, (value) => $linksArray = value);
+  $$unsubscribe_t = subscribe(t, (value) => $t = value);
+  {
+    if ($page.data?.links) {
+      set_store_value(linksArray, $linksArray = $page.data.links, $linksArray);
+    }
+  }
   $$unsubscribe_page();
+  $$unsubscribe_linksArray();
+  $$unsubscribe_t();
   return `<section class="${"pt-28 mx- mx-auto bg-base-100"}"><h1 class="${"text-[22px] font-bold max-[410px]:px-[10px]"}">${escape($t("common.dashboard"))}</h1>
   ${validate_component(LinkForm, "LinkForm").$$render($$result, {}, {}, {})}
-  <div class="${"links-wrapper my-10"}">
-    ${each($page.data.links, (item) => {
-    return `${validate_component(LinkCard, "LinkCard").$$render($$result, { link: item }, {}, {})}`;
+  <div class="${"links-wrapper my-10"}">${each($linksArray, (item) => {
+    return `
+      ${validate_component(LinkCard, "LinkCard").$$render($$result, { link: item }, {}, {})}`;
   })}</div></section>`;
 });
 export {

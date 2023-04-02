@@ -36,6 +36,10 @@ function get_store_value(store) {
 function null_to_empty(value) {
   return value == null ? "" : value;
 }
+function set_store_value(store, ret, value) {
+  store.set(value);
+  return ret;
+}
 const is_client = typeof window !== "undefined";
 let now = is_client ? () => window.performance.now() : () => Date.now();
 let raf = is_client ? (cb) => requestAnimationFrame(cb) : noop;
@@ -181,16 +185,17 @@ export {
   null_to_empty as g,
   add_styles as h,
   identity as i,
-  get_store_value as j,
-  noop as k,
+  set_store_value as j,
+  get_store_value as k,
   loop as l,
   missing_component as m,
   now as n,
   onDestroy as o,
-  safe_not_equal as p,
-  is_function as q,
+  noop as p,
+  safe_not_equal as q,
   run_all as r,
   setContext as s,
-  getContext as t,
+  is_function as t,
+  getContext as u,
   validate_component as v
 };

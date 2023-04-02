@@ -1,4 +1,5 @@
 import { c as create_ssr_component, b as subscribe, h as add_styles, f as escape, d as add_attribute, v as validate_component, e as each } from "../../chunks/index3.js";
+import { p as page } from "../../chunks/stores.js";
 import { l as locale, t } from "../../chunks/translations.js";
 import { c as chatbot, I as IconSister } from "../../chunks/IconSister.js";
 const pic1 = "/_app/immutable/assets/pic1.636fb5d8.png";
@@ -95,6 +96,10 @@ const Section7 = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   return ``;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
+  console.log("page data: ", $page.data.user);
+  $$unsubscribe_page();
   return `<div class="${"page-home wrapper mt-[70px] w-full"}">${validate_component(Section1, "Section1").$$render($$result, {}, {}, {})}
   ${validate_component(Section2, "Section2").$$render($$result, {}, {}, {})}
   ${validate_component(Section3, "Section3").$$render($$result, {}, {}, {})}

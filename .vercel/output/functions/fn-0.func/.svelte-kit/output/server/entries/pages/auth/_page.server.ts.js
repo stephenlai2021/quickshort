@@ -1,6 +1,9 @@
-import { f as fail } from "../../../chunks/index.js";
+import { r as redirect, f as fail } from "../../../chunks/index.js";
 const OAUTH_PROVIDERS = ["google", "discord", "github"];
 const load = ({ locals }) => {
+  if (locals.session) {
+    throw redirect(303, "/dashboard");
+  }
   return {
     user: locals.session
   };

@@ -1,7 +1,6 @@
 import { w as writable } from "./index2.js";
 const defaultValue = "";
 const initialValue = defaultValue;
-const user = writable({});
 const mobile = writable(false);
 const btnChat = writable(true);
 const menuOpen = writable(false);
@@ -35,6 +34,5 @@ export {
   mobile as k,
   linksArray as l,
   menuOpen as m,
-  user as u,
   widthLessthan320 as w
 };
