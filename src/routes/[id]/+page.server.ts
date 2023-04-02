@@ -11,7 +11,7 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     .select("*")
     .eq("key", params.id)
     .single();
-  console.log("link data: ", data);
+  // console.log("link data: ", data);
 
   if (error) {
     console.log("error: ", error.message);
