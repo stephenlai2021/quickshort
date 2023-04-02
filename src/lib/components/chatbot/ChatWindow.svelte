@@ -11,7 +11,7 @@
   let query: string = "";
   let answer: string = "";
   let loading: boolean = false;
-  let errMsg: string = "";
+  let errMsg = "";
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
 
@@ -74,9 +74,9 @@
     query = "";
     answer = ""; 
     // openaiErr = true
-    errMsg = err?.data.error
+    errMsg = err.data
     // console.error('error message | chat window: ', err)
-    console.error('error | chat window: ', err?.data.error)
+    console.error('error | chat window: ', err?.data)
   }
 
   function slidefade(node, params) {
