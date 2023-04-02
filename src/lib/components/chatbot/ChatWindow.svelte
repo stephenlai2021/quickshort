@@ -74,9 +74,9 @@
     query = "";
     answer = ""; 
     // openaiErr = true
-    // errMsg = err.error.data
+    errMsg = err.data.error
     // console.error('error message | chat window: ', err)
-    console.error('error | chat window: ', err?.data)
+    console.error('error | chat window: ', err.data.error)
   }
 
   function slidefade(node, params) {
@@ -133,9 +133,9 @@
       {#if loading}
         <ChatMessage type="assistant" message="Loading.." />
       {/if}
-      <!-- {#if err}
-        <ChatMessage type="assistant" message={err} />
-      {/if} -->
+      {#if errMsg}
+        <ChatMessage type="assistant" message={errMsg} />
+      {/if}
     </div>
     <div class="" bind:this={scrollToDiv} />
   </div>
