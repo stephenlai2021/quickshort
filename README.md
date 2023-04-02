@@ -107,7 +107,7 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 
 
 
-## Tech Stack  
+## Tech_Stack  
 
 **Sveltekit** 
 
@@ -122,7 +122,7 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 - `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
 
 
-## Third Party APIs
+## Third_Party_APIs
 
 **Supabase** 
 
@@ -141,7 +141,7 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 -
 
 
-## Environment Variables
+## Environment_Variables
 
 In order to make the application gets up and running, we need to fill out the environment variables. There are four different third party services leveraged in this application and all of them require API key, they are `supabasebase`, `openai`, `ipify`, `ipapi` respectively. One thing to notify is the abbreviation~ `PUBLIC_`, it means the API is exposed on the browser, it is because we perform _CRUD_ operation on client side and _Sveltekit_ requires the environment variables have to be public.
 
