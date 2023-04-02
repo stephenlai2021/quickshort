@@ -1,4 +1,4 @@
-# <img height="50" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/public/shormaster_logo-removebg.png"  alt="Logo" /> ShortMaster - A useful URL shortener app that not only shorten long url but analyze traffic from the clicks
+# <img height="40" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/public/shormaster_logo-removebg.png"  alt="Logo" /> ShortMaster - A useful URL shortener app that not only shorten long url but analyze traffic from the clicks
 
    
 
