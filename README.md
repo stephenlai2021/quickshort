@@ -3,54 +3,46 @@
    
 
 为ChatGPT API提供了一个Web图形界面。在Bilibili上[观看视频教程](https://www.bilibili.com/video/BV1mo4y1r7eE/)。也可以在Hugging Face上[在线体验](https://huggingface.co/spaces/JohnSmith9982/ChuanhuChatGPT)。
-
   
 
 ![Animation Demo](https://user-images.githubusercontent.com/51039745/223148794-f4fd2fcb-3e48-4cdf-a759-7aa463d3f14c.gif)
 
   
-  
-
-## 重大更新 🎉🎉🎉
----
-
-  
-
-- 像官方ChatGPT那样实时回复
-
-- 无限长度对话
-
-- 改进的保存/加载功能
-
-- 从Prompt模板中选择预设
-
-- 将大段代码显示在代码块中
-
-- 渲染输出中的LaTex公式
-
 
 ## Table of Contents
 ---
 [Features](#Features)
 [Routes](#Routes)
-[Tech_Stack](#Tech_Stack)
-[Third Party APIs](#Third_Party_APIs)
-[Environment Variables](#Environment_Variables)
+[Tech_Stack](#Tech Stack)
+[Third Party APIs](#Third Party APIs)
+[Environment Variables](#Environment Variables)
   
 
 ## Features
 
-**Theme Switcher -** users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie,  so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism. 🥰
+**Theme Switcher** 
 
-**Internationalization -** Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. 🤗
+- users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie,  so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism. 🥰
 
-**Authentication** - _ShortMaster_ applies `Supabase` as a total backend solution. Users are required to login to use the functionality. Each route is protected on server side, if a user is not loggedin, he/she is not allowed to access `/dashboard` route where only authenticated users are accessible. On the other hand, if authenticated users try to access routes such as `/`, `/auth`, they will be redirected to `/dashboard`. Besides, users can easily login with their social accounts which save tons of time and steps because if login / signup with email and password, it requires users head to thier email account to confirm the login / signup procedure and that's why people are liking social accounts login with a click of button. 😀
+**Internationalization** 
 
-**OpenAI Powered Chatbot -** The advent of `chatGPT` has becoming a phenomonal, it takes chabot to another level, it talks in human manner, understand what we ask, and answer questions beyond our expectations. Therefore an `OpenAI` powered chatbot has become a necessity for a successful app to draw visitors' attention and willing to stay longer on our page. _ShortMaster_ has `OpenAI` powered chatbot built-in, it not only answers questions related to URL shortening, but also other concerns if you would like to just chat with this super AI, all the conversation is stored so that you don't need to restart the conversation all over again once the chat window is closed.😉
+- Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. 🤗
 
-**Tracking Capability -** When a user click shortend url you paste, _ShortMaster_ collects total clicks from that particular url, and that user's ip address, country, city, latitude, longitude, etc. User location is then displayed on the map in dashoard. This feature let you visualize where the traffic is from and that makes you easily target the audiences to deliver your services.
+**Authentication** 
 
-**Fully Responsive UI -** All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
+- _ShortMaster_ applies `Supabase` as a total backend solution. Users are required to login to use the functionality. Each route is protected on server side, if a user is not loggedin, he/she is not allowed to access `/dashboard` route where only authenticated users are accessible. On the other hand, if authenticated users try to access routes such as `/`, `/auth`, they will be redirected to `/dashboard`. Besides, users can easily login with their social accounts which save tons of time and steps because if login / signup with email and password, it requires users head to thier email account to confirm the login / signup procedure and that's why people are liking social accounts login with a click of button. 😀
+
+**OpenAI Powered Chatbot** 
+
+- The advent of `chatGPT` has becoming a phenomonal, it takes chabot to another level, it talks in human manner, understand what we ask, and answer questions beyond our expectations. Therefore an `OpenAI` powered chatbot has become a necessity for a successful app to draw visitors' attention and willing to stay longer on our page. _ShortMaster_ has `OpenAI` powered chatbot built-in, it not only answers questions related to URL shortening, but also other concerns if you would like to just chat with this super AI, all the conversation is stored so that you don't need to restart the conversation all over again once the chat window is closed.😉
+
+**Tracking Capability** 
+
+- When a user click shortend url you paste, _ShortMaster_ collects total clicks from that particular url, and that user's ip address, country, city, latitude, longitude, etc. User location is then displayed on the map in dashoard. This feature let you visualize where the traffic is from and that makes you easily target the audiences to deliver your services.
+
+**Fully Responsive UI** 
+
+- All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
 ## Routes
 ---
