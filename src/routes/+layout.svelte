@@ -31,8 +31,8 @@
   let localUser = {}
   // let currentTheme = Cookies.get('colortheme')
   // let cookie = Cookies.get()
-  let theme = $page.data.theme
-  console.log('theme | layout: ', $page.data)
+  // let theme = $page.data.theme
+  // console.log('theme | layout: ', $page.data)
 
   const handleRWD = () => {
     if (window.innerWidth <= 680) $widthLessthan680 = true;

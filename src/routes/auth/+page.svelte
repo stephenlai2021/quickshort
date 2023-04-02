@@ -8,9 +8,9 @@
   import { browser } from "$app/environment";
   import GoogleIcon from "$lib/assets/images/google-icon.png";
   import IconGithub from "$lib/assets/images/icons/icon-github.png";
-  import IconGoogle from "$lib/assets/images/icons/icon-google.png";
+  import IconGoogle from "$lib/assets/images/icons/google-new.png";
   import IconNotion from "$lib/assets/images/icons/icon-notion.png";
-  import IconDiscord from "$lib/assets/images/icons/icon-discord.png";
+  import IconDiscord from "$lib/assets/images/icons/discord.png";
 
   const signInWithProvider = async (provider: Provider) => {
     const { data, error } = await supabaseClient.auth.signInWithOAuth({
@@ -47,7 +47,7 @@
   <div class="mt-[80px] mx-auto">
     <div class="p-5 w-[360px] max-[360px]:w-full">
       <div class="text-center flex justify-center">
-        <div class="p-4 mt-2 border shadow shadow-sm rounded-full">
+        <div class="p-4 mt-2 borde shadow shadow-md shadow-gray-500 rounded-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -68,14 +68,14 @@
       <form method="POST" use:enhance={submitSocialLogin} class="pb-2">
         <div class="flex justify-center">
           <button
-            class="shadow shadow-sm py-4 flex justify-center items-center rounded-[8px] w-full max-[360px]:w-[90vw] mt-5 bg-white text-black"
+            class="shadow shadow-md shadow-gray-800 py-4 flex justify-center items-center rounded-[8px] w-full max-[360px]:w-[90vw] mt-5 bg-black text-white"
             formaction="?/login&provider=github"
           >
             <img
               class="mr-[10px]"
               src={IconGithub}
               alt=""
-              width="25"
+              width="26"
             />
             {$t("common.btn-github")}
           </button>
@@ -83,14 +83,14 @@
 
         <div class="flex justify-center">
           <button
-            class="shadow shadow-sm py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white text-black font-weight-bold"
+            class="shadow shadow-sm py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-[#EA4335] text-white font-weight-bold"
             formaction="?/login&provider=google"
           >
             <img
               class="mr-[10px]"
               src={IconGoogle}
               alt=""
-              width="22"
+              width="28"
             />
             {$t("common.btn-google")}
           </button>
@@ -98,14 +98,14 @@
 
         <div class="flex justify-center">
           <button
-            class="shadow shadow-sm py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white text-black font-weight-bold"
+            class="shadow shadow-md py-4 flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white text-black font-weight-bold"
             formaction="?/login&provider=notion"
           >
             <img
               class="mr-[10px]"
               src={IconNotion}
               alt=""
-              width="25"
+              width="26"
             />
             {$t("common.btn-notion")}
           </button>
@@ -113,14 +113,14 @@
 
         <div class="flex justify-center">
           <button
-            class="shadow shadow-sm py-4 pl- flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-white  [#8C9EFF] text-black font-weight-bold"
+            class="shadow shadow-sm py-4 pl- flex justify-center items-center max-[360px]:w-[90vw] rounded-[8px] w-full mt-5 bg-[#5865F2] text-white font-weight-bold"
             formaction="?/login&provider=discord"
           >
             <img
-              class="mr-[10px]"
+              class="mr-[6px]"
               src={IconDiscord}
               alt=""
-              width="25"
+              width="32"
             />
             {$t("common.btn-discord")}
           </button>

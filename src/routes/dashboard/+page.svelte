@@ -9,7 +9,7 @@
   import type { PageData } from "./$types";
   import { goto } from "$app/navigation"
 
-  $: console.log('user | dashboard: ', $page.data.user?.user)
+  // $: console.log('user | dashboard: ', $page.data.user?.user)
 </script>
 
 <section class="pt-28 mx- mx-auto bg-base-100">

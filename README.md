@@ -32,8 +32,7 @@
 ## Table of Contents
 ---
 [Features](#Features)
-[User Interface](#User_Interface)
-[API Route](#API_Route)
+[Routes](#Routes)
 [Tech_Stack](#Tech_Stack)
 [Third Party APIs](#Third_Party_APIs)
 [Environment Variables](#Environment_Variables)
@@ -53,8 +52,14 @@
 
 **Fully Responsive UI -** All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
-## User Iterface / Client Side
+## Routes
+---
+There client route, server routes, api route. Client routes are User interface that displayed text, images, animations, transition, and executes javascript to interact with visitors. Server routes handle tasks on servers side and return the data to pages for rendering. Each page has its own server route, Sveltekit is well known a powerful `SSR` framework, it does all sorts of rendering, and server side render it most used render stategy because with SSR users see the fully rendered page, there will be no loaind indicators shown, it provides the best user experiences
 
+Each client side page has its own server, all the data are fetched on server side and then injected to be rendered on fontend pages.
+
+### Client Route / Page
+---
 **Home Page / Landing Page -** it is expressed in the form of `/` in codes, it is the root directory of the entire application. The home page is composed of six sections, each section is two column row contains text descriptions and illustration. There is a fixed menu bar at the top, user can login through login menu.
 
 **Auth Page -** `/auth` route as it self-explanins is a page where shows login options that allow users to gain authentication / authorization to access functionality. _**SmartShort**_ provides social accounts login such as `Github`, `Google`, `Facebook` and `Discord` for users to easily complete authentication process with a click of a button.
@@ -63,37 +68,44 @@
 
 **Key Page -** `https://domain/3qlms7` route displayed detailed statistics of the click. When the shortened url link you post on social media or in any other pages is clicked, _**ShortMaster**_ collects ip address, country, city, latitude, longitude information and display the location of the person who clicked the link on the map. It helps you visucalize and track who is interested in the content from the link you provide and you can move further to promote your services / products, etc.
 
-  
+**+page.svelte -** represents the file is a client side route or page. For instance, a home page dwells in the `src/routes/` directory, any pages other than home page must live within a folder, for example, an About page is defined in `src/routes/about/+page.svelte`.
 
-## API_Route
+**+page.svelte.js -** This file handle tasks on server of that particular page, it belongs to the server of that particular page. For example, dashboard route `src/routes/dashboard` has `src/routes/dashboard/+page.svelte` as UI page and `src/routes/dashboard/+page.server.js` as server route that fetching third party API and return the data to be displayed in UI.
+
+**+page.js -** This file works both on client and server side, if we `console.log` the messages will appears on browser and terminal console. it is an optional. 
+
+**+layout.page -** All of the client side pages are confined by the layout and share same components such as menu bar, header, footer, etc. It is optional.
+
+**+layout.js -**
+
+**+layout.server.js -** 
+
+**+server.js -**
+
+
+### Server Route
+---
+
+### API Route
+---
+API rounte is a standalone server route
 
 Sveltekit has a very powerful routing system on both client and server side. We can create a stand alone API route that not only access by client side but alos outside the application. 
-The only one API route `src/routes/api/chat/+server.js` contains codes to receive user prompts from chatbot and send it to `OpenAI` server to acquire responses.
+The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST` API codes to handle requests such as read user prompts from client, send it to `OpenAI` server to acquire responses, save data into database, etc.
 
 
 
-## Tech_Stack  
+# Tech Stack  
 
-**Sveltekit -** `Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in a easy and pleasant experiences. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api). 
+**Sveltekit -** `Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in an easy and pleasant manner. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api), it also has the simpliest, cleaniest, most intuitive, easiest to read and understand syntax, template engine, expressions to provide best developer experiences, it is a master piece from **Rich Harris** and **Svelte core team** 🤩🤩🤩
 
-- **+page.svelte -** represents the file is a client side route or page. For instance, a home page dwells in the `src/routes/` directory, any pages other than home page must live within a folder, for example, an About page is defined in `src/routes/about/+page.svelte`.
+**Supabase -** `Supabase` is a backend as a service, it has database, authentication, storage, edge function, etc. It provides simple, clean, easy to read and understand functions / expressions / api to perform CRUD operation. We can go to API Docs page and copy the codes and paste into our project, modify table name and the column data to get job done like piece of cake. It makes developing backend functionality way so much easy, it is the altervative of the popular `firebase` but even better.
 
-- **+page.svelte.js -** This file handle tasks on server of that particular page, it belongs to the server of that particular page. For example, dashboard route `src/routes/dashboard` has `src/routes/dashboard/+page.svelte` as UI page and `src/routes/dashboard/+page.server.js` as server route that fetching third party API and return the data to be displayed in UI.
-
-- **+page.js -** This file works both on client and server side, if we `console.log` the messages will appears on browser and terminal console. it is an optional. 
-
-- **+layout.page -** All of the client side pages are confined by the layout and share same components such as menu bar, header, footer, etc. It is optional.
-
-- **+layout.js -**
+**Tailwindcss / Daisyui -** `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
 
 
-**Supabasae -** 
-
-**Tailwindcss / Daisyui -** 
-
-
-## Third_Party_APIs
-
+## Third Party APIs
+---
 **Supabase -** 
 
 **OpenAI -** 
@@ -103,8 +115,8 @@ The only one API route `src/routes/api/chat/+server.js` contains codes to receiv
 **IPAPI -** 
 
 ## Environment Variables
+---
 In order to make the application gets up and running, we need to fill out the environment variables. There are four different third party services leveraged in this application and all of them require API key, they are `supabasebase`, `openai`, `ipify`, `ipapi` respectively. One thing to notify is the abbreviation~ `PUBLIC_`, it means the API is exposed on the browser, it is because we perform _CRUD_ operation on client side and _Sveltekit_ requires the environment variables have to be public.
-
 ```
 # Supabase Config
 PUBLIC_SUPABASE_URL = "Your key"
@@ -125,40 +137,15 @@ IPIFY = "https://api.ipify.org"
 IPAPI = "https://ipapi.co/json/?key=YourAPIKey>"
 ```
 
-- 对于长对话，可以使用“优化Tokens”按钮减少Tokens占用。
-
-- 如果部署到服务器，将程序最后一句改成`demo.launch(server_name="0.0.0.0", server_port=99999)`。其中`99999`是端口号，应该是1000-65535任意可用端口，请自行更改为实际端口号。
-
-- 如果需要获取公共链接，将程序最后一句改成`demo.launch(share=True)`。注意程序必须在运行，才能通过公共链接访问
-
-- 使用Prompt模板功能时，请先选择模板文件（`.csv`），然后点击载入按钮，然后就可以从下拉菜单中选择想要的prompt了，点击应用填入System Prmpt
-
-- 输入框支持换行，按`shift enter`即可
-
-- 在Hugging Face上使用时，建议在右上角**复制Space**再使用，这样能大大减少排队时间，App反应也会更加迅速。
-
-<img  width="300"  alt="image"  src="https://user-images.githubusercontent.com/51039745/223447310-e098a1f2-0dcf-48d6-bcc5-49472dd7ca0d.png">
-
-  
-
 ## 安装方式
-
-  
 
 ### 本地部署
 
-  
-
 1.  **下载本项目**
 
-  
-
 ```shell
-
 git clone https://github.com/GaiZhenbiao/ChuanhuChatGPT.git
-
 cd ChuanhuChatGPT
-
 ```
 
 或者，点击网页右上角的 `Download ZIP`，下载并解压完成后进入文件夹，进入`终端`或`命令提示符`。

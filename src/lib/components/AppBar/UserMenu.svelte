@@ -10,7 +10,7 @@
   // export let localUser;
   // console.log("user | user menu: ", localUser);
 
-  console.log("user | user menu: ", $page.data.user);
+  // console.log("user | user menu: ", $page.data.user);
 
   const submitLogout: SubmitFunction = async ({ cancel }) => {
     const { error } = await supabaseClient.auth.signOut();

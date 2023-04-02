@@ -9,7 +9,7 @@
 
   // export let localUser
   // console.log('user | menu bar: ', localUser)
-  console.log('user | menu bar: ', $page.data.user)
+  // console.log('user | menu bar: ', $page.data.user)
 
   // console.log('page data: ', $page.data.user)
 </script>
