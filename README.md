@@ -2,7 +2,7 @@
   
 [LIve Demo](https://shortmaster.netlify.app)
 
-![Animation Demo]<img width="600" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z"  alt="Logo" />
+<img width="600" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z"  alt="Logo" />
   
 
 ## Table of Contents
