@@ -1,12 +1,14 @@
 # <img height="40" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/public/shormaster_logo-removebg.png"  alt="Logo" /> ShortMaster - A useful URL shortener app that not only shorten long url but analyze traffic from the clicks
   
+
+![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/shortmaster.png)
+
+
 ### Live Demo
 
 - [https://shortmaster.netlify.app](https://shortmaster.netlify.app)
 - [https://shortmaster.vercel.app](https://shortmaster.vercel.app)
 
-
-![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/shortmaster.png)
   
 
 ## Table of Contents
