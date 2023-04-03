@@ -8,7 +8,7 @@
 
 ### Animation Demo
 
-![Animation Demo](github-images/shortmaster-dem0.gif)
+![Animation Demo](github-images/shortmaster-demo.gif)
   
 
 ## Table of Contents
