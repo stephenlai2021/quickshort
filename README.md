@@ -10,7 +10,10 @@
 
 - ![Demo](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z)
 
-<!-- <img src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z"  alt="intro gif" /> -->
+<video width="600" controls>
+  <source src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/videos/shortmaster-demo.mp4?t=2023-04-03T05%3A16%3A59.287Z" type="video/mp4">
+Your browser does not support the video tag.
+</video>
   
 
 ## Table of Contents
