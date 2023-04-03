@@ -8,8 +8,7 @@
 
 ### Animation Demo
 
-[Demo](https://firebasestorage.googleapis.com/v0/b/fir-server-auth-88953.appspot.com/o/shortmaster-demo-v2.gif?alt=media&token=ac7f40de-7a58-4a3a-9c80-68afb4bf24dc)
-
+![Animation Demo](github-images/my-image.jpg)
   
 
 ## Table of Contents
