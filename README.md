@@ -6,10 +6,7 @@
 - [https://shortmaster.vercel.app](https://shortmaster.vercel.app)
 
 
-### Animation Demo
-
-<!-- ![Animation Demo](github-images/shortmaster-demo.gif) -->
-![Animation Demo](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z)
+![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/shortmaster.png)
   
 
 ## Table of Contents
