@@ -8,10 +8,10 @@
 
 ### Animation Demo
 
-- ![Demo](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z)
+- ![Demo](https://firebasestorage.googleapis.com/v0/b/fir-server-auth-88953.appspot.com/o/shortmaster-demo-v2.gif?alt=media&token=ac7f40de-7a58-4a3a-9c80-68afb4bf24dc)
 
 <video width="600" controls>
-  <source src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/videos/shortmaster-demo.mp4?t=2023-04-03T05%3A16%3A59.287Z" type="video/mp4">
+  <source src="https://firebasestorage.googleapis.com/v0/b/fir-server-auth-88953.appspot.com/o/shortmaster-demo.mp4?alt=media&token=7471f073-968c-469b-a85e-a8c919de1901" type="video/mp4">
 Your browser does not support the video tag.
 </video>
   
