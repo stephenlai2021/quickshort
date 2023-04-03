@@ -19,8 +19,8 @@ Your browser does not support the video tag.
 ## Table of Contents
 
 - [Features](#Features)
-- [Routes](#Routes)
 - [Tech Stack](#Tech_Stack)
+- [Routes](#Routes)
 - [Third Party APIs](#Third_Party_APIs)
 - [Environment Variables](#Environment_Variables)
   
@@ -50,6 +50,23 @@ Your browser does not support the video tag.
 **Fully Responsive UI** 
 
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
+
+
+## Tech_Stack  
+
+**Sveltekit** 
+
+- `Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in an easy and pleasant manner. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api), it also has the simpliest, cleaniest, most intuitive, easiest to read and understand syntax, template engine, expressions to provide best developer experiences, it is a master piece from **Rich Harris** and **Svelte core team** 🤩🤩🤩
+
+**Supabase** 
+
+- `Supabase` is a backend as a service, it has database, authentication, storage, edge function, etc. It provides simple, clean, easy to read and understand functions / expressions / api to perform CRUD operation. We can go to API Docs page and copy the codes and paste into our project, modify table name and the column data to get job done like piece of cake. It makes developing backend functionality way so much easy, it is the altervative of the popular `firebase` but even better.
+
+**Tailwindcss / Daisyui** 
+
+- `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
+
+
 
 ## Routes
 
@@ -112,21 +129,6 @@ API rounte is a standalone server route
 Sveltekit has a very powerful routing system on both client and server side. We can create a stand alone API route that not only access by client side but alos outside the application. 
 The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST` API codes to handle requests such as read user prompts from client, send it to `OpenAI` server to acquire responses, save data into database, etc.
 
-
-
-## Tech_Stack  
-
-**Sveltekit** 
-
-- `Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in an easy and pleasant manner. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api), it also has the simpliest, cleaniest, most intuitive, easiest to read and understand syntax, template engine, expressions to provide best developer experiences, it is a master piece from **Rich Harris** and **Svelte core team** 🤩🤩🤩
-
-**Supabase** 
-
-- `Supabase` is a backend as a service, it has database, authentication, storage, edge function, etc. It provides simple, clean, easy to read and understand functions / expressions / api to perform CRUD operation. We can go to API Docs page and copy the codes and paste into our project, modify table name and the column data to get job done like piece of cake. It makes developing backend functionality way so much easy, it is the altervative of the popular `firebase` but even better.
-
-**Tailwindcss / Daisyui** 
-
-- `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
 
 
 ## Third_Party_APIs
