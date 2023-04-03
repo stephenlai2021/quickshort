@@ -2,14 +2,15 @@
   
 ### Live Demo
 
-- <a href="https://shortmaster.netlify.app" target="_blank">https://shortmaster.netlify.app</a>
-
-<!-- - [https://shortmaster.netlify.app](https://shortmaster.netlify.app) -->
-
+- [https://shortmaster.netlify.app](https://shortmaster.netlify.app)
 - [https://shortmaster.vercel.app](https://shortmaster.vercel.app)
 
 
-<img src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z"  alt="intro gif" />
+### Animation Demo
+
+- ![Demo](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z)
+
+<!-- <img src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/furnitures/shortmaster-demo.gif?t=2023-04-03T04%3A58%3A52.850Z"  alt="intro gif" /> -->
   
 
 ## Table of Contents
