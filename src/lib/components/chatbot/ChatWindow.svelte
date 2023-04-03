@@ -3,7 +3,9 @@
   import { SSE } from "sse.js";
   import { cubicOut } from "svelte/easing";
   import { t } from "$lib/i18n/translations";
+  import { supabaseClient } from "$lib/supabase";
   import { menuOpen } from "$lib/stores";
+  import { onMount } from "svelte"
   import ChatMessage from "./ChatMessage.svelte";
   import IconSister from "$lib/components/icon/IconSister.svelte";
   import IconClose from "$lib/components/icon/IconClose.svelte";
@@ -15,8 +17,9 @@
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
 
-  let openaiErr = false
+  let openaiErr = false;
   // let errMsg = ''
+  let chatMsgs = []
 
   function scrollToBottom() {
     setTimeout(function () {
@@ -31,13 +34,13 @@
   const handleSubmit = async () => {
     loading = true;
     chatMessages = [...chatMessages, { role: "user", content: query }];
-    
+
     const eventSource = new SSE("/api/chat", {
       headers: {
         "Content-Type": "application/json",
       },
       payload: JSON.stringify({
-        messages: chatMessages
+        messages: chatMessages,
       }),
     });
     query = "";
@@ -72,12 +75,9 @@
   function handleError<T>(err: T) {
     loading = false;
     query = "";
-    answer = ""; 
-    // openaiErr = true
-    // errMsg = JSON.stringify(err.data.error)
-    errMsg = err.data
-    // console.error('error message | chat window: ', err)
-    console.error('error | chat window: ', errMsg)
+    answer = "";
+    errMsg = err.data;
+    console.error("error | chat window: ", errMsg);
   }
 
   function slidefade(node, params) {
@@ -93,6 +93,23 @@
         `transform-origin: bottom right; transform: ${existingTransform} scaleY(${t}) scaleX(${t}); opacity: ${t};`,
     };
   }
+
+  onMount(() => {
+    const chats = supabaseClient
+      .channel("shortmaster-chats")
+      .on(
+        "postgres_changes", 
+        { event: '*', schema: 'public', table: 'url_shortener_chats' },
+        (payload) => {
+          console.log(payload)
+          chatMsgs = [...chatMsgs, payload.new]
+        }
+      )
+      .subscribe()
+  })
+
+  const sendMsg = () => {
+  };
 </script>
 
 <div
@@ -109,8 +126,8 @@
     >
       <IconSister width="46" />
       <div class="description ml-[10px] flex flex-col">
-        <span class="text-[18px]">{$t('common.logo_long')}</span>
-        <span class="text-[14px]">{$t('common.chatbot_description')}</span>
+        <span class="text-[18px]">{$t("common.logo_long")}</span>
+        <span class="text-[14px]">{$t("common.chatbot_description")}</span>
       </div>
       <div
         class="icon-close-wrapper ml-auto cursor-pointer"
@@ -123,17 +140,21 @@
     <div class="mt-[0px] overflow-y-aut flex flex-col gap-2 pt-[0px] px-4">
       <ChatMessage
         type="assistant"
-        message={$t('common.chatbot_initial_prompt')}
+        message={$t("common.chatbot_initial_prompt")}
       />
+
       {#each chatMessages as message}
         <ChatMessage type={message.role} message={message.content} />
       {/each}
+
       {#if answer}
         <ChatMessage type="assistant" message={answer} />
       {/if}
+
       {#if loading}
         <ChatMessage type="assistant" message="Loading.." />
       {/if}
+
       {#if errMsg}
         <ChatMessage type="assistant" message={errMsg} />
       {/if}
@@ -142,12 +163,17 @@
   </div>
   <form
     class="max-[400px]:h-[50px] relative flex w-full max-[400px]:rounded-none rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
-    on:submit|preventDefault={handleSubmit}
   >
-    <input type="text" class="w-[70%] border-none rounded-none outline-none" bind:value={query} />
+    <!-- on:submit|preventDefault={handleSubmit} -->
+    <input
+      type="text"
+      class="w-[70%] border-none rounded-none outline-none"
+      bind:value={query}
+    />
+    <!-- type="submit" -->
     <button
-      type="submit"
       class="text-[14px] rounded-[04px] px-[10px] w-[30%]"
+      on:click={sendMsg}
     >
       <span>{$t("common.send")}</span>
     </button>

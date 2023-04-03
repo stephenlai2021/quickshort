@@ -3,7 +3,7 @@
   "logo_long": "ShortMaster",
   "logo_short": "QS",
   "chatbot_description": "chatbot powered by GPT4",
-  "chatbot_initial_prompt": "Please ask me anything about ShortMaster or questions regarding URL Shortener",
+  "chatbot_initial_prompt": "How may I help you ?",
   "title": "Shorten Your URLs Easily.",
   "subtitle": "QuickShort is the easiest way to shorten URLs and track analytics for your website.",
   "action": "Short Now",

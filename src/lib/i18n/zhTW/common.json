@@ -3,7 +3,7 @@
   "logo_long": "縮短專家",
   "logo_short": "縮短專家",
   "chatbot_description": "chatGPT 聊天機器人",
-  "chatbot_initial_prompt": "請問我有關縮址專家或其他方面的問題",
+  "chatbot_initial_prompt": "我能為您做甚麼 ?",
   "title": "輕鬆縮短你的網址",
   "subtitle": "魁秀是縮短網址和跟踪分析網站的最簡單方法",
   "action": "現在就修",
