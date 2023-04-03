@@ -2,7 +2,10 @@
   
 ### Live Demo
 
-- [https://shortmaster.netlify.app](https://shortmaster.netlify.app)
+- <a href="https://shortmaster.netlify.app" target="_blank">https://shortmaster.netlify.app</a>
+
+<!-- - [https://shortmaster.netlify.app](https://shortmaster.netlify.app) -->
+
 - [https://shortmaster.vercel.app](https://shortmaster.vercel.app)
 
 
