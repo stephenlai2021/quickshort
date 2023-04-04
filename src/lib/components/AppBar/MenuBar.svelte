@@ -24,12 +24,12 @@
     <ul class="flex items-center">
       <div class="side-men">
         <ul class="menu menu-horizontal px-1 z-50 flex items-center">
-          <div class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.theme')}>
+          <!-- <div class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.theme')}> -->
             <ThemeMenu />
-          </div>
-          <div class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.language')}>
+          <!-- </div> -->
+          <!-- <div class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.language')}> -->
             <LangMenu />
-          </div>
+          <!-- </div> -->
 
           <!-- {#if $page.url.pathname === "/" && !localUser.email} -->
           {#if $page.url.pathname === "/" && !$page.data.user?.user.email}
@@ -52,9 +52,9 @@
             <UserMenu {localUser} />
           {/if} -->
 
-          <div class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.user')}>
+          <!-- <div class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.user')}> -->
             <UserMenu />
-          </div>
+          <!-- </div> -->
         </ul>
       </div>
     </ul>
