@@ -163,15 +163,15 @@
   </div>
   <form
     class="max-[400px]:h-[50px] relative flex w-full max-[400px]:rounded-none rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
+    on:submit|preventDefault={handleSubmit}
   >
-    <!-- on:submit|preventDefault={handleSubmit} -->
     <input
       type="text"
       class="w-[70%] border-none rounded-none outline-none"
       bind:value={query}
     />
-    <!-- type="submit" -->
     <button
+      type="submit"
       class="text-[14px] rounded-[04px] px-[10px] w-[30%]"
       on:click={sendMsg}
     >
