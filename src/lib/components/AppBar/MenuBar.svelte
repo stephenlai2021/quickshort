@@ -31,28 +31,33 @@
           <LangMenu />
 
           {#if $page.url.pathname === "/" && !$page.data.user?.user.email}
-            <li
+            <!-- <li
               class="tooltip tooltip-bottom tooltip-neutral"
               data-tip={$t("common.login")}
+            > -->
+            <a
+              href="/auth"
+              class="mr-4 borde max-[530px]:hidden tooltip tooltip-bottom tooltip-neutral"
+              data-tip={$t("common.login")}
             >
-              <a href="/auth" class="mr-4 borde max-[530px]:hidden">
-                <img src={imageLogin} width="24" alt="" />
-              </a>
-            </li>
+              <img src={imageLogin} width="24" alt="" />
+            </a>
+            <!-- </li> -->
           {/if}
 
           {#if $page.data.user?.user.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
-            <li
+            <!-- <li
               class="tooltip tooltip-bottom tooltip-neutral"
               data-tip={$t("common.dashboard")}
-            >
+            > -->
               <a
                 href="/dashboard"
-                class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100"
+                class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100 tooltip tooltip-bottom tooltip-neutral"
+                data-tip={$t("common.dashboard")}
               >
                 <img src={imagePanel} width="24" alt="" />
               </a>
-            </li>
+            <!-- </li> -->
           {/if}
 
           <UserMenu />
