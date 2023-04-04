@@ -37,7 +37,7 @@
             > -->
             <a
               href="/auth"
-              class="mr-4 borde max-[530px]:hidden tooltip tooltip-bottom tooltip-neutral"
+              class="mr-4 borde max-[530px]:hidden tooltip tooltip-top tooltip-neutral"
               data-tip={$t("common.login")}
             >
               <img src={imageLogin} width="24" alt="" />
@@ -52,7 +52,7 @@
             > -->
               <a
                 href="/dashboard"
-                class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100 tooltip tooltip-bottom tooltip-neutral"
+                class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100 tooltip tooltip-top tooltip-neutral"
                 data-tip={$t("common.dashboard")}
               >
                 <img src={imagePanel} width="24" alt="" />

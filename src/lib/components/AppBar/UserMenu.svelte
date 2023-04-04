@@ -26,7 +26,7 @@
   };
 </script>
 
-<li class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.user')}>
+<li class="tooltip tooltip-top tooltip-neutral" data-tip={$t('common.user')}>
   <span class="pl-0 hover:bg-base-100">
     <!-- src={localUser.user_metadata?.avatar_url} -->
     <img
