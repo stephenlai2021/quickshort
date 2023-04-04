@@ -7,6 +7,12 @@
   import UserMenu from "./UserMenu.svelte";
   import imagePanel from "$lib/assets/images/icons/panel.png";
   import imageLogin from "$lib/assets/images/icons/enter.png";
+
+  // export let localUser
+  // console.log('user | menu bar: ', localUser)
+  // console.log('user | menu bar: ', $page.data.user)
+
+  // console.log('page data: ', $page.data.user)
 </script>
 
 <div class="bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50">
@@ -25,13 +31,28 @@
           <LangMenu />
 
           {#if $page.url.pathname === "/" && !$page.data.user?.user.email}
-            <a
-              href="/auth"
-              class="mr-4 borde max-[530px]:hidden tooltip tooltip-bottom tooltip-neutral"
+            <li
+              class="tooltip tooltip-bottom tooltip-neutral"
               data-tip={$t("common.login")}
             >
-              <img src={imageLogin} width="24" alt="" />
-            </a>
+              <a href="/auth" class="mr-4 borde max-[530px]:hidden">
+                <img src={imageLogin} width="24" alt="" />
+              </a>
+            </li>
+          {/if}
+
+          {#if $page.data.user?.user.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
+            <li
+              class="tooltip tooltip-bottom tooltip-neutral"
+              data-tip={$t("common.dashboard")}
+            >
+              <a
+                href="/dashboard"
+                class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100"
+              >
+                <img src={imagePanel} width="24" alt="" />
+              </a>
+            </li>
           {/if}
 
           <UserMenu />
