@@ -15,19 +15,21 @@ One thing to mention is that designing an appealing, good-looking User Interface
 ## How it works
 
 1. User has to login with one of the social accouns.
-<!-- ![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/auth.png) -->
 <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/auth.png" />
 
 2. User will be brought to dashboard page after login.
 3. There is a form on the top where user enter a long url, clicking the shorten button, the system then designates a randomly generated six figures (short key) automatically and update the info with a card
-![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/dashboard.png)
+<!-- ![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/dashboard.png) -->
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/dashboard.png" />
 
 4. Click the short link in the card section to enter detailed page. 
 5. You can see ShortMaster icon in the center of the map in the top.
-![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v1.png)
+<!-- ![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v1.png) -->
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v1.png" />
 
 6. Copy the shortend url by clicking the copy icon, open a new tab and paste it on the address bar, you will be redirected to the original url, the total clicks will be automatically increased by one, and the ip address, country, city will be collected and user location (whoever clicks the link) will be displayed on the map.
-![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v2.png)
+<!-- ![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v2.png) -->
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v2.png" />
 
 7. This is pretty much about the main features and functionalities of ShortMaster URL shortener.
 
