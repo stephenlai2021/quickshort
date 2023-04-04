@@ -22,7 +22,7 @@
 </script>
 
 <!-- <li class="relative cursor-pointer tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.language')}> -->
-<li class="relative cursor-pointer>
+<li class="relative cursor-pointer">
     <span class="pl-0 hover:bg-base-100">
       <img src={imageI18n} width="24" alt="">
     </span>
