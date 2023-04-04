@@ -66,6 +66,9 @@
   "btn-action": "開始",
   "total_clicks": "總點擊數",
   "country": "國家",
-  "city": "城市"
+  "city": "城市",
+  "home": "首頁",
+  "language": "語言",
+  "user": "用戶"
 }
 

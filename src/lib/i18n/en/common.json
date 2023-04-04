@@ -66,5 +66,8 @@
   "btn-action": "Start Now",
   "total_clicks": "Total Clicks",
   "country": "Country",
-  "city": "City"
+  "city": "City",
+  "home": "Home",
+  "language": "Language",
+  "user": "User"
 }

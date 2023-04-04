@@ -66,5 +66,8 @@
   "btn-action": "今すぐ",
   "total_clicks": "総クリック数",
   "country": "くに",
-  "city": "都会"
+  "city": "都会",
+  "home": "ホーム",
+  "language": "言語",
+  "user": "ユーザー"
 }

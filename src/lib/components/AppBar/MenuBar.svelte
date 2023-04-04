@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from "$lib/i18n/translations";
   import { page } from "$app/stores";
   import Logo from "$lib/components/AppBar/Logo.svelte";
   import ThemeMenu from "./ThemeMenu.svelte";
@@ -16,17 +17,23 @@
 
 <div class="bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50">
   <nav class="py-2 relative flex justify-between items-center">
-    <Logo />
+    <span class="tooltip tooltip-bottom" data-tip={$t('common.home')}>
+      <Logo />
+    </span>    
 
     <ul class="flex items-center">
       <div class="side-men">
         <ul class="menu menu-horizontal px-1 z-50 flex items-center">
-          <ThemeMenu />
-          <LangMenu />
+          <span class="tooltip tooltip-bottom" data-tip={$t('common.theme')}>
+            <ThemeMenu />
+          </span>
+          <span class="tooltip tooltip-bottom" data-tip={$t('common.language')}>
+            <LangMenu />
+          </span>
 
           <!-- {#if $page.url.pathname === "/" && !localUser.email} -->
           {#if $page.url.pathname === "/" && !$page.data.user?.user.email}
-              <a href="/auth" class="mr-4 borde max-[530px]:hidden">
+              <a href="/auth" class="mr-4 borde max-[530px]:hidden tooltip tooltip-bottom"  data-tip={$t('common.login')}>
                 <img src={imageLogin} width="24" alt="">
               </a>
           {/if}
@@ -44,7 +51,9 @@
             <UserMenu {localUser} />
           {/if} -->
 
-          <UserMenu />
+          <span class="tooltip tooltip-bottom" data-tip={$t('common.user')}>
+            <UserMenu />
+          </span>
         </ul>
       </div>
     </ul>
