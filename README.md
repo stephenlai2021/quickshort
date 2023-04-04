@@ -4,6 +4,15 @@
 ![Screen Shot](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/shortmaster.png)
 
 
+Before the advent of `Svelte` and `Sveltekit`, most people built single page application with `Angular`, `React` and `Vue`, I was one of them, I used to build web apps with `Vue.js` most of the time, a little bit `React.js`, until I found out `Svelet`, I couldn't remember how I exactly discrover Svelte, but I know I was totally attracted and fall in love with the magic it brings about, short, clean and easy to understand and read syntax / expresssion, built-in store management, well structured folder, the entire system is just terrific, I never thought developing web applications can be so pleasant and enjoyble, everything is so intuitive, and of course I switched to Svelte without any hestataion. I also dived in fullstack application with `Sapper`, a meta-framework built on top of Svelte and is as known as `Next.js` and `Nuxt.js`, then we all know what happened, Rich Harris and Svelte team creates the revoluntionary meta-framework~ `Sveltekit`, and it is so popular that it has become Developers's most loved and used framework. The reason `Sveltekit` is so cool and awesome is because its genius file naming, for example, `+page.svelte` means it is a ui file, does thing on client side after dom is mounted; `+page.server.js` indicates it is a server file, we fetch external data in this file and inject to `+page.svelte`, the ui is fully rendered on server side and is displayed on page. `+server.js` is a standalone api file, it handle CRUD operations such as Create / Read / Update / Delete on api. With Sveltekit building a fully functionaly web applications has become very easy, with the naming mechanism it becomes intuitive and write codes, Sveltekit takes care of the heavy lifting job for us so we can focus on what is creative and the content we want to present to users / visitors. I used to build SSR web apps with Node/Express, and I fully switched to Sveltekit because of the above mentioned advantages. 
+
+This ShortMaster URL shortener applications functionalities and features and all handle on server side, so on client side we only read the data fetched on server side and render. I personally love server side render because users / visitors always see the fully rendred page in no time, and avoid codes such as loading indicators / skeletons, etc. compared to client side rendering (Single Page Application)
+
+As a big fan of Svelte / Sveltekit, I quite often browse svelte.dev to look for answers / solutions / inspirations, and I happed to find out SvelteHack competition, and feel very excited and eagerly to participate this awesome and meaningful event. Because time is not much so I was thinking what type of application is best demonstrating Sveltekit's advanced features. I want this app have features such as theme switcher, multiple languages support, authentication, route gurad, chatbot, and I think an URL shortener application is a good idea, not only short long url but track user info such as ip address, country, city, geolocation, etc. I have been learning Svele/Sveltekit for awhile from official website, artickes on internet and youtube, and I already have a blueprint on how to implement these features and functionalities. After a something month the app is accomplished and it is time to present the results that I am proud of and hopefully not only win the prizes but help contribute to Svelte society, I am pretty sure Sveltekit is the No.1 meta-framework, it is better than Next, Nuxt, Remix and many other frameworks because my personal experiences. I think people should be aware of the advantages, benefits and power that Svelte / Sveltekit brings out over other frameworks and knowing builing powerful Server side render application can be pretty easy and fun, no need to learn and build a fullstack MVC app with Node, ASP.Net, Python, Ruby, PHP, etc. Sveltekit takes care of it all 🤩😀🥰😉🤗😘😎👍
+
+I built this app specially for **Svelte Hackathon** contest, 
+
+
 ### Live Demo
 
 - [https://shortmaster.netlify.app](https://shortmaster.netlify.app)
@@ -138,11 +147,11 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 
 **IPIFY** 
 
--
+- ipify auto detect user ip address in the format of version 4, i.e. `101.25.90.123`, it is a handy tool, for further info please visit [https://www.ipify.org/](https://www.ipify.org/)
 
 **IPAPI**
 
--
+- ipapi is a very powerful api that find all sorts of info of an ip address such as city, region country, time zone, latitude, longitude, etc. The ip address is displayed in the form of version 6, i.e. `2402:7500:4ce:693f:400b:fe1:264b:f036`, it is hard to 
 
 
 ## Environment_Variables
@@ -158,7 +167,7 @@ PUBLIC_SUPABASE_KEY = "Your key"
 PUBLIC_APP_BASE_URL = "http://localhost:5173"
 
 # production mode
-PUBLIC_APP_BASE_URL = "https://shortmaster.vercel.app"
+PUBLIC_APP_BASE_URL = "https://shortmaster.netlify.app"
 
 OPENAI_KEY = "Your OpenAI key"
 
