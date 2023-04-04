@@ -35,6 +35,7 @@
           {/if}
 
           {#if $page.data.user?.user.email && $page.url.pathname !== "/dashboard" && $page.url.pathname !== "/auth"}
+            <li>
               <a
                 href="/dashboard"
                 class="max-[530px]:hidden pl-0 mr-1  hover:bg-base-100 tooltip tooltip-bottom tooltip-neutral"
@@ -42,6 +43,7 @@
               >
                 <img src={imagePanel} width="24" alt="" />
               </a>
+            </li>
           {/if}
 
           <UserMenu />
