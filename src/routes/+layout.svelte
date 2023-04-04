@@ -28,12 +28,6 @@
   import Icon from "$lib/assets/images/favicon.ico";
   import ChatWindow from "$lib/components/chatbot/ChatWindow.svelte";
 
-  let localUser = {}
-  // let currentTheme = Cookies.get('colortheme')
-  // let cookie = Cookies.get()
-  // let theme = $page.data.theme
-  // console.log('theme | layout: ', $page.data)
-
   const handleRWD = () => {
     if (window.innerWidth <= 680) $widthLessthan680 = true;
     if (window.innerWidth > 680) $widthLessthan680 = false;
@@ -70,19 +64,11 @@
       subscription.unsubscribe();
     };
   });
-
-  // $: if ($page.data.user?.user) {
-  //   localUser = $page.data.user.user     
-  // }
-
-  // $: console.log('user | layout: ', localUser)
-  // $: console.log('user | layout: ', $page.data.user?.user)
   
   $: if (browser) window.addEventListener("resize", () => handleRWD());
 </script>
 
 <svelte:head>
-  <!-- <link rel="icon" type="image/x-icon" href={Icon} /> -->
   <title>ShortMaster</title>
 </svelte:head>
 
@@ -92,10 +78,6 @@
   style:height={$widthLessthan400 && $menuOpen ? "100vh" : "auto"}
   style:overflow-y={$widthLessthan400 && $menuOpen ? "hidden" : "auto"}
 >
-  <!-- {#if localUser}
-    <MenuBar {localUser} />
-  {/if} -->
-
   <MenuBar />
   <slot />
 

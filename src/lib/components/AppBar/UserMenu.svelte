@@ -21,7 +21,8 @@
   };
 </script>
 
-<li class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.user')}>
+<!-- <li class="tooltip tooltip-bottom tooltip-neutral" data-tip={$t('common.user')}> -->
+<li>
   <span class="pl-0 hover:bg-base-100">
     <img
       src={$page.data.user?.user.user_metadata.avatar_url ? $page.data.user.user.user_metadata.avatar_url : imageAvatar}
