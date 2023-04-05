@@ -274,14 +274,14 @@ Once user enter long url and hit shorten button, the system automatically genera
 - Data Type: text
 - Configuration: Primary Key && Unique
 
-_long-url_
+_long_url_
 
 After user enter a long url, it will be stored in long_url property.
 
 - Data Type: text
 - Configuration: Allow Nullable
 
-_total-clicks_
+_total_clicks_
 
 This property records total clicks of a short link
 
@@ -314,11 +314,22 @@ end;
 
 ### Authentication
 
-There are four auth providers used in this application, they are `Github`, `Google`, `Notion` and `Discord` respectively, in order to activate each provider we have to fill out `Client ID` and `Client Secret`, and paste `Redirect URL` to each provider to redirect to dashboard page once user has logged in with each provider
+There are four auth providers used in this application, they are `Github`, `Google`, `Notion` and `Discord` respectively, in order to activate each provider we have to fill out `Client ID` and `Client Secret`, and paste `Redirect URL` to each provider to redirect to dashboard page once user has logged in.
 
 There are two sections we have to configure
 
 **Providers**
+
+```
+Client ID
+i.e. 1091324580779540600
+
+Client Secret
+i.e. JzKDZxHm08epo-O-TJh8bwY17byPSy81
+
+Redirect URL
+https://yourprojectid.supabase.co/auth/v1/callback
+```
 
 
 **URL Configuration**
