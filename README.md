@@ -54,7 +54,7 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie,  so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism. 
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-theme.png">
+<img height="300" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-theme.png">
 
 
 **Internationalization** 
@@ -87,9 +87,9 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
+<img height="400" float="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png">
+<img height="400" float="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png">
 
 <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png">
 
