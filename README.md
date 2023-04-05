@@ -187,9 +187,11 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 
 **Supabase**
 
-- **OpenAI**
+**OpenAI**
 
-- **IPIFY**
+**IPIFY**
+
+**IPAPI**
 
 - ipify auto detect user ip address in the format of version 4, i.e. `101.25.90.123`, it is a handy tool, for further info please visit [https://www.ipify.org/](https://www.ipify.org/)
 
@@ -373,18 +375,12 @@ On the other hand, if the environment variables are imported in server file then
 PUBLIC_SUPABASE_URL = "Your key"
 PUBLIC_SUPABASE_KEY = "Your key"
 
-# development mode
 PUBLIC_APP_BASE_URL = "http://localhost:5173"
-
-# production mode
-PUBLIC_APP_BASE_URL = "https://shortmaster.netlify.app"
 
 OPENAI_KEY = "Your OpenAI key"
 
-# Get ipv4 address
 IPIFY = "https://api.ipify.org"
 
-# Get user city, country, latitude, longitude, etc.
 IPAPI = "https://ipapi.co/json/?key=YourAPIKey>"
 ```
 
