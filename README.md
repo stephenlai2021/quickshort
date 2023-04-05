@@ -61,13 +61,13 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. 🤗
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-lang.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-lang.png">
 
 **User account**
 
 - loggedin user's avatar image will be apperaed on the top right corner, when mouse hovered the menu will be opened, submenu such as user name, dashboard, chatbot toggle, logout will be shown.
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-user.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-user.png">
 
 
 
@@ -87,13 +87,13 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
-[Home page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png)
+![Home page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png)
 <!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png"> -->
 
-[Auth page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png)
+![Auth page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png)
 <!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png"> -->
 
-[Dashboard page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png)
+![Dashboard page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png)
 <!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png"> -->
 
 [Details page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png)
