@@ -354,7 +354,8 @@ For further info please read [Social Login](https://supabase.com/docs/guides/aut
 
 ## Environment_Variables
 
-In order to make the application gets up and running, we need to create a `.env` file under root directory, copy the following codes and paste into it. There are four different third party services leveraged in this application and all of them require API key, they are `supabasebase`, `openai`, `ipify`, `ipapi` respectively. One thing to notify is the abbreviation~ `PUBLIC_`, it means the API is exposed on the browser, it is because we perform _CRUD_ operation on client side and _Sveltekit_ requires the environment variables have to be public.
+In order to make the application gets up and running, we need to create a `.env` file under root directory, copy the following codes and paste into it. There are four different third party services applied in this application and all of them require API key, they are `supabasebase`, `openai`, `ipify`, `ipapi` respectively. One thing to notify is the abbreviation~ `PUBLIC_`, it means the API is exposed in the browser, it is because we perform _CRUD_ operation on client side and _Sveltekit_ requires the environment variables have to be public.
+On the other hand, if the environment variables are imported in server file then there is no `PUBLIC_` abbreviation and is not exposed in browser.
 
 ```
 # Supabase Config
