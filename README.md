@@ -388,7 +388,7 @@ IPIFY = "https://api.ipify.org"
 IPAPI = "https://ipapi.co/json/?key=YourAPIKey>"
 ```
 
-## 安装方式
+<!-- ## 安装方式
 
 ### 本地部署
 
@@ -823,4 +823,4 @@ DOMAIN-SUFFIX,openai.com,你的代理规则
 
 🐯 请作者喝可乐～
 
-<img  width="350"  alt="image"  src="https://user-images.githubusercontent.com/51039745/223626874-f471e5f5-8a06-43d5-aa31-9d2575b6f631.JPG">
+<img  width="350"  alt="image"  src="https://user-images.githubusercontent.com/51039745/223626874-f471e5f5-8a06-43d5-aa31-9d2575b6f631.JPG"> -->
