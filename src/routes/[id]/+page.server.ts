@@ -6,15 +6,15 @@ import { IPAPI, IPIFY } from "$env/static/private";
 export const load: PageServerLoad = async ({ params, fetch }) => {
   console.log("key: ", params.id);
 
-  const { data, error } = await supabaseClient
+  const { data: link, error: linkErr } = await supabaseClient
     .from("url_shortener_links")
     .select("*")
     .eq("key", params.id)
     .single();
   // console.log("link data: ", data);
 
-  if (error) {
-    console.log("error: ", error.message);
+  if (linkErr) {
+    console.log("error: ", linkErr.message);
     throw redirect(303, "/");
   }
 
@@ -26,11 +26,11 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
   const ip = await res.text();
 
   /* Get user info */
-  const { data: clicks, error: err } = await supabaseClient
+  const { data: click, error: clickErr } = await supabaseClient
     .from("url_shortener_clicks")
     .insert([
       {
-        link_id: data?.id,
+        link_id: link?.id,
         country: country_name,
         ip,
         city,
@@ -40,13 +40,13 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
       },
     ]);
 
-  if (err) console.log("error message: ", err.message);
-  console.log("clicks table: ", clicks);
+  if (clickErr) console.log("error message: ", clickErr.message);
+  console.log("clicks table: ", click);
 
   /* update total clicks */
-  const { data:totalClicks, error: errMsg } = await supabaseClient
+  const { data: totalClicks, error: errMsg } = await supabaseClient
     .from("url_shortener_links")
-    .insert([{ total_clicks: data?.total_clicks + 1 }]);
+    .insert([{ total_clicks: link?.total_clicks + 1 }]);
 
-  throw redirect(303, data?.long_url);
+  throw redirect(303, link?.long_url);
 };

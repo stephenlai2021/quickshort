@@ -30,18 +30,27 @@
     });
   };
 
-  // const handleDelete = async (key) => {
-  //   alert(`Are you sure to delete key "${key}" ?`);
+  const handleDelete = async (key) => {
+    alert(`Are you sure to delete key "${key}" ?`);
 
-  //   const { data, error } = await supabaseClient
-  //     .from("url_shortener_links")
-  //     .delete()
-  //     .eq("key", key);
+    const { data: link, error: linkErr } = await supabaseClient
+      .from("url_shortener_links")
+      .delete()
+      .eq("key", key);
+
+    console.log('deleted key: ', link?.key)
+    if (linkErr) console.log('error message: ', linkErr.message)
     
-  //   if (error) console.log('error message: ', error.message)
+    const { data: click, error: clickErr } = await supabaseClient
+    .from("url_shortener_clicks")
+    .delete()
+    .eq("link_id", link?.id);
+    
+    console.log('deleted click: ', click)
+    if (clickErr) console.log('error message: ', clickErr.message)
 
-  //   $linksArray = $linksArray.filter(link => link.key !== key)    
-  // };
+    $linksArray = $linksArray.filter(link => link.key !== key)    
+  };
 </script>
 
 <div
@@ -92,10 +101,10 @@
       <CopyBtn key={link.key} />
     </div>
 
-    <!-- <div class="border flex items-center">
+    <div class="borde flex items-center">
       <button on:click={() => handleDelete(link.key)}>
         <IconTrashcan width="18" />
       </button>
-    </div> -->
+    </div>
   </div>
 </div>
