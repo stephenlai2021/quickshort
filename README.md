@@ -85,7 +85,7 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
-<p align="center">
+<p align="left">
   <!-- <img height="400" position="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png"> -->
   <img width="190" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
 
