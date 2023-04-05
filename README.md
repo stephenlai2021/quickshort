@@ -312,6 +312,46 @@ begin
 end;
 ```
 
+### Authentication
+
+There are four auth providers used in this application, they are `Github`, `Google`, `Notion` and `Discord` respectively, in order to activate each provider we have to fill out `Client ID` and `Client Secret`, and paste `Redirect URL` to each provider to redirect to dashboard page once user has logged in with each provider
+
+There are two sections we have to configure
+
+**Providers**
+
+
+**URL Configuration**
+
+_Site URL_
+
+- The base URL of your website, for instance
+```
+http://localhost:5173
+
+https://shortmaster.vercel.app
+
+https://shortmaster.netlify.app
+```
+
+_Redirect URLs_
+
+- URLs that auth providers are permitted to redirect to post authentication. Wildcards are allowed, for example
+```
+http://localhost:5173/dashboard
+
+https://shortmaster.vercel.app/dashboard
+
+https://shortmaster.netlify.app/dashboard
+```
+
+
+
+For further info please read [Social Login](https://supabase.com/docs/guides/auth/social-login) from Supabase documents.
+
+
+
+
 ## Environment_Variables
 
 In order to make the application gets up and running, we need to create a `.env` file under root directory, copy the following codes and paste into it. There are four different third party services leveraged in this application and all of them require API key, they are `supabasebase`, `openai`, `ipify`, `ipapi` respectively. One thing to notify is the abbreviation~ `PUBLIC_`, it means the API is exposed on the browser, it is because we perform _CRUD_ operation on client side and _Sveltekit_ requires the environment variables have to be public.
