@@ -106,8 +106,7 @@ Each client side page has its own server, all the data are fetched on server sid
 <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section1.png">
 <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section2.png">
 <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section3.png">
-<img height="400" src="
-https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section4.png">
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section4.png">
 <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section5.png">
 <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section6.png">
 
