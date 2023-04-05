@@ -38,18 +38,19 @@
       .delete()
       .eq("key", key);
 
-    console.log('deleted key: ', link?.key)
-    if (linkErr) console.log('error message: ', linkErr.message)
-    
-    const { data: click, error: clickErr } = await supabaseClient
-    .from("url_shortener_clicks")
-    .delete()
-    .eq("link_id", link?.id);
-    
-    console.log('deleted click: ', click)
-    if (clickErr) console.log('error message: ', clickErr.message)
+    // console.log('deleted key: ', link?.key)
+    if (linkErr)
+      console.log("error message from links table: ", linkErr.message);
 
-    $linksArray = $linksArray.filter(link => link.key !== key)    
+    const { data: click, error: clickErr } = await supabaseClient
+      .from("url_shortener_clicks")
+      .delete()
+      .eq("link_id", link?.id);
+
+    // console.log("deleted click: ", click);
+    if (clickErr) console.log("error message from clicks table: ", clickErr.message);
+
+    $linksArray = $linksArray.filter((link) => link.key !== key);
   };
 </script>
 
