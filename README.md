@@ -87,16 +87,16 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 <p align="left">
   <!-- <img height="400" position="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png"> -->
-  <img width="185" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
+  <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
 
   <!-- <img height="400" float="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png"> -->
-  <img width="185" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png">
+  <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png">
 
   <!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png"> -->
-  <img width="185" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png">
+  <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png">
 
   <!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png"> -->
-  <img width="185" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png">
+  <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png">
 </p>
 
 ## Tech_Stack
