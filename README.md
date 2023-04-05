@@ -125,12 +125,12 @@ Each client side page has its own server, all the data are fetched on server sid
 
 - it is expressed in the form of `/` in codes, it is the root directory of the entire application. The home page is composed of six sections, each section is two column row contains text descriptions and illustration. There is a fixed menu bar at the top, user can login through login menu.
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section1.png">
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section2.png">
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section3.png">
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section4.png">
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section5.png">
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section6.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section1.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section2.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section3.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section4.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section5.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section6.png">
 
 **Auth Page** 
 
