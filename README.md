@@ -52,15 +52,28 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 **Theme Switcher** 
 
-- users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie,  so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism. 🥰
+- users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie,  so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism. 
+
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-theme.png">
+
 
 **Internationalization** 
 
 - Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. 🤗
 
-**Authentication** 
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-lang.png">
 
-- _ShortMaster_ applies `Supabase` as a total backend solution. Users are required to login to use the functionality. Each route is protected on server side, if a user is not loggedin, he/she is not allowed to access `/dashboard` route where only authenticated users are accessible. On the other hand, if authenticated users try to access routes such as `/`, `/auth`, they will be redirected to `/dashboard`. Besides, users can easily login with their social accounts which save tons of time and steps because if login / signup with email and password, it requires users head to thier email account to confirm the login / signup procedure and that's why people are liking social accounts login with a click of button. 😀
+**User account**
+
+- loggedin user's avatar image will be apperaed on the top right corner, when mouse hovered the menu will be opened, submenu such as user name, dashboard, chatbot toggle, logout will be shown.
+
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-user.png">
+
+
+
+<!-- **Authentication** 
+
+- _ShortMaster_ applies `Supabase` as a total backend solution. Users are required to login to use the functionality. Each route is protected on server side, if a user is not loggedin, he/she is not allowed to access `/dashboard` route where only authenticated users are accessible. On the other hand, if authenticated users try to access routes such as `/`, `/auth`, they will be redirected to `/dashboard`. Besides, users can easily login with their social accounts which save tons of time and steps because if login / signup with email and password, it requires users head to thier email account to confirm the login / signup procedure and that's why people are liking social accounts login with a click of button. 😀 -->
 
 **OpenAI Powered Chatbot** 
 
@@ -73,6 +86,15 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 **Fully Responsive UI** 
 
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
+
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
+
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png">
+
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png">
+
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png">
+
 
 
 ## Tech_Stack  
