@@ -187,37 +187,44 @@ There are two tables involved in this application, they are `url_shortener_click
 Besides default property such as `id`, `created_at`, this table contains key elements associates with click details such as
 
 _link_id_
+
 This propery has relation with `url_shortener_lilnks` id
 - Foreign Key Relation: `link.id -> public.url_shortener_links.id`
 - Data Type: int8
 - Configureation: Primary Key
 
 _ip_
+
 Ip address of the person who click the short link will be collected
 - Data Type: varchar
 - Configuration: Allow Nullable
 
 _country_
+
 Country of the person who click the short link will be collected
 - Data Type: varchar
 - Configuration: Allow Nullable
  
 _city_
+
 City of the person who click the short link will be collected
 - Data Type: varchar
 - Configuration: Allow Nullable
 
 _latitude_
+
 Latitude of the person who click the short link will be collected and user location will be displayed on the map
 - Data Type: varchar
 - Configuration: Allow Nullable
 
 _longitude_
+
 Longitude of the person who click the short link will be collected and user location will be displayed on the map
 - Data Type: varchar
 - Configuration: Allow Nullable
 
 _language_
+
 - Data Type: varchar
 - Configuration: Allow Nullable
 
@@ -226,21 +233,25 @@ _language_
 This table contains the following properties
 
 _user_id_
+
 Once user login, his email will be stored in this column, and the user can only see his/her short link data based upon this user_id
 - Data Type: text
 - Configuration: Primary Key
 
 _key_
+
 Once user enter long url and hit shorten button, the system automatically generate a six random figures and stored in this key property
 - Data Type: text
 - Configuration: Primary Key && Unique
 
 _long-url_
+
 After user enter a long url, it will be stored in long_url property.
 - Data Type: text
 - Configuration: Allow Nullable
 
 _total-clicks_ 
+
 This property records total clicks of a short link
 - Data Type: numeric
 - Default Value: '0'::numeric
