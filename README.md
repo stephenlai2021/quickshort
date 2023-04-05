@@ -87,17 +87,13 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
-![Home page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png)
-<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png"> -->
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
 
-![Auth page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png)
-<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png"> -->
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png">
 
-![Dashboard page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png)
-<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png"> -->
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png">
 
-[Details page on Smartphone](https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png)
-<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png"> -->
+<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png">
 
 
 
