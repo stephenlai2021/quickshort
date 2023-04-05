@@ -38,7 +38,7 @@ One thing to mention is that designing an appealing, good-looking User Interface
 - [https://shortmaster.netlify.app](https://shortmaster.netlify.app)
 - [https://shortmaster.vercel.app](https://shortmaster.vercel.app)
 
-The app is working perfectly on Vercel all the time at the beginning but somehow it is not working anymore due to "Serverless Function crash" and I have no clue how that happened and the way to fix it therefore I take alternative approach which is deploying it on `Netlify` and it works great.
+The app is working perfectly on Vercel all the time at the beginning but somehow it is not working anymore due to "Serverless Function crash" and I cannot get it fixed therefore I take alternative approach which is deploying it on `Netlify` and it works great.
 
 ## Table of Contents
 
