@@ -11,12 +11,7 @@
 
 <div class="bg-base/30 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50">
   <nav class="py-2 relative flex justify-between items-center">
-    <span
-      class="tooltip tooltip-bottom tooltip-neutral"
-      data-tip={$t("common.home")}
-    >
-      <Logo />
-    </span>
+    <Logo />
 
     <ul class="flex items-center">
       <div class="side-men">
@@ -25,11 +20,8 @@
           <LangMenu />
 
           {#if $page.url.pathname === "/" && !$page.data.user?.user.email}
-          <!-- class="mr-4 borde max-[530px]:hidden tooltip tooltip-bottom tooltip-neutral" -->
-            <a
-              href="/auth"
-              class="mr-4 borde max-[530px]:hidden"
-              >
+            <!-- class="mr-4 borde max-[530px]:hidden tooltip tooltip-bottom tooltip-neutral" -->
+            <a href="/auth" class="mr-4 borde max-[530px]:hidden">
               <!-- data-tip={$t("common.login")} -->
               <img src={imageLogin} width="24" alt="" />
             </a>
@@ -41,7 +33,7 @@
               <a
                 href="/dashboard"
                 class="max-[530px]:hidden pl-0 mr-1 hover:bg-base-100"
-                >
+              >
                 <!-- data-tip={$t("common.dashboard")} -->
                 <img src={imagePanel} width="24" alt="" />
               </a>
