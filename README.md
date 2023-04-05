@@ -55,7 +55,7 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie, so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism.
 
-<img height="300" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-theme.png">
+<img height="300" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-theme-v2.png">
 
 **Internationalization**
 
