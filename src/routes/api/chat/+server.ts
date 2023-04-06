@@ -14,12 +14,15 @@ export const config: Config = {
 
 export const POST: RequestHandler = async ({ request }) => {
   try {
-    if (!OPENAI_KEY) {
-      throw new Error("OPENAI_KEY env variable not set");
-    }
+    // if (!OPENAI_KEY) {
+    //   throw new Error("OPENAI_KEY env variable not set");
+    // }
 
     const requestData = await request.json();
     console.log("chat data: ", requestData);
+    
+    const { openaiKey } = requestData
+    console.log("openai key: ", openaiKey);
 
     if (!requestData) {
       throw new Error("No request data");
@@ -41,7 +44,8 @@ export const POST: RequestHandler = async ({ request }) => {
     const moderationRes = await fetch("https://api.openai.com/v1/moderations", {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_KEY}`
+        // Authorization: `Bearer ${OPENAI_KEY}`
+        Authorization: `Bearer ${openaiKey}`
       },
       method: "POST",
       body: JSON.stringify({
@@ -81,7 +85,8 @@ export const POST: RequestHandler = async ({ request }) => {
       "https://api.openai.com/v1/chat/completions",
       {
         headers: {
-          Authorization: `Bearer ${OPENAI_KEY}`,
+          // Authorization: `Bearer ${OPENAI_KEY}`,
+          Authorization: `Bearer ${openaiKey}`,
           "Content-Type": "application/json",
         },
         method: "POST",

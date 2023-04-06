@@ -2,8 +2,8 @@
   "logo": "ShortMaster",
   "logo_long": "ShortMaster",
   "logo_short": "QS",
-  "chatbot_description": "chatbot powered by GPT4",
-  "chatbot_initial_prompt": "How may I help you ?",
+  "chatbot_description": "chatbot powered by chatGPT",
+  "chatbot_initial_prompt": "Hello, folks, please click the chatgpt icon down below and enter your OpenAI API key to start conversation with chatGPT 🙏, the api key is stored in local storage so there is no need to worry about being misused 😉",
   "title": "Shorten Your URLs Easily.",
   "subtitle": "QuickShort is the easiest way to shorten URLs and track analytics for your website.",
   "action": "Short Now",
@@ -69,5 +69,6 @@
   "city": "City",
   "home": "Home",
   "language": "Language",
-  "user": "User"
+  "user": "User",
+  "save": "Save"
 }

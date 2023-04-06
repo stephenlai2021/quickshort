@@ -3,7 +3,7 @@
   "logo_long": "縮短專家",
   "logo_short": "縮短專家",
   "chatbot_description": "chatGPT 聊天機器人",
-  "chatbot_initial_prompt": "我能為您做甚麼 ?",
+  "chatbot_initial_prompt": "大家好，請點擊下面的 chatgpt 圖標，输入你的 OpenAI API 密鑰，開始與 chatGPT 對話🙏, api密钥存储在本地存储器中，因此无需担心被滥用😉。",
   "title": "輕鬆縮短你的網址",
   "subtitle": "魁秀是縮短網址和跟踪分析網站的最簡單方法",
   "action": "現在就修",
@@ -69,6 +69,7 @@
   "city": "城市",
   "home": "首頁",
   "language": "語言",
-  "user": "用戶"
+  "user": "用戶",
+  "save": "儲存"
 }
 

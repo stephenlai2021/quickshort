@@ -3,7 +3,7 @@
   "logo_long": "クイックショート",
   "logo_short": "縮める",
   "chatbot_description": "GPT4 を利用したチャットボット",
-  "chatbot_initial_prompt": "ご用件は？",
+  "chatbot_initial_prompt": "皆さん、こんにちは！下のchatgptアイコンをクリックして、OpenAI APIキーを入力して、chatGPTと会話を始めてください🙏, apiキーはローカルストレージに保存されるため、悪用される心配はない😉。",
   "title": "URLを簡単に短縮できる.",
   "subtitle": "クイックショートは、あなたのウェブサイトのURLを短縮し、分析を追跡する最も簡単な方法です.",
   "action": "今すぐ始める",
@@ -69,5 +69,6 @@
   "city": "都会",
   "home": "ホーム",
   "language": "言語",
-  "user": "ユーザー"
+  "user": "ユーザー",
+  "save": "扶ける"
 }

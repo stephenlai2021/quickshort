@@ -4,11 +4,14 @@
   import { cubicOut } from "svelte/easing";
   import { t } from "$lib/i18n/translations";
   import { supabaseClient } from "$lib/supabase";
-  import { menuOpen } from "$lib/stores";
-  import { onMount } from "svelte"
+  import { menuOpen, openaiKey } from "$lib/stores";
+  import { onMount } from "svelte";
+  import { fade, fly } from "svelte/transition";
+  import { toast } from "@zerodevx/svelte-toast";
   import ChatMessage from "./ChatMessage.svelte";
   import IconSister from "$lib/components/icon/IconSister.svelte";
   import IconClose from "$lib/components/icon/IconClose.svelte";
+  import iconChatgpt from "$lib/assets/images/icons/chatgpt.png";
 
   let query: string = "";
   let answer: string = "";
@@ -16,10 +19,12 @@
   let errMsg: string = "";
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
+  let popup = false;
+  let apiKey = "";
 
   let openaiErr = false;
   // let errMsg = ''
-  let chatMsgs = []
+  let chatMsgs = [];
 
   function scrollToBottom() {
     setTimeout(function () {
@@ -32,6 +37,26 @@
   }
 
   const handleSubmit = async () => {
+    if (!query) {
+      toast.push("Prompt cannot be empty !", {
+        theme: {
+          "--toastBorderRadius": "8px",
+          "--toastBarBackground": "",
+          // "--toastBackground": "#F5B942",
+          "--toastBackground": "#8AD8EF",
+          "--toastBtnWidth": "0",
+          "--toastBtnHeight": "0",
+          "--toastBtnContent": " ",
+          "--toastMsgPadding": "0.35rem 1rem",
+          "--toastMinHeight": "3.0rem",
+          // "--toastWidth": "174px",
+          "--toastColor": "black",
+          "--toastBtnFont": "14px",
+        },
+      });
+      return;
+    }
+
     loading = true;
     chatMessages = [...chatMessages, { role: "user", content: query }];
 
@@ -41,6 +66,7 @@
       },
       payload: JSON.stringify({
         messages: chatMessages,
+        openaiKey: $openaiKey
       }),
     });
     query = "";
@@ -94,22 +120,7 @@
     };
   }
 
-  onMount(() => {
-    const chats = supabaseClient
-      .channel("shortmaster-chats")
-      .on(
-        "postgres_changes", 
-        { event: '*', schema: 'public', table: 'url_shortener_chats' },
-        (payload) => {
-          console.log(payload)
-          chatMsgs = [...chatMsgs, payload.new]
-        }
-      )
-      .subscribe()
-  })
-
-  const sendMsg = () => {
-  };
+  $: console.log("openai key: ", $openaiKey);
 </script>
 
 <div
@@ -158,26 +169,56 @@
       {#if errMsg}
         <ChatMessage type="assistant" message={errMsg} />
       {/if}
+
+      {#if !$openaiKey}
+        <!-- <ChatMessage type="assistant" message={errMsg} /> -->
+        <ChatMessage type="assistant" message="Oh, you forgot to attach your openai key 🙄" />
+      {/if}
     </div>
     <div class="" bind:this={scrollToDiv} />
   </div>
-  <form
-    class="max-[400px]:h-[50px] relative flex w-full max-[400px]:rounded-none rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
-    on:submit|preventDefault={handleSubmit}
-  >
-    <input
-      type="text"
-      class="w-[70%] border-none rounded-none outline-none"
-      bind:value={query}
-    />
-    <button
-      type="submit"
-      class="text-[14px] rounded-[04px] px-[10px] w-[30%]"
-      on:click={sendMsg}
+
+  {#if popup}
+    <form
+      class="relative flex max-[400px]:h-[50px] relative flex w-full max-[400px]:rounded-none rounded-b-[8px] shadow-neutral/20 shadow-md"
     >
-      <span>{$t("common.send")}</span>
-    </button>
-  </form>
+      <input
+        type="text"
+        class="w-[70%] border-none rounded-none outline-none bg-warnin text-blac"
+        placeholder="Please enter you OpenAI API key"
+        bind:value={$openaiKey}
+      />
+      <button
+        class="bg-primary borde text-[14px] rounded-[0px] px-[10px] w-[30%]"
+        on:click={() => (popup = false)}
+      >
+        <span class="borde">{$t("common.save")}</span>
+      </button>
+    </form>
+  {:else}
+    <form
+      class="relative flex max-[400px]:h-[50px] relative flex w-full max-[400px]:rounded-none rounded-b-[8px] shadow-neutral/20 shadow-md bg-base-300"
+      on:submit|preventDefault={handleSubmit}
+    >
+      <input
+        type="text"
+        class="w-[70%] border-none rounded-none outline-none"
+        bind:value={query}
+      />
+      <button
+        type="submit"
+        class="borde flex items-center text-[14px] rounded-[04px] px-[10px] w-[30%]"
+      >
+        <span class="borde ml-[18px]">{$t("common.send")}</span>
+      </button>
+      <span
+        class="cursor-pointe absolute right-[8px] top-[50%] translate-y-[-50%] borde flex items-center"
+        on:click={() => (popup = !popup)}
+      >
+        <img src={iconChatgpt} alt="" width="16" />
+      </span>
+    </form>
+  {/if}
 </div>
 
 <style>
