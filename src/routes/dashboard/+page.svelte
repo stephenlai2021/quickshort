@@ -22,8 +22,8 @@
   }
 </script>
 
-<section class="pt-28 mx- mx-auto bg-base-100">
-  <h1 class="text-[22px] font-bold max-[410px]:px-[10px] max-[420px]:overflow-x-hidden">
+<section class="pt-28 mx- mx-auto bg-base-100 max-[420px]:overflow-x-hidden">
+  <h1 class="text-[22px] font-bold max-[410px]:px-[10px]">
     {$t("common.dashboard")}
   </h1>
   <LinkForm />
