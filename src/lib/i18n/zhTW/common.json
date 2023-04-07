@@ -70,6 +70,12 @@
   "home": "首頁",
   "language": "語言",
   "user": "用戶",
-  "save": "儲存"
+  "save": "儲存",
+  "about": "關於作者",
+  "authorName": "史帝芬賴",
+  "authorTitle": "全端開發人員",
+  "authorDescription": "我創建各種網路應用，主要是全端開發，我使用 Sveltekit 構建。",
+  "contact": "聯絡我",
+  "copyright": "版權聲明 © 2023- 縮短專家. 保留所有權利。"
 }
 

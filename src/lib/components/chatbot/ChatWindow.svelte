@@ -170,10 +170,9 @@
         <ChatMessage type="assistant" message={errMsg} />
       {/if}
 
-      {#if !$openaiKey}
-        <!-- <ChatMessage type="assistant" message={errMsg} /> -->
+      <!-- {#if !$openaiKey}
         <ChatMessage type="assistant" message="Oh, you forgot to attach your openai key 🙄" />
-      {/if}
+      {/if} -->
     </div>
     <div class="" bind:this={scrollToDiv} />
   </div>
@@ -191,6 +190,7 @@
       <button
         class="bg-primary borde text-[14px] rounded-[0px] px-[10px] w-[30%]"
         on:click={() => (popup = false)}
+        on:keydown
       >
         <span class="borde">{$t("common.save")}</span>
       </button>

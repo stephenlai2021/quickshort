@@ -70,5 +70,11 @@
   "home": "ホーム",
   "language": "言語",
   "user": "ユーザー",
-  "save": "扶ける"
+  "save": "扶ける",
+  "about": "について",
+  "authorName": "Stephen Lai",
+  "authorTitle": "フルスタック開発者",
+  "authorDescription": "フルスタックを中心に様々なWebアプリケーションを制作しており、Sveltekitで構築している",
+  "contact": "連絡先",
+  "copyright": "著作権 © 2023- 縮める. 無断転載禁止."
 }

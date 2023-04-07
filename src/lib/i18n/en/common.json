@@ -70,5 +70,11 @@
   "home": "Home",
   "language": "Language",
   "user": "User",
-  "save": "Save"
+  "save": "Save",
+  "about": "About the author",
+  "authorName": "Stephen Lai",
+  "authorTitle": "Fullstack Developer",
+  "authorDescription": "I create various web applications, mainly fullstack, and I build with Sveltekit",
+  "contact": "contact me",
+  "copyright": "Copyright © 2023- ShortMaster. All Rights Reserved."
 }

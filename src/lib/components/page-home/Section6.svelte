@@ -36,7 +36,7 @@
 </script>
 
 <section
-  class="section6 bg-no-repeat max-[680px]:mx-[10px] max-[680px]:px-[10px] rounded-[20px] mt-[90px] mb-[80px] mx-[40px] sm:mx-[90px] border border-[2px] border-neutral/30"
+  class="section6 bg-no-repeat max-[680px]:mx-[10px] max-[680px]:px-[10px] rounded-[20px] mt-[90px] mb-[80px] mx-[40px] sm:mx-[90px] border border-neutral/10 shadow shadow-lg"
 >
   <div class="wrapper flex justify-center my-[80px]">
     <div
@@ -57,7 +57,7 @@
   <div class="flex justify-center my-[60px]">
     <!-- <button class="btn px-4 text-[16px]" on:click={handleAction}>{$t("common.btn-action")}</button> -->
     <!-- <div class="btn px-4 text-[16px]" on:keydown on:click={() => goto('/dashboard')}>{$t("common.btn-action")}</div> -->
-    <a href="/dashboard" class="btn px-8 text-[16px]">{$t("common.btn-action")}</a>
+    <a href="/dashboard" class="btn px-8 text-[16px] bg-[#3AA7AA] border-none rounded-[8px] text-white">{$t("common.btn-action")}</a>
   </div>
 </section>
 
