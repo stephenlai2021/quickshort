@@ -228,27 +228,35 @@ const config = {
 
 **Supabase**
 
-Supabase plays an important role in this application, it is total backend solution, authentication, database are utilized in this application.
+- Supabase is an open source Firebase alternative, it plays an important role in this application, it is total backend solution, authentication, database are utilized in this application.
+
+- Reference: <a href="https://supabase.com/" target="_blank">https://supabase.com/</a>
+
 
 **OpenAI**
 
 It is a red hot technology these days. chatbot is included at the bottom right corner of the page and is powered by chatgpt3.5, users are required to enter their own api key to activate conversation with Openai server.
 
+- Reference: <a href="https://openai.com/" target="_blank">https://openai.com/</a>
+
+
 **IPIFY**
 
-It is a simple public IP address API, we can simply get our own api or others on client or server side using fetch function 
+- It is a simple public IP address API, we can simply get our own api or others on client or server side using fetch function 
 ```
 const res = await fetch(IPIFY);
 const ip = await res.text();
 ```
 
-**IPAPI**
+- Reference: <a href="https://www.ipify.org/" target="_blank">https://www.ipify.org/</a>
 
-- ipify auto detect user ip address in the format of version 4, i.e. `101.25.90.123`, it is a handy tool, for further info please visit [https://www.ipify.org/](https://www.ipify.org/)
 
 **IPAPI**
 
 - ipapi is a very powerful api that find all sorts of info of an ip address such as city, region country, time zone, latitude, longitude, etc. The ip address is displayed in the form of version 6, i.e. `2402:7500:4ce:693f:400b:fe1:264b:f036`, it is hard to
+
+- Reference: <a href="https://ipapi.co/" target="_blank">https://ipapi.co/</a>
+
 
 ## Third_Party_Packages
 
@@ -256,54 +264,47 @@ const ip = await res.text();
 
 - A collection of framework-specific Auth utilities for working with Supabase, it makes implementing auth in route guard easy.
 
-<!-- - [Reference](https://github.com/supabase/auth-helpers) -->
-
-- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/supabase/auth-helpers</a>
+- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/supabase/auth-helpers</a>
 
 **adapter-vercel**
 
 - A SvelteKit adapter that creates a Vercel app.
 
-<!-- - [Reference](https://kit.svelte.dev/docs/adapter-vercel)  -->
+- Reference: <a href="https://kit.svelte.dev/docs/adapter-vercel" target="_blank">https://kit.svelte.dev/docs/adapter-vercel</a>
 
-- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://kit.svelte.dev/docs/adapter-vercel</a>
+**adapter-netlify**
+
+- A SvelteKit adapter that creates a Netlify app.
+
+- Reference: <a href="https://kit.svelte.dev/docs/adapter-netlify" target="_blank">https://kit.svelte.dev/docs/adapter-netlify</a>
 
 
 **svelte-toast**
 
 - A feather-light and well-tested toast notification component for modern web frontends in very little lines of code. Compiled (into UMD), it's only 20kB minified (8kB gzipped) and can be used in Vanilla JS, or as a Svelte component.
 
-<!-- - [Reference](https://github.com/zerodevx/svelte-toast) -->
-
-- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/zerodevx/svelte-toast</a>
+- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/zerodevx/svelte-toast</a>
 
 
 **tailwindcss**
 
 - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 
-<!-- - [Reference](https://tailwindcss.com/) -->
-
-- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://tailwindcss.com/</a>
+- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://tailwindcss.com/</a>
 
 
 **daisyui**
 
 - daisyUI is a customizable Tailwind CSS component library that prevents verbose markup in frontend applications. With a focus on customizing and creating themes for user interfaces, daisyUI uses pure CSS and Tailwind utility classes, allowing developers to write clean HTML.
 
-<!-- - [Reference](https://daisyui.com/) -->
-
-- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://daisyui.com/</a>
-
+- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://daisyui.com/</a>
 
 
 **leaflet**
 
 - An open source JavaScript library used to build web mapping applications.
 
-<!-- - [Reference](https://leafletjs.com/) -->
-
-- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://leafletjs.com/</a>
+- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://leafletjs.com/</a>
 
 
 
@@ -311,9 +312,7 @@ const ip = await res.text();
 
 - A tiny library with no external dependencies, built for Svelte and SvelteKit. It provides you the most straightforward sveltekit-i18n solution.
 
-<!-- - [Reference](https://www.npmjs.com/package/sveltekit-i18n) -->
-
-- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://www.npmjs.com/package/sveltekit-i18n</a>
+- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://www.npmjs.com/package/sveltekit-i18n</a>
 
 
 
