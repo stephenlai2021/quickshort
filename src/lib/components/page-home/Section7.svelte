@@ -21,12 +21,13 @@
       <div class="text-[20px] mt-1">
         🥰🤗😘😉🤩😀😎👍
       </div>
-      <div>
+      <!-- <div>
         Contact me at stephenlai2015@gmail.com
-      </div>
+      </div> -->
     </div>
   </div>
-  <!-- <button class="btn rounded-[8px] mt-[40px] mb-[60px] bg-[#3AA7AA] text-white border-none text-[16px]">
-    {$t('common.contact')}
-  </button> -->
+  <button class="btn rounded-[8px] mt-[40px] mb-[60px] bg-[#3AA7AA] text-white border-none text-[16px]">
+    <a href="mailto: stephenlai2015@gmail.com">{$t('common.contact')}</a>
+    <!-- {$t('common.contact')} -->
+  </button>
 </div>
