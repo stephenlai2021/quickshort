@@ -1,4 +1,4 @@
-# <img height="40" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/public/shormaster_logo-removebg.png"  alt="Logo" /> ShortMaster - A Sveltekit URL shortener application that not only shorten long url but analyze traffic from the clicks
+# <img height="40" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/public/shormaster_logo-removebg.png"  alt="Logo" /> ShortMaster - A Sveltekit application that not only shorten long url but analyze traffic from the clicks
 
 <img src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/home-v2.png" />
 
@@ -55,6 +55,8 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 **Theme Switcher**
 
 - users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie, so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism.
+
+- [Reference](https://www.youtube.com/watch?v=3GpZkVBjXfE&list=PLq30BP0TIcqXP149TyFMfRhnMT6T5--e5&index=14)
 
 <img height="300" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-theme-v2.png">
 
@@ -254,46 +256,65 @@ const ip = await res.text();
 
 - A collection of framework-specific Auth utilities for working with Supabase, it makes implementing auth in route guard easy.
 
-- [Reference](https://github.com/supabase/auth-helpers)
+<!-- - [Reference](https://github.com/supabase/auth-helpers) -->
+
+- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/supabase/auth-helpers</a>
 
 **adapter-vercel**
 
 - A SvelteKit adapter that creates a Vercel app.
-- [Reference](https://kit.svelte.dev/docs/adapter-vercel) 
+
+<!-- - [Reference](https://kit.svelte.dev/docs/adapter-vercel)  -->
+
+- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://kit.svelte.dev/docs/adapter-vercel</a>
+
 
 **svelte-toast**
 
 - A feather-light and well-tested toast notification component for modern web frontends in very little lines of code. Compiled (into UMD), it's only 20kB minified (8kB gzipped) and can be used in Vanilla JS, or as a Svelte component.
 
-- [Reference](https://github.com/zerodevx/svelte-toast)
+<!-- - [Reference](https://github.com/zerodevx/svelte-toast) -->
+
+<a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/zerodevx/svelte-toast</a>
 
 
 **tailwindcss**
 
 - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 
-- [Reference](https://tailwindcss.com/)
+<!-- - [Reference](https://tailwindcss.com/) -->
+
+<a href="https://github.com/supabase/auth-helpers" target="_blank">https://tailwindcss.com/</a>
 
 
 **daisyui**
 
 - daisyUI is a customizable Tailwind CSS component library that prevents verbose markup in frontend applications. With a focus on customizing and creating themes for user interfaces, daisyUI uses pure CSS and Tailwind utility classes, allowing developers to write clean HTML.
 
-- [Reference](https://daisyui.com/)
+<!-- - [Reference](https://daisyui.com/) -->
+
+<a href="https://github.com/supabase/auth-helpers" target="_blank">https://daisyui.com/</a>
+
 
 
 **leaflet**
 
 - An open source JavaScript library used to build web mapping applications.
 
-- [Reference](https://leafletjs.com/)
+<!-- - [Reference](https://leafletjs.com/) -->
+
+<a href="https://github.com/supabase/auth-helpers" target="_blank">https://leafletjs.com/</a>
+
 
 
 **sveltekit-i18n**
 
 - A tiny library with no external dependencies, built for Svelte and SvelteKit. It provides you the most straightforward sveltekit-i18n solution.
 
-- [Reference](https://www.npmjs.com/package/sveltekit-i18n)
+<!-- - [Reference](https://www.npmjs.com/package/sveltekit-i18n) -->
+
+<a href="https://github.com/supabase/auth-helpers" target="_blank">https://www.npmjs.com/package/sveltekit-i18n</a>
+
 
 
 ## Supabase_as_BAAS
