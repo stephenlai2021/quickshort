@@ -12,7 +12,7 @@
     <div class="title text-[15px] mt-2">{$t('common.authorTitle')}</div>
     <a href="https://github.com/stephenlai2021/quickshort" target="_blank">
       <!-- <img src={githubIcon} alt="" width="24" height="24" class="mt-4 mb-2 cursor-pointer" on:click={() => goto('https://github.com/stephenlai2021')}> -->
-      <img src={githubIcon} alt="" width="24" height="24" class="mt-4 mb-2 cursor-pointer shadow shadow-sm border border-neutral/10">
+      <img src={githubIcon} alt="" width="24" height="24" class="mt-4 mb-2 cursor-pointer border border-white">
     </a>
     <div class="description mt-2 mx-6 text-center">
       <div>
@@ -21,9 +21,12 @@
       <div class="text-[20px] mt-1">
         🥰🤗😘😉🤩😀😎👍
       </div>
+      <div>
+        Contact me at stephenlai2015@gmail.com
+      </div>
     </div>
   </div>
-  <button class="btn rounded-[8px] mt-[40px] mb-[60px] bg-[#3AA7AA] text-white border-none text-[16px]">
+  <!-- <button class="btn rounded-[8px] mt-[40px] mb-[60px] bg-[#3AA7AA] text-white border-none text-[16px]">
     {$t('common.contact')}
-  </button>
+  </button> -->
 </div>
