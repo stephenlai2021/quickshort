@@ -275,7 +275,7 @@ const ip = await res.text();
 
 <!-- - [Reference](https://github.com/zerodevx/svelte-toast) -->
 
-<a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/zerodevx/svelte-toast</a>
+- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/zerodevx/svelte-toast</a>
 
 
 **tailwindcss**
@@ -284,7 +284,7 @@ const ip = await res.text();
 
 <!-- - [Reference](https://tailwindcss.com/) -->
 
-<a href="https://github.com/supabase/auth-helpers" target="_blank">https://tailwindcss.com/</a>
+- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://tailwindcss.com/</a>
 
 
 **daisyui**
@@ -293,7 +293,7 @@ const ip = await res.text();
 
 <!-- - [Reference](https://daisyui.com/) -->
 
-<a href="https://github.com/supabase/auth-helpers" target="_blank">https://daisyui.com/</a>
+- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://daisyui.com/</a>
 
 
 
@@ -303,7 +303,7 @@ const ip = await res.text();
 
 <!-- - [Reference](https://leafletjs.com/) -->
 
-<a href="https://github.com/supabase/auth-helpers" target="_blank">https://leafletjs.com/</a>
+- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://leafletjs.com/</a>
 
 
 
@@ -313,7 +313,7 @@ const ip = await res.text();
 
 <!-- - [Reference](https://www.npmjs.com/package/sveltekit-i18n) -->
 
-<a href="https://github.com/supabase/auth-helpers" target="_blank">https://www.npmjs.com/package/sveltekit-i18n</a>
+- <a href="https://github.com/supabase/auth-helpers" target="_blank">https://www.npmjs.com/package/sveltekit-i18n</a>
 
 
 
