@@ -12,7 +12,7 @@
     <div class="title text-[15px] mt-2">{$t('common.authorTitle')}</div>
     <a href="https://github.com/stephenlai2021/quickshort" target="_blank">
       <!-- <img src={githubIcon} alt="" width="24" height="24" class="mt-4 mb-2 cursor-pointer" on:click={() => goto('https://github.com/stephenlai2021')}> -->
-      <img src={githubIcon} alt="" width="24" height="24" class="mt-4 mb-2 cursor-pointer border border-white">
+      <img src={githubIcon} alt="" width="24" height="24" class="mt-4 mb-2 cursor-pointer">
     </a>
     <div class="description mt-2 mx-6 text-center">
       <div>
