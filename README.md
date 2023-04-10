@@ -114,6 +114,16 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 - `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
 
+**Vercel / Netlify**
+
+- Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration, and it is my goto hosting platform, it makes deploying projects build with all sorts of frameworks such as Svelte/Sveltekit, React/Next, Vue/Nuxt, Remix, etc. way so much easy and saved us tons of time, Vercel runs so fast and that provides pleasant and enjoyable user experiences
+
+- [Reference](https://vercel.com/docs)
+
+- The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web.
+
+-[Reference](https://www.netlify.com/)
+
 ## Routes
 
 There client route, server routes, api route. Client routes are User interface that displayed text, images, animations, transition, and executes javascript to interact with visitors. Server routes handle tasks on servers side and return the data to pages for rendering. Each page has its own server route, Sveltekit is well known a powerful `SSR` framework, it does all sorts of rendering, and server side render it most used render stategy because with SSR users see the fully rendered page, there will be no loaind indicators shown, it provides the best user experiences
