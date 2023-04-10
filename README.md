@@ -1,4 +1,4 @@
-# <img height="40" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/public/shormaster_logo-removebg.png"  alt="Logo" /> ShortMaster - A URL shortener application that not only shorten long url but analyze traffic from the clicks
+# <img height="40" align="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/public/shormaster_logo-removebg.png"  alt="Logo" /> ShortMaster - A Sveltekit URL shortener application that not only shorten long url but analyze traffic from the clicks
 
 <img src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/home-v2.png" />
 
@@ -46,7 +46,7 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 - [Tech Stack](#Tech_Stack)
 - [Routes](#Routes)
 - [Third Party APIs](#Third_Party_APIs)
-- [Third Party Packagess](#Third_Party_Packages)
+- [Third Party Packages](#Third_Party_Packages)
 - [Supabase as BAAS](#Supabase_BAAS)
 - [Environment Variables](#Environment_Variables)
 
