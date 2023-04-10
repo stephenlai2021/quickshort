@@ -46,6 +46,7 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 - [Tech Stack](#Tech_Stack)
 - [Routes](#Routes)
 - [Third Party APIs](#Third_Party_APIs)
+- [Third Party Packagess](#Third_Party_Packages)
 - [Supabase as BAAS](#Supabase_BAAS)
 - [Environment Variables](#Environment_Variables)
 
@@ -125,30 +126,30 @@ Each client side page has its own server, all the data are fetched on server sid
 
 - it is expressed in the form of `/` in codes, it is the root directory of the entire application. The home page is composed of six sections, each section is two column row contains text descriptions and illustration. There is a fixed menu bar at the top, user can login through login menu.
 
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section1.png">
+<!-- <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section1.png">
 <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section2.png">
 <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section3.png">
 <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section4.png">
 <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section5.png">
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section6.png">
+<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section6.png"> -->
 
 **Auth Page**
 
 - `/auth` route as it self-explanins is a page where shows login options that allow users to gain authentication / authorization to access functionality. _**SmartShort**_ provides social accounts login such as `Github`, `Google`, `Facebook` and `Discord` for users to easily complete authentication process with a click of a button.
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/auth-v2.png">
+<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/auth-v2.png"> -->
 
 **Dashboard Page**
 
 - `/dashboard` route is where authenticated users enter long url and get shortened url or key~`https://domain/3qlms7`, users can get the shortened key by clicking copy button, once the shortend key is pasted into the address bar users will be taken to the original url.
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/dashboard-v3.png">
+<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/dashboard-v3.png"> -->
 
 **Detail Page**
 
 - `https://domain/3qlms7` route displayed detailed statistics of the click. When the shortened url link you post on social media or in any other pages is clicked, _**ShortMaster**_ collects ip address, country, city, latitude, longitude information and display the location of the person who clicked the link on the map. It helps you visucalize and track who is interested in the content from the link you provide and you can move further to promote your services / products, etc.
 
-<img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v3.png">
+<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v3.png"> -->
 
 **+page.svelte**
 
@@ -162,19 +163,24 @@ Each client side page has its own server, all the data are fetched on server sid
 
 **+layout.page**
 
-- All of the client side pages are confined by the layout and share same components such as menu bar, header, footer, etc. It is optional.
+- layout wraps all the pages, we can place commonly used components such as menu bar, heaader, footer in layout that shows up in each page.
 
 **+layout.js**
 
-- **+layout.server.js**
+This file works on both client and server side, we fetch data in load function on server side and paste into `_layout.page` and works on all pages. It is called universal load function
 
-=
+**+layout.server.js**
+
+This file works only on server side, it works just like `+page.server.js` but layout wise.
 
 **+server.js**
 
--
+This file is a standalone api route, we can implement CRRD operations in this file, it can also be accessed from outside of the application
+
 
 ### Server Route
+
+Server routes begin with `+page.server.js`
 
 ### API Route
 
@@ -182,14 +188,47 @@ API rounte is a standalone server route
 
 Sveltekit has a very powerful routing system on both client and server side. We can create a stand alone API route that not only access by client side but alos outside the application.
 The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST` API codes to handle requests such as read user prompts from client, send it to `OpenAI` server to acquire responses, save data into database, etc.
+We can configure our server functions as `edge function`, `serverless function` or `isr function`. In this example `src/routes/api/chat/+server.js` is configured as edge function, other than that are serverless functions and they are default and we don't need specify. We can also configure all server codes as edge function.
+
+In `src/routes/api/chat/+server.js` file we configure edge function at the top
+```
+export const config: Config = {
+  runtime: "edge",
+};
+
+...
+```
+
+or if we can configure all the server functions as edge function
+```
+const config = {
+  kit: {
+      adapter: adapter(
+        {
+          edge: true 
+        }
+      )
+  }
+}
+```
 
 ## Third_Party_APIs
 
 **Supabase**
 
+Supabase plays an important role in this application, it is total backend solution, authentication, database are utilized in this application.
+
 **OpenAI**
 
+It is a red hot technology these days. chatbot is included at the bottom right corner of the page and is powered by chatgpt3.5, users are required to enter their own api key to activate conversation with Openai server.
+
 **IPIFY**
+
+It is a simple public IP address API, we can simply get our own api or others on client or server side using fetch function 
+```
+const res = await fetch(IPIFY);
+const ip = await res.text();
+```
 
 **IPAPI**
 
@@ -198,6 +237,54 @@ The only one API route `src/routes/api/chat/+server.js` contains `GET` and `POST
 **IPAPI**
 
 - ipapi is a very powerful api that find all sorts of info of an ip address such as city, region country, time zone, latitude, longitude, etc. The ip address is displayed in the form of version 6, i.e. `2402:7500:4ce:693f:400b:fe1:264b:f036`, it is hard to
+
+## Third_Party_Packages
+
+**supabase auth helpers**
+
+- A collection of framework-specific Auth utilities for working with Supabase, it makes implementing auth in route guard easy.
+
+- [Reference](https://github.com/supabase/auth-helpers)
+
+**adapter-vercel**
+
+- A SvelteKit adapter that creates a Vercel app.
+- [Reference](https://kit.svelte.dev/docs/adapter-vercel) 
+
+**svelte-toast**
+
+- A feather-light and well-tested toast notification component for modern web frontends in very little lines of code. Compiled (into UMD), it's only 20kB minified (8kB gzipped) and can be used in Vanilla JS, or as a Svelte component.
+
+- [Reference](https://github.com/zerodevx/svelte-toast)
+
+
+**tailwindcss**
+
+- A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+
+- [Reference](https://tailwindcss.com/)
+
+
+**daisyui**
+
+- daisyUI is a customizable Tailwind CSS component library that prevents verbose markup in frontend applications. With a focus on customizing and creating themes for user interfaces, daisyUI uses pure CSS and Tailwind utility classes, allowing developers to write clean HTML.
+
+- [Reference](https://daisyui.com/)
+
+
+**leaflet**
+
+- An open source JavaScript library used to build web mapping applications.
+
+- [Reference](https://leafletjs.com/)
+
+
+**sveltekit-i18n**
+
+- A tiny library with no external dependencies, built for Svelte and SvelteKit. It provides you the most straightforward sveltekit-i18n solution.
+
+- [Reference](https://www.npmjs.com/package/sveltekit-i18n)
+
 
 ## Supabase_as_BAAS
 
