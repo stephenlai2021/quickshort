@@ -76,5 +76,6 @@
   "authorTitle": "Fullstack Developer",
   "authorDescription": "I create various web applications, mainly fullstack, and I build with Sveltekit",
   "contact": "contact me",
-  "copyright": "Copyright © 2023- ShortMaster. All Rights Reserved."
+  "copyright": "Copyright © 2023- ShortMaster. All Rights Reserved.",
+  "placeholder": "Enter your OpenAI API key"
 }

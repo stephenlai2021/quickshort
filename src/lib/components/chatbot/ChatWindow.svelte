@@ -184,7 +184,7 @@
       <input
         type="text"
         class="w-[70%] border-none rounded-none outline-none bg-warnin text-blac"
-        placeholder="Please enter you OpenAI API key"
+        placeholder={$t('common.placeholder')}
         bind:value={$openaiKey}
       />
       <button

@@ -76,5 +76,6 @@
   "authorTitle": "フルスタック開発者",
   "authorDescription": "フルスタックを中心に様々なWebアプリケーションを制作しており、Sveltekitで構築している",
   "contact": "連絡先",
-  "copyright": "著作権 © 2023- 縮める. 無断転載禁止."
+  "copyright": "著作権 © 2023- 縮める. 無断転載禁止.",
+  "placeholder": "OpenAI API キーを入力します。"
 }
