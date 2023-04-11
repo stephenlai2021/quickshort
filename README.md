@@ -56,11 +56,11 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie, so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism. - [https://shortmaster.netlify.app/cEXJBV](https://shortmaster.netlify.app/cEXJBV)
 
-<img height="300" src="https://shortmaster.netlify.app/I5W0gv">
+<img height="400" src="https://shortmaster.netlify.app/I5W0gv">
 
 **Internationalization**
 
-Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. - [https://www.npmjs.com/package/sveltekit-i18n](https://www.npmjs.com/package/sveltekit-i18n)
+Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. - [sveltekit-i18n](https://www.npmjs.com/package/sveltekit-i18n)
 
 
 <img height="200" src="https://shortmaster.netlify.app/cMRCJb">
@@ -75,9 +75,9 @@ Multiple languages supports is essential for a successful web application, being
 
 **Chatbot**
 
-- The advent of `chatGPT` has becoming a phenomonal, it takes chabot to another level, it talks in human manner, understand what we ask, and answer questions beyond our expectations. Therefore an `OpenAI` powered chatbot has become a necessity for a successful app to draw visitors' attention and willing to stay longer on our page. _ShortMaster_ has `OpenAI` powered chatbot built-in, it not only answers questions related to URL shortening, but also other concerns if you would like to just chat with this super AI, all the conversation is stored so that you don't need to restart the conversation all over again once the chat window is closed. - [https://platform.openai.com/overview](https://platform.openai.com/overview)
+The advent of `chatGPT` has becoming a phenomonal, it takes chabot to another level, it talks in human manner, understand what we ask, and answer questions beyond our expectations. Therefore an `OpenAI` powered chatbot has become a necessity for a successful app to draw visitors' attention and willing to stay longer on our page. _ShortMaster_ has `OpenAI` powered chatbot built-in, it not only answers questions related to URL shortening, but also other concerns if you would like to just chat with this super AI, all the conversation is stored so that you don't need to restart the conversation all over again once the chat window is closed. - [https://platform.openai.com/overview](https://platform.openai.com/overview)
 
-<img height="200" src="https://shortmaster.netlify.app/xICP5o">
+<img height="400" src="https://shortmaster.netlify.app/xICP5o">
 
 **Tracking Capability**
 
@@ -85,7 +85,7 @@ Multiple languages supports is essential for a successful web application, being
 
 **Fully Responsive UI**
 
-- All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
+All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
 <p align="left">
   <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
@@ -101,25 +101,21 @@ Multiple languages supports is essential for a successful web application, being
 
 **Sveltekit**
 
-- `Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in an easy and pleasant manner. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api), it also has the simpliest, cleaniest, most intuitive, easiest to read and understand syntax, template engine, expressions to provide best developer experiences, it is a master piece from **Rich Harris** and **Svelte core team** 🤩🤩🤩
+`Sveltekit` is the No.1 meta-framework in Javascript world, it allows developers to work on both forntend and backend functionality to build powerful fullstack applications in an easy and pleasant manner. It has the best, clear, easy to understand folder structure that illustrates the route (client, server and api), it also has the simpliest, cleaniest, most intuitive, easiest to read and understand syntax, template engine, expressions to provide best developer experiences, it is a master piece from **Rich Harris** and **Svelte core team** 🤩🤩🤩
 
 **Supabase**
 
-- `Supabase` is a backend as a service, it has database, authentication, storage, edge function, etc. It provides simple, clean, easy to read and understand functions / expressions / api to perform CRUD operation. We can go to API Docs page and copy the codes and paste into our project, modify table name and the column data to get job done like piece of cake. It makes developing backend functionality way so much easy, it is the altervative of the popular `firebase` but even better.
+`Supabase` is a backend as a service, it has database, authentication, storage, edge function, etc. It provides simple, clean, easy to read and understand functions / expressions / api to perform CRUD operation. We can go to API Docs page and copy the codes and paste into our project, modify table name and the column data to get job done like piece of cake. It makes developing backend functionality way so much easy, it is the altervative of the popular `firebase` but even better.
 
 **Tailwindcss / Daisyui**
 
-- `Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
+`Tailwindcss` is a utility class library, it let developers never leave html, all the styles can be done within tags, it is considered the most popular CSS library . `Daisyui` is a library on top of Tailwindcss, it is a component library and make developing components fairly easy by simply adding a class name to get a beautify component with minimum styles, for example if we need a button, simply add `class="btn"` to get a basic styled button, if we want to customize the color of the button we simply add `class="btn btn-primary"` to get system define primary color, etc. Daisyui makes building beautiful, good-looking UI pretty easy and offers terrific developer experiences 🤗
 
 **Vercel / Netlify**
 
-- Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration, and it is my goto hosting platform, it makes deploying projects build with all sorts of frameworks such as Svelte/Sveltekit, React/Next, Vue/Nuxt, Remix, etc. way so much easy and saved us tons of time, Vercel runs so fast and that provides pleasant and enjoyable user experiences
+Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration, and it is my goto hosting platform, it makes deploying projects build with all sorts of frameworks such as Svelte/Sveltekit, React/Next, Vue/Nuxt, Remix, etc. way so much easy and saved us tons of time, Vercel runs so fast and that provides pleasant and enjoyable user experiences - [Vercel docs](https://vercel.com/docs)
 
-- [Reference](https://vercel.com/docs)
-
-- The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web.
-
--[Reference](https://www.netlify.com/)
+- The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. - [Netlify](https://www.netlify.com/)
 
 ## Routes
 
