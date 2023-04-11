@@ -60,11 +60,11 @@ users are able to select favorite theme, it applies to the entire application, t
 
 **Internationalization**
 
-- Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. 🤗
+Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. - [https://www.npmjs.com/package/sveltekit-i18n](https://www.npmjs.com/package/sveltekit-i18n)
+
 
 <img height="200" src="https://shortmaster.netlify.app/cMRCJb">
 
-[Reference - https://www.npmjs.com/package/sveltekit-i18n](https://www.npmjs.com/package/sveltekit-i18n)
 
 **User account**
 
@@ -72,13 +72,12 @@ users are able to select favorite theme, it applies to the entire application, t
 
 <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-user-v2.png">
 
-<!-- **Authentication**
 
-- _ShortMaster_ applies `Supabase` as a total backend solution. Users are required to login to use the functionality. Each route is protected on server side, if a user is not loggedin, he/she is not allowed to access `/dashboard` route where only authenticated users are accessible. On the other hand, if authenticated users try to access routes such as `/`, `/auth`, they will be redirected to `/dashboard`. Besides, users can easily login with their social accounts which save tons of time and steps because if login / signup with email and password, it requires users head to thier email account to confirm the login / signup procedure and that's why people are liking social accounts login with a click of button. 😀 -->
+**Chatbot**
 
-**OpenAI Powered Chatbot**
+- The advent of `chatGPT` has becoming a phenomonal, it takes chabot to another level, it talks in human manner, understand what we ask, and answer questions beyond our expectations. Therefore an `OpenAI` powered chatbot has become a necessity for a successful app to draw visitors' attention and willing to stay longer on our page. _ShortMaster_ has `OpenAI` powered chatbot built-in, it not only answers questions related to URL shortening, but also other concerns if you would like to just chat with this super AI, all the conversation is stored so that you don't need to restart the conversation all over again once the chat window is closed. - [https://platform.openai.com/overview](https://platform.openai.com/overview)
 
-- The advent of `chatGPT` has becoming a phenomonal, it takes chabot to another level, it talks in human manner, understand what we ask, and answer questions beyond our expectations. Therefore an `OpenAI` powered chatbot has become a necessity for a successful app to draw visitors' attention and willing to stay longer on our page. _ShortMaster_ has `OpenAI` powered chatbot built-in, it not only answers questions related to URL shortening, but also other concerns if you would like to just chat with this super AI, all the conversation is stored so that you don't need to restart the conversation all over again once the chat window is closed.😉
+<img height="200" src="https://shortmaster.netlify.app/xICP5o">
 
 **Tracking Capability**
 
