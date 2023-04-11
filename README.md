@@ -54,9 +54,7 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 **Theme Switcher**
 
-users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie, so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism.
-
-[Reference - https://shortmaster.netlify.app/cEXJBV](https://shortmaster.netlify.app/cEXJBV)
+users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie, so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism. - [https://shortmaster.netlify.app/cEXJBV](https://shortmaster.netlify.app/cEXJBV)
 
 <img height="300" src="https://shortmaster.netlify.app/I5W0gv">
 
