@@ -42,13 +42,13 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 ## Table of Contents
 
-[Features](#Features)
-[Tech Stack](#Tech_Stack)
-[Routes](#Routes)
-[Third Party APIs](#Third_Party_APIs)
-[Third Party Packages](#Third_Party_Packages)
-[Supabase as BAAS](#Supabase_BAAS)
-[Environment Variables](#Environment_Variables)
+- [Features](#Features)
+- [Tech Stack](#Tech_Stack)
+- [Routes](#Routes)
+- [Third Party APIs](#Third_Party_APIs)
+- [Third Party Packages](#Third_Party_Packages)
+- [Supabase as BAAS](#Supabase_BAAS)
+- [Environment Variables](#Environment_Variables)
 
 ## Features
 
@@ -116,7 +116,7 @@ All the pages are fully responsive, no matter what size of the page, or what dim
 
 Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration, and it is my goto hosting platform, it makes deploying projects build with all sorts of frameworks such as Svelte/Sveltekit, React/Next, Vue/Nuxt, Remix, etc. way so much easy and saved us tons of time, Vercel runs so fast and that provides pleasant and enjoyable user experiences - [Vercel docs](https://vercel.com/docs)
 
-- The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. - [Netlify](https://www.netlify.com/)
+The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. - [Netlify](https://www.netlify.com/)
 
 ## Routes
 
