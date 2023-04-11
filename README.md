@@ -35,20 +35,20 @@ One thing to mention is that designing an appealing, good-looking User Interface
 
 ### Live Demo
 
-- [https://shortmaster.netlify.app](https://shortmaster.netlify.app)
-- [https://shortmaster.vercel.app](https://shortmaster.vercel.app)
+[ShortMaster on Netlify](https://shortmaster.netlify.app)
+[ShortMaster on Vercel](https://shortmaster.vercel.app)
 
-The app is working perfectly on Vercel all the time at the beginning but somehow it is not working anymore due to "Serverless Function crash" and I cannot get it fixed therefore I take alternative approach which is deploying it on `Netlify` and it works great.
+The app is working perfectly on Vercel all the time at the beginning but somehow it is not working anymore due to "Serverless Function crash" and I cannot get it fixed therefore I take alternative approach that is to deploy the project on `Netlify` to make it work properly.
 
 ## Table of Contents
 
-- [Features](#Features)
-- [Tech Stack](#Tech_Stack)
-- [Routes](#Routes)
-- [Third Party APIs](#Third_Party_APIs)
-- [Third Party Packages](#Third_Party_Packages)
-- [Supabase as BAAS](#Supabase_BAAS)
-- [Environment Variables](#Environment_Variables)
+[Features](#Features)
+[Tech Stack](#Tech_Stack)
+[Routes](#Routes)
+[Third Party APIs](#Third_Party_APIs)
+[Third Party Packages](#Third_Party_Packages)
+[Supabase as BAAS](#Supabase_BAAS)
+[Environment Variables](#Environment_Variables)
 
 ## Features
 
@@ -68,7 +68,7 @@ Multiple languages supports is essential for a successful web application, being
 
 **User account**
 
-- loggedin user's avatar image will be apperaed on the top right corner, when mouse hovered the menu will be opened, submenu such as user name, dashboard, chatbot toggle, logout will be shown.
+loggedin user's avatar image will be apperaed on the top right corner, when mouse hovered the menu will be opened, submenu such as user name, dashboard, chatbot toggle, logout will be shown.
 
 <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-user-v2.png">
 
