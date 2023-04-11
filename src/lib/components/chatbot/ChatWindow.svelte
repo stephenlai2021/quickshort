@@ -20,11 +20,6 @@
   let chatMessages: ChatCompletionRequestMessage[] = [];
   let scrollToDiv: HTMLDivElement;
   let popup = false;
-  let apiKey = "";
-
-  let openaiErr = false;
-  // let errMsg = ''
-  let chatMsgs = [];
 
   function scrollToBottom() {
     setTimeout(function () {
@@ -42,14 +37,12 @@
         theme: {
           "--toastBorderRadius": "8px",
           "--toastBarBackground": "",
-          // "--toastBackground": "#F5B942",
           "--toastBackground": "#8AD8EF",
           "--toastBtnWidth": "0",
           "--toastBtnHeight": "0",
           "--toastBtnContent": " ",
           "--toastMsgPadding": "0.35rem 1rem",
           "--toastMinHeight": "3.0rem",
-          // "--toastWidth": "174px",
           "--toastColor": "black",
           "--toastBtnFont": "14px",
         },
@@ -170,9 +163,6 @@
         <ChatMessage type="assistant" message={errMsg} />
       {/if}
 
-      <!-- {#if !$openaiKey}
-        <ChatMessage type="assistant" message="Oh, you forgot to attach your openai key 🙄" />
-      {/if} -->
     </div>
     <div class="" bind:this={scrollToDiv} />
   </div>
