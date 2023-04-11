@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-auto';
-// import adapter from '@sveltejs/adapter-vercel';
+// import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 // import adapter from '@sveltejs/adapter-netlify';
 import preprocess from "svelte-preprocess";
 import { vitePreprocess } from '@sveltejs/kit/vite';
@@ -13,9 +13,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(
-			// {
-			// 	edge: true 
-			// }
+			{
+				edge: true 
+			}
 		)
 	}
 };
