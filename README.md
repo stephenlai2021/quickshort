@@ -77,11 +77,11 @@ Multiple languages supports is essential for a successful web application, being
 
 The advent of `chatGPT` has becoming a phenomonal, it takes chabot to another level, it talks in human manner, understand what we ask, and answer questions beyond our expectations. Therefore an `OpenAI` powered chatbot has become a necessity for a successful app to draw visitors' attention and willing to stay longer on our page. _ShortMaster_ has `OpenAI` powered chatbot built-in, it not only answers questions related to URL shortening, but also other concerns if you would like to just chat with this super AI, all the conversation is stored so that you don't need to restart the conversation all over again once the chat window is closed. - [https://platform.openai.com/overview](https://platform.openai.com/overview)
 
-<img height="400" src="https://shortmaster.netlify.app/xICP5o">
+<img height="300" src="https://shortmaster.netlify.app/xICP5o">
 
 **Tracking Capability**
 
-- When a user click shortend url you paste, _ShortMaster_ collects total clicks from that particular url, and that user's ip address, country, city, latitude, longitude, etc. User location is then displayed on the map in dashoard. This feature let you visualize where the traffic is from and that makes you easily target the audiences to deliver your services.
+When a user click shortend url you paste, _ShortMaster_ collects total clicks from that particular url, and that user's ip address, country, city, latitude, longitude, etc. User location is then displayed on the map in dashoard. This feature let you visualize where the traffic is from and that makes you easily target the audiences to deliver your services.
 
 **Fully Responsive UI**
 
@@ -206,91 +206,67 @@ const config = {
 
 **Supabase**
 
-- Supabase is an open source Firebase alternative, it plays an important role in this application, it is total backend solution, authentication, database are utilized in this application.
-
-- Reference: <a href="https://supabase.com/" target="_blank">https://supabase.com/</a>
+Supabase is an open source Firebase alternative, it plays an important role in this application, it is total backend solution, authentication, database are utilized in this application. - <a href="https://supabase.com/" target="_blank">supabase</a>
 
 
 **OpenAI**
 
-It is a red hot technology these days. chatbot is included at the bottom right corner of the page and is powered by chatgpt3.5, users are required to enter their own api key to activate conversation with Openai server.
-
-- Reference: <a href="https://openai.com/" target="_blank">https://openai.com/</a>
+It is a red hot technology these days. chatbot is included at the bottom right corner of the page and is powered by chatgpt3.5, users are required to enter their own api key to activate conversation with Openai server. - <a href="https://openai.com/" target="_blank">openai</a>
 
 
 **IPIFY**
 
-- It is a simple public IP address API, we can simply get our own api or others on client or server side using fetch function 
+- It is a simple public IP address API, we can simply get our own api or others on client or server side using fetch function - <a href="https://www.ipify.org/" target="_blank">ipify</a>
+
 ```
 const res = await fetch(IPIFY);
 const ip = await res.text();
 ```
 
-- Reference: <a href="https://www.ipify.org/" target="_blank">https://www.ipify.org/</a>
-
-
 **IPAPI**
 
-- ipapi is a very powerful api that find all sorts of info of an ip address such as city, region country, time zone, latitude, longitude, etc. The ip address is displayed in the form of version 6, i.e. `2402:7500:4ce:693f:400b:fe1:264b:f036`, it is hard to
-
-- Reference: <a href="https://ipapi.co/" target="_blank">https://ipapi.co/</a>
+ipapi is a very powerful api that find all sorts of info of an ip address such as city, region country, time zone, latitude, longitude, etc. The ip address is displayed in the form of version 6, i.e. `2402:7500:4ce:693f:400b:fe1:264b:f036` - <a href="https://ipapi.co/" target="_blank">ipapi</a>
 
 
 ## Third_Party_Packages
 
 **supabase auth helpers**
 
-- A collection of framework-specific Auth utilities for working with Supabase, it makes implementing auth in route guard easy.
-
-- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/supabase/auth-helpers</a>
+A collection of framework-specific Auth utilities for working with Supabase, it makes implementing auth in route guard easy. - <a href="https://github.com/supabase/auth-helpers" target="_blank">supabase auth helpers</a>
 
 **adapter-vercel**
 
-- A SvelteKit adapter that creates a Vercel app.
-
-- Reference: <a href="https://kit.svelte.dev/docs/adapter-vercel" target="_blank">https://kit.svelte.dev/docs/adapter-vercel</a>
+A SvelteKit adapter that creates a Vercel app. - <a href="https://kit.svelte.dev/docs/adapter-vercel" target="_blank">adapter-vercel</a>
 
 **adapter-netlify**
 
-- A SvelteKit adapter that creates a Netlify app.
-
-- Reference: <a href="https://kit.svelte.dev/docs/adapter-netlify" target="_blank">https://kit.svelte.dev/docs/adapter-netlify</a>
+- A SvelteKit adapter that creates a Netlify app. - <a href="https://kit.svelte.dev/docs/adapter-netlify" target="_blank">adapter-netlify</a>
 
 
 **svelte-toast**
 
-- A feather-light and well-tested toast notification component for modern web frontends in very little lines of code. Compiled (into UMD), it's only 20kB minified (8kB gzipped) and can be used in Vanilla JS, or as a Svelte component.
-
-- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://github.com/zerodevx/svelte-toast</a>
+- A feather-light and well-tested toast notification component for modern web frontends in very little lines of code. Compiled (into UMD), it's only 20kB minified (8kB gzipped) and can be used in Vanilla JS, or as a Svelte component. - <a href="https://github.com/supabase/auth-helpers" target="_blank">svelte-toast</a>
 
 
 **tailwindcss**
 
-- A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
-
-- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://tailwindcss.com/</a>
+- A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup. - <a href="https://github.com/supabase/auth-helpers" target="_blank">tailwindcss</a>
 
 
 **daisyui**
 
-- daisyUI is a customizable Tailwind CSS component library that prevents verbose markup in frontend applications. With a focus on customizing and creating themes for user interfaces, daisyUI uses pure CSS and Tailwind utility classes, allowing developers to write clean HTML.
-
-- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://daisyui.com/</a>
+- daisyUI is a customizable Tailwind CSS component library that prevents verbose markup in frontend applications. With a focus on customizing and creating themes for user interfaces, daisyUI uses pure CSS and Tailwind utility classes, allowing developers to write clean HTML. - <a href="https://github.com/supabase/auth-helpers" target="_blank">daisyui</a>
 
 
 **leaflet**
 
-- An open source JavaScript library used to build web mapping applications.
-
-- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://leafletjs.com/</a>
+- An open source JavaScript library used to build web mapping applications. - <a href="https://github.com/supabase/auth-helpers" target="_blank">leafletjs</a>
 
 
 
 **sveltekit-i18n**
 
-- A tiny library with no external dependencies, built for Svelte and SvelteKit. It provides you the most straightforward sveltekit-i18n solution.
-
-- Reference: <a href="https://github.com/supabase/auth-helpers" target="_blank">https://www.npmjs.com/package/sveltekit-i18n</a>
+- A tiny library with no external dependencies, built for Svelte and SvelteKit. It provides you the most straightforward sveltekit-i18n solution. - <a href="https://github.com/supabase/auth-helpers" target="_blank">sveltekit-i18n</a>
 
 
 
