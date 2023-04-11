@@ -6,7 +6,7 @@
 
 **This** ShortMaster URL shortener applications functionalities and features are all handle on server side, so on client side we only read the data injected from server side and rendering. I personally love server side render because users / visitors always see the fully rendred page in no time, and avoid parts such as loading indicators / skeletons, etc. compared to client side rendering (Single Page Application)
 
-**As** a big fan of Svelte / Sveltekit, I quite often browse svelte.dev to look for answers / solutions / inspirations, and I happed to find out SvelteHack competition, and feel very excited and eagerly to participate this awesome and meaningful event. Because time is not much so I was thinking what type of application is best demonstrating Sveltekit's advanced features. I want this app have features such as theme switcher, multiple languages support, authentication, route gurad, chatbot, and I think an URL shortener application is a good idea, not only short long url but track user info such as ip address, country, city, geolocation, etc. I have been learning Svele/Sveltekit for awhile from official website, articles and youtube, and I already have a blueprint on how to implement these features and functionalities. After one something month the app is accomplished and it is time to present the results that I am proud of and hopefully not only win the prizes but help contribute to Svelte society, I am pretty sure Sveltekit is the No.1 meta-framework, it is better than Next, Nuxt, Remix and many other frameworks based upon my personal experiences. I think people should be aware of the advantages, benefits and power that Svelte / Sveltekit brings about over other frameworks and knowing building powerful server side render application can be pretty easy and fun, no need to learn and build backend MVC server with Node, ASP.Net, Python, Ruby, PHP, etc. Sveltekit takes care of it all 🤩😀🥰😉🤗😘😎👍
+**As** a big fan of Svelte / Sveltekit, I quite often browse svelte.dev to look for answers / solutions / inspirations, and I happed to find out SvelteHack competition, and feel very excited and eagerly to participate this awesome and meaningful event. Because time is not much so I was thinking what type of application is best demonstrating Sveltekit's advanced features. I want this app have features such as theme switcher, multiple languages support, authentication, route gurad, chatbot, and I think an URL shortener application is a good idea, not only short long url but track user info such as ip address, country, city, geolocation, etc. I have been learning Svele/Sveltekit for awhile from official website, articles and youtube, and I already have a blueprint on how to implement these features and functionalities. After one something month the app is accomplished and it is time to present the results that I am proud of and hopefully not only win the prizes but help contribute to Svelte society, I am pretty sure Sveltekit is the No.1 meta-framework, it is better than Next, Nuxt, Remix and many other frameworks based upon my personal experiences. I think people should be aware of the advantages, benefits and power that Svelte / Sveltekit brings about over other frameworks and knowing building powerful server side render application can be pretty easy and fun, and there is no need to learn and build backend MVC server with Node, ASP.Net, Python, Ruby, PHP, etc. Sveltekit takes care of it all 🤩😀🥰😉🤗😘😎👍
 
 One thing to mention is that designing an appealing, good-looking User Interface is always a challenge for me, and I think this applies to most of the developers / coders. It took me awhile to determined the layout of the pages, this involves color, title, subtitle, etc.
 
@@ -89,16 +89,12 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 - All the pages are fully responsive, no matter what size of the page, or what dimension of the device, _ShortMaster_ always presents the best and good looking user interface.
 
 <p align="left">
-  <!-- <img height="400" position="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png"> -->
   <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-home.png">
 
-  <!-- <img height="400" float="left" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png"> -->
   <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-auth.png">
 
-  <!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png"> -->
   <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-dashboard.png">
 
-  <!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png"> -->
   <img width="186" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/rwd-details.png">
 </p>
 
@@ -138,30 +134,17 @@ Each client side page has its own server, all the data are fetched on server sid
 
 - it is expressed in the form of `/` in codes, it is the root directory of the entire application. The home page is composed of six sections, each section is two column row contains text descriptions and illustration. There is a fixed menu bar at the top, user can login through login menu.
 
-<!-- <img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section1.png">
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section2.png">
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section3.png">
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section4.png">
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section5.png">
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/section6.png"> -->
-
 **Auth Page**
 
 - `/auth` route as it self-explanins is a page where shows login options that allow users to gain authentication / authorization to access functionality. _**SmartShort**_ provides social accounts login such as `Github`, `Google`, `Facebook` and `Discord` for users to easily complete authentication process with a click of a button.
-
-<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/auth-v2.png"> -->
 
 **Dashboard Page**
 
 - `/dashboard` route is where authenticated users enter long url and get shortened url or key~`https://domain/3qlms7`, users can get the shortened key by clicking copy button, once the shortend key is pasted into the address bar users will be taken to the original url.
 
-<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/dashboard-v3.png"> -->
-
 **Detail Page**
 
 - `https://domain/3qlms7` route displayed detailed statistics of the click. When the shortened url link you post on social media or in any other pages is clicked, _**ShortMaster**_ collects ip address, country, city, latitude, longitude information and display the location of the person who clicked the link on the map. It helps you visucalize and track who is interested in the content from the link you provide and you can move further to promote your services / products, etc.
-
-<!-- <img height="400" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/detailed-v3.png"> -->
 
 **+page.svelte**
 
