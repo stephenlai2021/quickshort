@@ -56,15 +56,17 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 
 users are able to select favorite theme, it applies to the entire application, the selected theme is remembered by the application and is stored in cookie, so when page is refreshed users won't see the flicker, it provies great user experiences thanks to `Sveltekit` powerful server side rendering mechanism.
 
-[Reference - https://www.youtube.com/watch?v=3GpZkVBjXfE&list=PLq30BP0TIcqXP149TyFMfRhnMT6T5--e5&index=14](https://www.youtube.com/watch?v=3GpZkVBjXfE&list=PLq30BP0TIcqXP149TyFMfRhnMT6T5--e5&index=14)
+[Reference - https://shortmaster.netlify.app/cEXJBV](https://shortmaster.netlify.app/cEXJBV)
 
-<img height="300" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-theme-v2.png">
+<img height="300" src="https://shortmaster.netlify.app/I5W0gv">
 
 **Internationalization**
 
 - Multiple languages supports is essential for a successful web application, being able to serve people around the world is the key to success, therefore, adding `i18n` to the app is crucial. A `sveltekit-i18n` package is leveraged to make this feature come true. 🤗
 
-<img height="200" src="https://itzgmdgndusfvggjclwk.supabase.co/storage/v1/object/public/general/menu-lang-v3.png">
+<img height="200" src="https://shortmaster.netlify.app/cMRCJb">
+
+[Reference - https://www.npmjs.com/package/sveltekit-i18n](https://www.npmjs.com/package/sveltekit-i18n)
 
 **User account**
 
