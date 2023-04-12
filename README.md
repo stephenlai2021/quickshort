@@ -49,6 +49,7 @@ The app is working perfectly on Vercel all the time at the beginning but somehow
 - [Third Party Packages](#Third_Party_Packages)
 - [Supabase as BAAS](#Supabase_BAAS)
 - [Environment Variables](#Environment_Variables)
+- [Get Project Up and Running](#Get_Project_Up_And_Running)
 
 ## Features
 
@@ -457,4 +458,13 @@ IPIFY = "https://api.ipify.org"
 
 IPAPI = "https://ipapi.co/json/?key=YourAPIKey>"
 ```
+
+## Get_Project_Up_And_Running
+
+- First download this repo into your desktop and unzip it
+- open this project folder with your favorite editor
+- open terminal and type npm i to install the necessary dependencies
+- register a Supabase account and follow the above mentioned steps
+- create a `.env` file in root directory, and fill out the api key based upon the above mentioned steps
+- type `npm run dev` to start server
 
