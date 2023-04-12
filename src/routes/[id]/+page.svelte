@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { page } from "$app/stores";
   import { onMount } from "svelte";
 
@@ -7,4 +7,4 @@
   onMount(() => {});
 </script>
 
-<h1 class="mt-[100px]">{$page.params.id}</h1>
+<h1 class="mt-[100px]">{$page.params.id}</h1> -->
